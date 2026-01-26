@@ -4,64 +4,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
+// SSRモードで動的レンダリング
+export const prerender = false;
+
 const API_URL = 'https://nlydlveiokiivjwpnnaf.supabase.co/functions/v1';
-
-// ビルド時に全商品のパスを生成
-export async function getStaticPaths() {
-  try {
-    const response = await fetch(`${API_URL}/get-products`);
-    const result = await response.json();
-
-    if (result.success && result.data) {
-      return result.data.map((product: any) => ({
-        params: { id: product.id },
-        props: { product }
-      }));
-    }
-  } catch (e) {
-    console.error('Error fetching products for static paths:', e);
-  }
-
-  // フォールバック: 既知の商品IDリスト
-  const knownIds = [
-    'a7621d74-28e8-4926-9c02-57eea01bcaf9',
-    '9c82500f-dc4d-49b9-ba51-67d8faa18e9d',
-    'd25342de-485c-45c5-8393-d60e372c0208',
-    'ca73245d-7ca2-46d4-b998-b08dbfeba43d',
-    '2a50e538-fcad-4134-8915-7983cdec05f0'
-  ];
-
-  return knownIds.map(id => ({
-    params: { id },
-    props: { product: null }
-  }));
-}
-
-interface Props {
-  product: any;
-}
-
-const { product: initialProduct } = Astro.props;
 const { id } = Astro.params;
 
-let product = initialProduct;
+let product = null;
 let error = null;
 
-// propsから商品が取得できなかった場合、APIから取得を試みる
-if (!product) {
-  try {
-    const response = await fetch(`${API_URL}/get-product?id=${id}`);
-    const result = await response.json();
+// APIから商品データを取得
+try {
+  const response = await fetch(`${API_URL}/get-product?id=${id}`);
+  const result = await response.json();
 
-    if (result.success) {
-      product = result.data;
-    } else {
-      error = '商品が見つかりません';
-    }
-  } catch (e) {
-    error = '商品データの読み込みに失敗しました';
-    console.error('Fetch error:', e);
+  if (result.success) {
+    product = result.data;
+  } else {
+    error = '商品が見つかりません';
   }
+} catch (e) {
+  error = '商品データの読み込みに失敗しました';
+  console.error('Fetch error:', e);
 }
 
 const formatPrice = (price: number) => {
