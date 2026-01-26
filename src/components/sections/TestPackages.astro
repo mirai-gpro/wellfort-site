@@ -1,0 +1,137 @@
+---
+---
+
+<section id="test-packages" class="py-20 bg-gradient-to-br from-white via-tiffany-50/20 to-cyan-50/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 fade-in">
+      <div class="inline-block px-6 py-2 bg-tiffany-100 rounded-full text-tiffany-700 font-medium text-sm mb-6">
+        法人向けプラン
+      </div>
+      <h2 class="heading-section mb-4">検査パッケージ</h2>
+      <p class="text-lead">
+        経営幹部、中堅社員、一般社員、年齢に最適なプランを提供
+      </p>
+    </div>
+
+    <div class="package-container fade-in">
+      <div class="package-image-wrapper">
+        <img src="/images/sample_slide_017.png" alt="法人向けパッケージ" class="package-image">
+
+        <!-- 経営幹部プラン用ボタン -->
+        <a href="/products/12f01544-0eee-43fc-a62b-9c9783c131ef" class="package-overlay-btn btn-executive">
+          経営幹部プラン<br>詳細を見る
+        </a>
+
+        <!-- 一般社員50代プラン用ボタン -->
+        <a href="/products/3a0aad30-6fbc-4527-8999-a885e0f17949" class="package-overlay-btn btn-general50">
+          一般社員50代～<br>詳細を見る
+        </a>
+
+        <!-- 中堅社員プラン用ボタン -->
+        <a href="/products/14c1d6af-cb60-4896-9392-383836e7bd25" class="package-overlay-btn btn-middle">
+          中堅社員プラン<br>詳細を見る
+        </a>
+
+        <!-- 一般社員30代プラン用ボタン -->
+        <a href="/products/3c5d7de5-fdcb-45e3-8b17-13c9540269ea" class="package-overlay-btn btn-general30">
+          一般社員用<br>詳細を見る
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .package-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .package-image-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .package-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .package-overlay-btn {
+    position: absolute;
+    background: rgba(102, 126, 234, 0.95);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 2px solid white;
+    z-index: 10;
+    transform: translateX(-50%);
+  }
+
+  .package-overlay-btn:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-executive {
+    background: rgba(234, 102, 102, 0.95);
+    top: 86%;
+    left: 36%;
+  }
+
+  .btn-executive:hover {
+    background: rgba(118, 75, 162, 0.95);
+  }
+
+  .btn-general50 {
+    background: rgba(46, 204, 113, 0.95);
+    top: 86%;
+    left: 53%;
+  }
+
+  .btn-general50:hover {
+    background: rgba(39, 174, 96, 0.95);
+  }
+
+  .btn-middle {
+    background: rgba(241, 196, 15, 0.95);
+    top: 86%;
+    left: 72%;
+  }
+
+  .btn-middle:hover {
+    background: rgba(243, 156, 18, 0.95);
+  }
+
+  .btn-general30 {
+    background: rgba(102, 126, 234, 0.95);
+    top: 86%;
+    left: 89%;
+  }
+
+  .btn-general30:hover {
+    background: rgba(212, 75, 75, 0.95);
+  }
+
+  @media (max-width: 768px) {
+    .package-overlay-btn {
+      padding: 8px 10px;
+      font-size: 10px;
+      border-radius: 8px;
+    }
+  }
+</style>
