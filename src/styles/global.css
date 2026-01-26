@@ -79,7 +79,7 @@
   }
 
   .heading-section {
-    @apply text-4xl lg:text-5xl font-display font-bold text-neutral-900 mb-4;
+    @apply text-3xl lg:text-4xl font-display font-bold text-neutral-900 mb-4;
   }
 
   .heading-subsection {
