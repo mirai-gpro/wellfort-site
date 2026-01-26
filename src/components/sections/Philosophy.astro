@@ -1,34 +1,33 @@
 ---
 const philosophyItems = [
   {
-    title: 'Mission',
+    title: 'ミッション',
     icon: 'mountain',
-    description: '健康モニタリングにより、がんや生活習慣病の早期発見や予防を行い、',
-    highlight: '健康寿命',
-    description2: 'を大幅に伸ばし、',
-    highlight2: '豊かな人生',
-    description3: 'を実現する。',
+    points: [
+      '健康モニタリングによる、がんや生活習慣病の早期発見・予防',
+      '健康寿命の大幅な延伸',
+      '豊かな人生の実現'
+    ],
     gradient: 'from-tiffany-500 to-tiffany-600',
     color: 'tiffany'
   },
   {
-    title: 'Vision',
+    title: 'ビジョン',
     icon: 'telescope',
-    description: '未病のプラットフォーマー',
-    description2: 'となり、ウェルテクトの会員である個人や経営幹部、従業員がさらに',
-    highlight: '健康になる仕組み',
-    description3: 'を構築していきます。',
+    points: [
+      '未病のプラットフォーマーとなる',
+      'ウェルテクト会員（個人・経営幹部・従業員）がさらに健康になる仕組みの構築'
+    ],
     gradient: 'from-tiffany-600 to-blue-600',
     color: 'blue'
   },
   {
-    title: 'Value',
+    title: 'バリュー',
     icon: 'diamond',
-    description: '常に',
-    highlight: '最新のテクノロジー',
-    description2: 'を積極的に導入し、会員の健康増進につながる',
-    highlight2: '予防ソリューション',
-    description3: 'を導入し続ける。',
+    points: [
+      '最新テクノロジーの積極的な導入',
+      '会員の健康増進につながる予防ソリューションの継続的な導入'
+    ],
     gradient: 'from-blue-600 to-purple-600',
     color: 'purple'
   }
@@ -39,15 +38,15 @@ const philosophyItems = [
   <div class="section-container">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
-      <h2 class="text-5xl lg:text-6xl font-sans font-bold text-tiffany-700 mb-6">
-        Philosophy
+      <h2 class="text-4xl lg:text-5xl font-sans font-bold text-tiffany-700 mb-6">
+        ウェルフォートの理念
       </h2>
     </div>
 
     <!-- Philosophy Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
       {philosophyItems.map((item, index) => (
-        <div 
+        <div
           class="relative bg-gradient-to-br from-white to-tiffany-50/30 rounded-3xl p-8 transition-all duration-500 group hover:shadow-luxury"
           style={`animation: slideUp 0.8s ease-out ${index * 0.15}s backwards;`}
         >
@@ -86,14 +85,15 @@ const philosophyItems = [
             {item.title}
           </h3>
 
-          <!-- Description -->
-          <p class="text-base leading-relaxed text-center text-neutral-700">
-            {item.description}
-            {item.highlight && <span class="text-tiffany-700 font-bold underline decoration-tiffany-400 decoration-2">{item.highlight}</span>}
-            {item.description2}
-            {item.highlight2 && <span class="text-orange-600 font-bold underline decoration-orange-400 decoration-2">{item.highlight2}</span>}
-            {item.description3}
-          </p>
+          <!-- Description as Bullet Points -->
+          <ul class="space-y-3 text-base leading-relaxed text-neutral-700">
+            {item.points.map((point) => (
+              <li class="flex items-start">
+                <span class="text-tiffany-600 mr-2 mt-1">•</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
