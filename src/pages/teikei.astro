@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="提携クリニック・ジム - Wellfort">
+  <Header />
+
+  <main>
+    <section class="hero-section">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8 fade-in">
+          <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            提携クリニック・ジム
+          </h1>
+          <p class="text-lg text-gray-600">
+            提携クリニック・提携パーソナルトレーニングジム
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-section">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="image-container fade-in">
+          <img src="/images/teikei_jim_medical.png" alt="提携クリニック・ジム" class="main-image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <a href="/#platform" class="btn-back">
+          プラットフォームに戻る
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero-section {
+    padding: 80px 0 40px;
+    background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+  }
+
+  .image-section {
+    padding: 40px 0 60px;
+  }
+
+  .image-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .cta-section {
+    padding: 40px 0 80px;
+  }
+
+  .btn-back {
+    display: inline-block;
+    padding: 16px 48px;
+    background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+    color: white;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+  }
+
+  .btn-back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.4);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
