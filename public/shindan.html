@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡易プラン診断</title>
+    <style>
+        /* CSSで見た目を整えます */
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; /* 全体の余白 */
+            box-sizing: border-box;
+        }
+
+        /* 全体を囲むコンテナ */
+        .main-container {
+            display: flex; /* flexboxを使って横並びにする */
+            gap: 20px; /* 診断枠と画像の間隔 */
+            align-items: stretch; /* 高さを揃える */
+            width: 95%; /* 全体の幅 */
+            max-width: 1000px; /* 最大幅 */
+            box-sizing: border-box;
+        }
+
+        .finder-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex: 1; /* 残りのスペースを埋めるように幅を広げる */
+            padding: 2rem;
+            box-sizing: border-box;
+            min-width: 300px; /* 診断枠の最小幅 */
+        }
+
+        /* 各質問ブロック */
+        .question-block {
+            display: none; /* 初期状態では非表示 */
+            margin-bottom: 20px;
+        }
+        /* 最初の質問だけ表示 */
+        #q1 {
+            display: block;
+        }
+        h2 {
+            margin-top: 0;
+            color: #0d9488;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            margin-top: 0;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #0d9488;
+            background-color: #fff;
+            color: #0d9488;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+            text-align: left; /* テキストを左寄せ */
+        }
+        .options button:hover {
+            background-color: #0d9488;
+            color: #fff;
+        }
+        /* 結果表示エリア */
+        #result {
+            display: none; /* 初期状態では非表示 */
+            border-top: 2px solid #0d9488;
+            padding-top: 20px;
+        }
+        #result h3 {
+            color: #0d9488;
+        }
+        #restart-button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        #restart-button:hover {
+            background-color: #5a6268;
+        }
+        /* 検査商品の詳細リンクボタン */
+        .detail-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
+        }
+        .detail-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+        }
+
+
+        /* アニメキャラのスタイル */
+        .character-image-container {
+            flex-shrink: 0;
+            width: 300px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .character-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* レスポンシブ対応：画面幅が狭い場合は縦並びにする */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column; /* 縦並びにする */
+                align-items: center; /* 中央揃え */
+            }
+            .character-image-container {
+                width: 60%; /* 小さい画面では画像幅を調整 */
+                max-width: 250px;
+                margin-top: 20px; /* 診断枠との間隔 */
+                position: static; /* stickyを解除 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="finder-container">
+
+            <h2>あなたに合ったプラン診断</h2>
+
+            <div class="question-block" id="q1">
+                <h3>Q1. あなたが今、最も気になることは何ですか？</h3>
+                <div class="options">
+                    <button onclick="showQuestion('q2-a')">(A) 将来の遺伝的リスクを知りたい</button>
+                    <button onclick="showQuestion('q2-b')">(B) 今の健康状態（血液など）をチェックしたい</button>
+                    <button onclick="showQuestion('q2-c')">(C) 「がん」のリスクを最優先で調べたい</button>
+                </div>
+            </div>
+
+            <div class="question-block" id="q2-a">
+                <h3>Q2. 遺伝子検査に加え、他の検査もまとめて行いたいですか？</h3>
+                <div class="options">
+                    <button onclick="showResult('result-std')">はい（総合的に調べたい）</button>
+                    <button onclick="showResult('result-gene')">いいえ（遺伝子検査だけで良い）</button>
+                </div>
+            </div>
+
+            <div class="question-block" id="q2-b">
+                <h3>Q2. 血液検査とあわせて、AIによる将来の疾病予測にも興味がありますか？</h3>
+                <div class="options">
+                    <button onclick="showResult('result-blood-ai')">はい（AI予測もしたい）</button>
+                    <button onclick="showResult('result-blood')">いいえ（血液検査だけで良い）</button>
+                </div>
+            </div>
+
+            <div class="question-block" id="q2-c">
+                <h3>Q2. がんリスク検査とあわせて、「がんドック受診料保証」も必要ですか？</h3>
+                <div class="options">
+                    <button onclick="showResult('result-cancer-hosho')">はい（保証があった方が安心）</button>
+                    <button onclick="showResult('result-cancer')">いいえ（保証は不要）</button>
+                </div>
+            </div>
+
+            <div id="result">
+                <div class="result-content" id="result-std">
+                    <h3>あなたにおすすめのプラン</h3>
+                    <p><strong>ウェルテクト</strong></p>
+                    <p>遺伝子・血液・がん・AI予測まで、総合的にチェックできるプランです。</p>
+                    <a href="/products/899d727b-7ef1-4946-b625-de8e1145bd95" class="detail-link" target="_parent">検査商品の詳細</a>
+                </div>
+                <div class="result-content" id="result-gene">
+                    <h3>あなたにおすすめのプラン</h3>
+                    <p><strong>遺伝子検査 ジェノプラン</strong></p>
+                    <p>まずはご自身の遺伝的リスクを把握したい方におすすめです。</p>
+                    <a href="/products/3e7ba6d2-85f5-4a95-abb7-80effa8aafab" class="detail-link" target="_parent">検査商品の詳細</a>
+                </div>
+                <div class="result-content" id="result-blood-ai">
+                    <h3>あなたにおすすめのプラン</h3>
+                    <p><strong>ウェルテクト</strong></p>
+                    <p>現在の健康状態と、AIによる将来予測を行いたい方におすすめです。</p>
+                    <a href="/products/ca73245d-7ca2-46d4-b998-b08dbfeba43d" class="detail-link" target="_parent">検査商品の詳細</a>
+                </div>
+                <div class="result-content" id="result-blood">
+                    <h3>あなたにおすすめのプラン</h3>
+                    <p><strong>血液検査キット</strong></p>
+                    <p>現在の生活習慣を見直すために、まずは血液の状態をチェックしたい方へ。</p>
+                    <a href="/products/1aae1f1c-2d96-4193-a950-85b940677e6a" class="detail-link" target="_parent">検査商品の詳細</a>
+                </div>
+                <div class="result-content" id="result-cancer-hosho">
+                    <h3>あなたにおすすめのプラン</h3>
+                    <p><strong>がんドック受診料保証（オプション）</strong></p>
+                    <p>万が一のリスクに備え、手厚い保証もセットにしたい方におすすめです。</p>
+                    <a href="/products/3e7ba6d2-85f5-4a95-abb7-80effa8aafab" class="detail-link" target="_parent">検査商品の詳細</a>
+                </div>
+                <div class="result-content" id="result-cancer">
+                    <h3>あなたにおすすめのプラン</h3>
+                    <p><strong>がんのリスク検査 Myシグナル</strong></p>
+                    <p>まずはシンプルに、がんのリスクを調べたい方におすすめです。</p>
+                    <a href="/products/9c82500f-dc4d-49b9-ba51-67d8faa18e9d" class="detail-link" target="_parent">検査商品の詳細</a>
+                </div>
+
+                <button id="restart-button" onclick="restart()">最初からやり直す</button>
+            </div>
+
+        </div>
+        <div class="character-image-container">
+            <img src="/images/nurse.png" alt="看護師のキャラクター">
+        </div>
+
+    </div>
+    <script>
+        // JavaScriptは前回と同じなので変更なし
+        function showQuestion(questionId) {
+            var questions = document.querySelectorAll('.question-block');
+            questions.forEach(function(q) {
+                q.style.display = 'none';
+            });
+            document.getElementById(questionId).style.display = 'block';
+        }
+
+        function showResult(resultId) {
+            var questions = document.querySelectorAll('.question-block');
+            questions.forEach(function(q) {
+                q.style.display = 'none';
+            });
+
+            var results = document.querySelectorAll('.result-content');
+            results.forEach(function(r) {
+                r.style.display = 'none';
+            });
+
+            document.getElementById(resultId).style.display = 'block';
+            document.getElementById('result').style.display = 'block';
+        }
+
+        function restart() {
+            document.getElementById('result').style.display = 'none';
+            var results = document.querySelectorAll('.result-content');
+            results.forEach(function(r) {
+                r.style.display = 'none';
+            });
+            showQuestion('q1');
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            showQuestion('q1');
+        });
+    </script>
+
+</body>
+</html>
