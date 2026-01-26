@@ -1,0 +1,124 @@
+---
+const navItems = [
+  { label: 'トップ', href: '/' },
+  { label: 'ソリューション', href: '/solutions' },
+  { label: 'エビデンス', href: '/evidence' },
+  { label: '支援活動', href: '/support' },
+  { label: '導入事例', href: '/case-studies' },
+  { label: '料金・プラン', href: '/pricing' },
+  { label: '会社情報', href: '/about' },
+  { label: 'お問い合わせ', href: '/contact' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-tiffany-500/20 backdrop-blur-md border-b border-tiffany-200/30 transition-all duration-300" id="header">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-3 group">
+        <img 
+          src="/images/wellfort_logo.png" 
+          alt="Wellfort Logo" 
+          class="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="px-4 py-2 text-sm font-medium text-white/90 hover:text-tiffany-400 rounded-lg hover:bg-white/10 transition-all duration-200"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button (Desktop) -->
+      <div class="hidden lg:block">
+        <a href="/contact" class="btn-primary text-sm px-6 py-3">
+          お問い合わせ
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden p-2 rounded-lg hover:bg-tiffany-50 transition-colors"
+        aria-label="メニューを開く"
+      >
+        <svg class="w-6 h-6 text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-neutral-100 bg-white">
+    <div class="px-4 py-6 space-y-1">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="block px-4 py-3 text-base font-medium text-neutral-700 hover:text-tiffany-600 hover:bg-tiffany-50 rounded-lg transition-all"
+        >
+          {item.label}
+        </a>
+      ))}
+      <div class="pt-4">
+        <a href="/contact" class="btn-primary w-full text-center">
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Header scroll effect
+  let lastScroll = 0;
+  const header = document.getElementById('header');
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+      header?.classList.remove('bg-tiffany-500/20', 'border-tiffany-200/30');
+      header?.classList.add('bg-white/95', 'border-tiffany-100', 'shadow-soft');
+      // Change text colors
+      header?.querySelectorAll('a').forEach((el) => {
+        if (el.classList.contains('text-white/90')) {
+          el.classList.remove('text-white/90');
+          el.classList.add('text-neutral-700');
+        }
+      });
+    } else {
+      header?.classList.remove('bg-white/95', 'border-tiffany-100', 'shadow-soft');
+      header?.classList.add('bg-tiffany-500/20', 'border-tiffany-200/30');
+      // Restore white colors
+      header?.querySelectorAll('a').forEach((el) => {
+        if (el.classList.contains('text-neutral-700')) {
+          el.classList.remove('text-neutral-700');
+          el.classList.add('text-white/90');
+        }
+      });
+    }
+    
+    lastScroll = currentScroll;
+  });
+</script>
+
+<style>
+  #header {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+</style>

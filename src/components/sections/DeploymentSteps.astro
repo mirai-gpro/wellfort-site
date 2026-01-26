@@ -1,0 +1,215 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'お問い合わせ',
+    icon: 'mail',
+    description: 'Webフォームまたはお電話で',
+    color: 'tiffany'
+  },
+  {
+    number: '02',
+    title: 'プランご提案',
+    icon: 'document',
+    description: 'BIZ/Personal',
+    subtitle: '貴社に最適なプランを',
+    color: 'tiffany'
+  },
+  {
+    number: '03',
+    title: 'モニタリング導入',
+    icon: 'watch',
+    description: 'Vitality Coral',
+    subtitle: '検査キット配送・開始',
+    color: 'coral'
+  },
+  {
+    number: '04',
+    title: '未病サイクルの開始',
+    icon: 'cycle',
+    description: 'Wellness Teal',
+    subtitle: '継続的な健康管理',
+    color: 'teal'
+  }
+];
+---
+
+<section id="deployment-steps" class="bg-gradient-to-br from-white via-tiffany-50/20 to-white py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Title -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-sans font-bold text-neutral-900 mb-4">
+        健康経営3.0への第一歩を、ここから。
+      </h2>
+    </div>
+
+    <!-- Steps Flow -->
+    <div class="relative">
+      <!-- Desktop Flow -->
+      <div class="hidden lg:grid grid-cols-4 gap-6 items-start">
+        {steps.map((step, index) => (
+          <>
+            <!-- Step Card -->
+            <div class="relative">
+              <div class={`
+                p-6 rounded-2xl border-4 transition-all duration-300 hover:scale-105
+                ${step.color === 'tiffany' ? 'border-tiffany-400 bg-tiffany-50' : ''}
+                ${step.color === 'coral' ? 'border-orange-400 bg-orange-50' : ''}
+                ${step.color === 'teal' ? 'border-tiffany-500 bg-tiffany-100' : ''}
+              `}>
+                <!-- Icon -->
+                <div class={`
+                  w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center
+                  ${step.color === 'tiffany' ? 'bg-tiffany-500' : ''}
+                  ${step.color === 'coral' ? 'bg-orange-500' : ''}
+                  ${step.color === 'teal' ? 'bg-tiffany-600' : ''}
+                `}>
+                  {step.icon === 'mail' && (
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 11h6"/>
+                    </svg>
+                  )}
+                  {step.icon === 'document' && (
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                      <circle cx="15" cy="15" r="3" stroke-width="2"/>
+                    </svg>
+                  )}
+                  {step.icon === 'watch' && (
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <rect x="6" y="4" width="12" height="16" rx="2" stroke-width="2"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l2 2"/>
+                      <path d="M9 20v2M15 20v2M9 2v2M15 2v2"/>
+                    </svg>
+                  )}
+                  {step.icon === 'cycle' && (
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                      <path d="M12 8v4l2 2"/>
+                    </svg>
+                  )}
+                </div>
+
+                <!-- Title -->
+                <h3 class="text-lg font-sans font-bold text-center text-neutral-900 mb-2">
+                  {step.title}
+                </h3>
+
+                <!-- Description -->
+                <div class="text-center">
+                  <p class={`
+                    text-sm font-semibold mb-1
+                    ${step.color === 'tiffany' ? 'text-tiffany-700' : ''}
+                    ${step.color === 'coral' ? 'text-orange-700' : ''}
+                    ${step.color === 'teal' ? 'text-tiffany-800' : ''}
+                  `}>
+                    {step.description}
+                  </p>
+                  {step.subtitle && (
+                    <p class="text-xs text-neutral-600">{step.subtitle}</p>
+                  )}
+                </div>
+              </div>
+
+              <!-- Arrow (except last item) -->
+              {index < steps.length - 1 && (
+                <div class="absolute top-1/2 -right-3 -translate-y-1/2 z-10">
+                  <div class="w-6 h-6 rounded-full bg-white border-4 border-tiffany-500 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-tiffany-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                  </div>
+                </div>
+              )}
+            </div>
+          </>
+        ))}
+      </div>
+
+      <!-- Mobile Flow -->
+      <div class="lg:hidden space-y-6">
+        {steps.map((step, index) => (
+          <div class="relative">
+            <div class={`
+              p-6 rounded-2xl border-4
+              ${step.color === 'tiffany' ? 'border-tiffany-400 bg-tiffany-50' : ''}
+              ${step.color === 'coral' ? 'border-orange-400 bg-orange-50' : ''}
+              ${step.color === 'teal' ? 'border-tiffany-500 bg-tiffany-100' : ''}
+            `}>
+              <div class="flex items-center space-x-4">
+                <!-- Icon -->
+                <div class={`
+                  w-16 h-16 rounded-xl flex-shrink-0 flex items-center justify-center
+                  ${step.color === 'tiffany' ? 'bg-tiffany-500' : ''}
+                  ${step.color === 'coral' ? 'bg-orange-500' : ''}
+                  ${step.color === 'teal' ? 'bg-tiffany-600' : ''}
+                `}>
+                  <span class="text-2xl font-bold text-white">{step.number}</span>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1">
+                  <h3 class="text-lg font-sans font-bold text-neutral-900 mb-1">
+                    {step.title}
+                  </h3>
+                  <p class={`
+                    text-sm font-semibold
+                    ${step.color === 'tiffany' ? 'text-tiffany-700' : ''}
+                    ${step.color === 'coral' ? 'text-orange-700' : ''}
+                    ${step.color === 'teal' ? 'text-tiffany-800' : ''}
+                  `}>
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            {index < steps.length - 1 && (
+              <div class="flex justify-center py-3">
+                <svg class="w-6 h-6 text-tiffany-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                </svg>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 text-center">
+      <p class="text-lg text-neutral-700 mb-8">
+        費用対効果のシミュレーションなど、お気軽にお問い合わせください。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          お問い合わせ
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom URLs -->
+    <div class="mt-12 text-center">
+      <div class="inline-flex flex-col sm:flex-row items-center gap-4 text-sm text-neutral-600">
+        <div class="flex items-center space-x-2">
+          <span class="font-semibold">Web:</span>
+          <a href="https://wellfort.co.jp" class="text-tiffany-600 hover:text-tiffany-700 font-medium">
+            https://wellfort.co.jp
+          </a>
+        </div>
+        <div class="hidden sm:block w-px h-4 bg-neutral-300"></div>
+        <div class="flex items-center space-x-2">
+          <span class="font-semibold">Email:</span>
+          <a href="mailto:info@wellfort.co.jp" class="text-tiffany-600 hover:text-tiffany-700 font-medium">
+            info@wellfort.co.jp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

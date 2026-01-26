@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import Philosophy from '../components/sections/Philosophy.astro';
+import HealthManagement from '../components/sections/HealthManagement.astro';
+import Platform from '../components/sections/Platform.astro';
+import HomeMonitoring from '../components/sections/HomeMonitoring.astro';
+import Technology from '../components/sections/Technology.astro';
+import Service from '../components/sections/Service.astro';
+import DeploymentSteps from '../components/sections/DeploymentSteps.astro';
+---
+
+<BaseLayout title="健康寿命延伸を実現する未病プラットフォーム">
+  <Header />
+  
+  <main>
+    <HeroSlider />
+    <Philosophy />
+    <HealthManagement />
+    <Platform />
+    <HomeMonitoring />
+    <Technology />
+    <Service />
+    <DeploymentSteps />
+  </main>
+  
+  <Footer />
+</BaseLayout>

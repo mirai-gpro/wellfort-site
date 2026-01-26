@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=M+PLUS+Rounded+1c:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-neutral-800 antialiased;
+    background: linear-gradient(-45deg, #ffffff, #e0f7fa, #b2ebf2, #80deea, #4dd0e1, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full 
+           bg-gradient-tiffany text-white shadow-luxury hover:shadow-luxury-lg 
+           transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full 
+           bg-white text-tiffany-600 border-2 border-tiffany-500 
+           hover:bg-tiffany-50 transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-full 
+           border-2 border-tiffany-500 text-tiffany-600 
+           hover:bg-tiffany-500 hover:text-white transition-all duration-300;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft p-8 transition-all duration-300 
+           hover:shadow-luxury border border-neutral-100;
+  }
+
+  .card-luxury {
+    @apply bg-gradient-to-br from-white to-tiffany-50/30 rounded-3xl shadow-luxury p-10 
+           border border-tiffany-100 backdrop-blur-sm;
+  }
+
+  /* Heading Styles */
+  .heading-display {
+    @apply text-display font-display font-bold text-neutral-900 mb-6;
+  }
+
+  .heading-hero {
+    @apply text-hero font-display font-bold text-neutral-900 mb-8;
+  }
+
+  .heading-section {
+    @apply text-4xl lg:text-5xl font-display font-bold text-neutral-900 mb-4;
+  }
+
+  .heading-subsection {
+    @apply text-2xl lg:text-3xl font-display font-semibold text-tiffany-700 mb-3;
+  }
+
+  /* Text Styles */
+  .text-lead {
+    @apply text-xl lg:text-2xl text-neutral-600 font-medium leading-relaxed;
+  }
+
+  .text-body {
+    @apply text-base lg:text-lg text-neutral-700 leading-relaxed;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-tiffany bg-clip-text text-transparent;
+  }
+
+  /* Section Background */
+  .section-bg-light {
+    @apply bg-gradient-to-br from-white via-tiffany-50/20 to-white;
+  }
+
+  .section-bg-tiffany {
+    @apply bg-gradient-to-br from-tiffany-50 via-white to-tiffany-50/50;
+  }
+
+  /* Animation utilities */
+  .fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  /* Decorative Elements */
+  .dna-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(0, 203, 217, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 203, 217, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth gradient animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
