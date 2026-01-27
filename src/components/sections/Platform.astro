@@ -11,17 +11,22 @@
       </h2>
     </div>
 
-    <!-- Ecosystem Diagram: Wellfort未病プラットフォーム -->
-    <div class="relative bg-gray-100 rounded-3xl p-6 lg:p-8">
-      <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Wellfort未病プラットフォーム</h3>
+    <!-- ===== Wellfort未病プラットフォーム 全体枠 ===== -->
+    <div class="platform-outer-wrapper bg-gray-200 rounded-3xl p-4 lg:p-6 border-2 border-gray-400 fade-in">
+      <!-- プラットフォームタイトル -->
+      <h3 class="text-2xl lg:text-3xl font-bold text-center text-gray-800 mb-6">
+        Wellfort未病プラットフォーム
+      </h3>
 
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 mb-8">
+      <!-- メインコンテンツエリア: Welltect + その他予防ソリューション -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
 
-        <!-- 左: Welltect（モニタリングサービス） -->
-        <div class="bg-white rounded-2xl p-6 border-2 border-gray-300">
-          <h4 class="text-xl font-bold text-gray-800 mb-6">Welltect（モニタリングサービス）</h4>
+        <!-- ===== Welltect（モニタリングサービス）枠 ===== -->
+        <div class="lg:col-span-2 welltect-wrapper bg-white/50 rounded-2xl p-4 border-2 border-gray-400">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Welltect（モニタリングサービス）</h4>
 
-          <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6">
+          <!-- Welltect内: データソース + 健康管理アプリケーション -->
+          <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4">
             <!-- 左列: データソース -->
             <div class="flex flex-col gap-4 justify-center">
               <!-- 法定健康診断データ -->
@@ -128,36 +133,87 @@
             </div>
           </div>
 
-          <p class="text-center text-sm text-gray-500 mt-4">法人（経営幹部、一般社員）向け、個人向けパッケージ</p>
+          <!-- 対象者説明 -->
+          <p class="text-center text-gray-600 text-sm mt-4">
+            法人（経営幹部、一般社員）向け、個人向けパッケージ
+          </p>
         </div>
 
-        <!-- 右: その他予防ソリューション -->
-        <div class="bg-white rounded-2xl p-6 border-2 border-gray-300 lg:w-56">
-          <h4 class="text-lg font-bold text-gray-800 text-center mb-6">その他予防ソリューション</h4>
+        <!-- ===== その他予防ソリューション枠 ===== -->
+        <div class="solution-wrapper">
+          <h4 class="text-xl font-bold text-gray-800 mb-4 text-center lg:text-right">その他予防ソリューション</h4>
 
-          <!-- サプリメント販売 -->
-          <a href="/sapuri" class="block bg-gray-50 rounded-xl p-4 mb-3 border border-gray-300 hover:bg-gray-100 transition-colors text-center">
-            <p class="font-bold text-gray-800">サプリメント販売</p>
-          </a>
+          <div class="flex flex-col gap-3 h-full">
+            <!-- サプリメーカー -->
+            <a href="/sapuri" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 2h12v2H6zm0 18h12v2H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6z"/>
+                  </svg>
+                </div>
+                <span class="font-bold text-sm">サプリ 提携/研究/開発/販売</span>
+              </div>
+              <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                <li>• 免疫アップドリンク</li>
+                <li>• アンチエイジングサプリ</li>
+                <li>• 腸内環境改善サプリ</li>
+              </ul>
+            </a>
 
-          <!-- 提携クリニック -->
-          <a href="/teikei" class="block bg-gray-50 rounded-xl p-4 mb-3 border border-gray-300 hover:bg-gray-100 transition-colors text-center">
-            <p class="font-bold text-gray-800">提携クリニック</p>
-          </a>
+            <!-- 提携クリニック -->
+            <a href="/teikei" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+                  </svg>
+                </div>
+                <span class="font-bold text-sm">提携クリニック</span>
+              </div>
+              <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                <li>• 免疫検査</li>
+                <li>• 高濃度ビタミンC点滴等</li>
+              </ul>
+            </a>
 
-          <!-- パーソナルジム -->
-          <a href="/teikei" class="block bg-gray-50 rounded-xl p-4 border border-gray-300 hover:bg-gray-100 transition-colors text-center">
-            <p class="font-bold text-gray-800">パーソナルジム</p>
-          </a>
+            <!-- 提携パーソナルトレーニングジム -->
+            <a href="/teikei" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                  </svg>
+                </div>
+                <span class="font-bold text-sm">提携パーソナルジム</span>
+              </div>
+              <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                <li>• パーソナルトレーニング</li>
+                <li>• インディバ</li>
+                <li>• 水素吸引</li>
+              </ul>
+            </a>
+          </div>
         </div>
-
       </div>
 
-      <!-- Welltfortポイントモール -->
-      <a href="/pointmall" class="block bg-white rounded-2xl p-6 border-2 border-gray-300 text-center hover:bg-gray-50 transition-colors">
-        <h4 class="text-xl font-bold text-gray-800">Welltfortポイントモール</h4>
+      <!-- ===== Wellfortポイントモール ===== -->
+      <a href="/pointmall" class="block bg-slate-400 rounded-2xl p-5 text-white hover:bg-slate-500 transition-colors border-2 border-gray-400">
+        <h4 class="text-xl lg:text-2xl font-bold text-center mb-2">Wellfortポイントモール</h4>
+        <p class="text-center text-sm lg:text-base">
+          ウェルテクトの使用金額と同額のポイントを付与。日用品やサプリ等が仕入れ価格で購入可能。
+        </p>
       </a>
-
     </div>
   </div>
 </section>
+
+<style>
+  .platform-outer-wrapper {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .welltect-wrapper {
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+</style>
