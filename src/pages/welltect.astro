@@ -207,48 +207,94 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
               <h3 class="text-2xl font-bold text-gray-900" id="plan-name"></h3>
             </div>
 
-            <!-- プラン詳細（アイコン付き） -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              <div class="bg-gray-50 rounded-xl p-4 text-center">
-                <div class="flex justify-center mb-2">
-                  <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 6v6l4 2" stroke-linecap="round" />
-                  </svg>
-                </div>
-                <div class="text-xs text-gray-500 mb-1">検査頻度</div>
-                <div class="text-xl font-bold text-gray-900" id="plan-frequency"></div>
-              </div>
-              <div class="bg-gray-50 rounded-xl p-4 text-center">
-                <div class="flex justify-center mb-2">
-                  <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="4">
-                    <path d="M 60 70 L 80 90 L 80 120 L 75 125 L 75 135 Q 75 140 80 140 L 95 140 Q 100 140 100 135 L 100 125 L 95 120 L 95 90 L 115 70 Z"/>
-                    <g transform="translate(125, 75)">
-                      <path d="M 0 0 L 5 10 L 0 20" stroke-width="3"/>
-                      <path d="M 15 0 L 10 10 L 15 20" stroke-width="3"/>
-                    </g>
-                  </svg>
-                </div>
-                <div class="text-xs text-gray-500 mb-1">遺伝子検査</div>
-                <div class="text-xl font-bold text-gray-900" id="plan-gene"></div>
-              </div>
-              <div class="bg-gray-50 rounded-xl p-4 text-center">
-                <div class="flex justify-center mb-2">
-                  <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                </div>
-                <div class="text-xs text-gray-500 mb-1">AI疾病予測報告書</div>
-                <div class="text-xl font-bold text-gray-900" id="plan-ai"></div>
-              </div>
-            </div>
+            <!-- 検査メニュー（固定5項目・アイコン付き） -->
+            <div class="space-y-4 mb-8">
 
-            <!-- 検査内容 -->
-            <div class="mb-8">
-              <h4 class="font-bold text-gray-800 mb-3">検査内容</h4>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="plan-items"></div>
+              <!-- がんリスク検査 -->
+              <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4" id="row-cancer">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a3.187 3.187 0 01-4.06.39L12 17l-.47.36a3.187 3.187 0 01-4.06-.39L5 14.5m14 0V17a2 2 0 01-2 2H7a2 2 0 01-2-2v-2.5" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-gray-900">がんリスク検査</div>
+                  <div class="text-xs text-gray-500">尿検査によるがんリスク判定</div>
+                </div>
+                <div class="flex-shrink-0 text-right">
+                  <span class="text-2xl font-bold text-tiffany-700" id="count-cancer"></span>
+                  <span class="text-sm text-gray-500">回/年</span>
+                </div>
+              </div>
+
+              <!-- 血液検査 -->
+              <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4" id="row-blood">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-400 to-red-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-1.2 2.4-5 6.6-5 10a5 5 0 0010 0c0-3.4-3.8-7.6-5-10z" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-gray-900">血液検査</div>
+                  <div class="text-xs text-gray-500">指先採血による健康状態チェック</div>
+                </div>
+                <div class="flex-shrink-0 text-right" id="count-blood-wrap">
+                  <span class="text-2xl font-bold text-tiffany-700" id="count-blood"></span>
+                  <span class="text-sm text-gray-500" id="count-blood-unit">回/年</span>
+                </div>
+              </div>
+
+              <!-- AI疾病予測報告書 -->
+              <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4" id="row-ai-predict">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-gray-900">AI疾病予測報告書</div>
+                  <div class="text-xs text-gray-500">5年後の疾病リスクをAIが分析</div>
+                </div>
+                <div class="flex-shrink-0 text-right" id="count-ai-predict-wrap">
+                  <span class="text-2xl font-bold text-tiffany-700" id="count-ai-predict"></span>
+                  <span class="text-sm text-gray-500" id="count-ai-predict-unit">回/年</span>
+                </div>
+              </div>
+
+              <!-- AI疾病予防報告書 -->
+              <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4" id="row-ai-prevent">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-gray-900">AI疾病予防報告書</div>
+                  <div class="text-xs text-gray-500">生活習慣改善の具体的アドバイス</div>
+                </div>
+                <div class="flex-shrink-0 text-right">
+                  <span class="text-2xl font-bold text-tiffany-700" id="count-ai-prevent"></span>
+                  <span class="text-sm text-gray-500">回/年</span>
+                </div>
+              </div>
+
+              <!-- 遺伝子検査 -->
+              <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4" id="row-gene">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+                  <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-4-4h8m-6-4h4" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <div class="font-bold text-gray-900">遺伝子検査</div>
+                  <div class="text-xs text-gray-500">唾液による遺伝的リスク解析</div>
+                </div>
+                <div class="flex-shrink-0 text-right">
+                  <span class="text-lg font-bold text-purple-700">初回1回</span>
+                </div>
+              </div>
+
             </div>
 
             <!-- 価格 -->
@@ -359,65 +405,41 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
 </style>
 
 <script>
-  const plans: Record<string, {name: string; frequency: string; gene: string; ai: string; items: string[]; priceFirst: string; priceRenewal: string; link: string}> = {
+  const plans: Record<string, {name: string; cancer: number; blood: number; aiPredict: number; aiPrevent: number; priceFirst: string; priceRenewal: string; link: string}> = {
     'executive_50over': {
       name: '経営幹部プラン（50代以上）',
-      frequency: '年4回',
-      gene: '初年度あり',
-      ai: 'あり',
-      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
-      priceFirst: '¥198,000',
-      priceRenewal: '¥148,000',
+      cancer: 3, blood: 3, aiPredict: 1, aiPrevent: 4,
+      priceFirst: '¥198,000', priceRenewal: '¥148,000',
       link: '/products/12f01544-0eee-43fc-a62b-9c9783c131ef'
     },
     'executive_50under': {
       name: '経営幹部プラン（50代未満）',
-      frequency: '年4回',
-      gene: '初年度あり',
-      ai: 'あり',
-      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
-      priceFirst: '¥198,000',
-      priceRenewal: '¥148,000',
+      cancer: 3, blood: 3, aiPredict: 1, aiPrevent: 4,
+      priceFirst: '¥198,000', priceRenewal: '¥148,000',
       link: '/products/12f01544-0eee-43fc-a62b-9c9783c131ef'
     },
     'middle_50over': {
       name: '中堅社員プラン（50代以上）',
-      frequency: '年4回',
-      gene: '初年度あり',
-      ai: 'あり',
-      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
-      priceFirst: '¥148,000',
-      priceRenewal: '¥98,000',
+      cancer: 3, blood: 1, aiPredict: 1, aiPrevent: 2,
+      priceFirst: '¥148,000', priceRenewal: '¥98,000',
       link: '/products/14c1d6af-cb60-4896-9392-383836e7bd25'
     },
     'middle_50under': {
       name: '中堅社員プラン（50代未満）',
-      frequency: '年4回',
-      gene: '初年度あり',
-      ai: 'あり',
-      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
-      priceFirst: '¥148,000',
-      priceRenewal: '¥98,000',
+      cancer: 2, blood: 1, aiPredict: 1, aiPrevent: 2,
+      priceFirst: '¥148,000', priceRenewal: '¥98,000',
       link: '/products/14c1d6af-cb60-4896-9392-383836e7bd25'
     },
     'general_50over': {
       name: '一般社員プラン（50代以上）',
-      frequency: '年4回',
-      gene: '初年度あり',
-      ai: 'オプション',
-      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI予防アドバイス×4回'],
-      priceFirst: '¥128,000',
-      priceRenewal: '¥78,000',
+      cancer: 3, blood: 0, aiPredict: 0, aiPrevent: 1,
+      priceFirst: '¥128,000', priceRenewal: '¥78,000',
       link: '/products/3a0aad30-6fbc-4527-8999-a885e0f17949'
     },
     'general_50under': {
       name: '一般社員プラン（50代未満）',
-      frequency: '年4回',
-      gene: '初年度あり',
-      ai: 'オプション',
-      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI予防アドバイス×4回'],
-      priceFirst: '¥98,000',
-      priceRenewal: '¥58,000',
+      cancer: 2, blood: 0, aiPredict: 0, aiPrevent: 1,
+      priceFirst: '¥98,000', priceRenewal: '¥58,000',
       link: '/products/3c5d7de5-fdcb-45e3-8b17-13c9540269ea'
     }
   };
@@ -459,19 +481,30 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       const plan = plans[key];
       if (plan && result) {
         (document.getElementById('plan-name') as HTMLElement).textContent = plan.name;
-        (document.getElementById('plan-frequency') as HTMLElement).textContent = plan.frequency;
-        (document.getElementById('plan-gene') as HTMLElement).textContent = plan.gene;
-        (document.getElementById('plan-ai') as HTMLElement).textContent = plan.ai;
 
-        const itemsEl = document.getElementById('plan-items') as HTMLElement;
-        itemsEl.innerHTML = plan.items.map(item =>
-          `<div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
-            <svg class="w-5 h-5 text-tiffany-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            </svg>
-            <span class="text-sm text-gray-800">${item}</span>
-          </div>`
-        ).join('');
+        // がんリスク検査（常に表示）
+        (document.getElementById('count-cancer') as HTMLElement).textContent = String(plan.cancer);
+
+        // 血液検査（0の場合は非表示）
+        const rowBlood = document.getElementById('row-blood') as HTMLElement;
+        if (plan.blood > 0) {
+          rowBlood.classList.remove('hidden');
+          (document.getElementById('count-blood') as HTMLElement).textContent = String(plan.blood);
+        } else {
+          rowBlood.classList.add('hidden');
+        }
+
+        // AI疾病予測報告書（0の場合は非表示）
+        const rowAiPredict = document.getElementById('row-ai-predict') as HTMLElement;
+        if (plan.aiPredict > 0) {
+          rowAiPredict.classList.remove('hidden');
+          (document.getElementById('count-ai-predict') as HTMLElement).textContent = String(plan.aiPredict);
+        } else {
+          rowAiPredict.classList.add('hidden');
+        }
+
+        // AI疾病予防報告書（常に表示）
+        (document.getElementById('count-ai-prevent') as HTMLElement).textContent = String(plan.aiPrevent);
 
         (document.getElementById('plan-price-first') as HTMLElement).textContent = plan.priceFirst;
         (document.getElementById('plan-price-renewal') as HTMLElement).textContent = plan.priceRenewal;
