@@ -11,185 +11,178 @@
       </h2>
     </div>
 
-    <!-- Ecosystem Diagram -->
-    <div class="relative">
-      <!-- Main Flow: 3 Columns -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4 mb-8 relative">
+    <!-- ===== Wellfort未病プラットフォーム 全体枠 ===== -->
+    <div class="platform-outer-wrapper bg-gray-200 rounded-3xl p-4 lg:p-6 border-2 border-gray-400 fade-in">
+      <!-- プラットフォームタイトル -->
+      <h3 class="text-2xl lg:text-3xl font-bold text-center text-gray-800 mb-6">
+        Wellfort未病プラットフォーム
+      </h3>
 
-        <!-- Column 1: 各種検査 -->
-        <div class="bg-blue-700 rounded-2xl p-6 text-white relative">
-          <h3 class="text-xl font-bold text-center mb-6 bg-blue-800/50 rounded-lg py-2">各種検査</h3>
+      <!-- メインコンテンツエリア: Welltect + その他予防ソリューション -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
 
-          <!-- 病院・クリニック -->
-          <div class="bg-blue-600 rounded-xl p-4 mb-4">
-            <div class="flex items-start gap-3 mb-3">
-              <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
-                </svg>
+        <!-- ===== Welltect（モニタリングサービス）枠 ===== -->
+        <div class="lg:col-span-2 welltect-wrapper bg-white/50 rounded-2xl p-4 border-2 border-gray-400">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Welltect（モニタリングサービス）</h4>
+
+          <!-- Welltect内の2カラム: 各種検査 + AI分析 -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
+
+            <!-- Column 1: 各種検査 -->
+            <div class="bg-blue-700 rounded-2xl p-5 text-white relative">
+              <h5 class="text-lg font-bold text-center mb-4 bg-blue-800/50 rounded-lg py-2">各種検査</h5>
+
+              <!-- 病院・クリニック -->
+              <div class="bg-blue-600 rounded-xl p-3 mb-3">
+                <div class="flex items-start gap-3 mb-2">
+                  <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-bold text-white text-sm">病院、クリニック<span class="text-blue-200 text-xs">（年1回 法定）</span></p>
+                  </div>
+                </div>
+                <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                  <li>• 人間ドック</li>
+                  <li>• 健康診断</li>
+                </ul>
               </div>
-              <div>
-                <p class="font-bold text-white">病院、クリニック<span class="text-blue-200 text-sm">（年1回 法定）</span></p>
+
+              <!-- 自宅 -->
+              <div class="bg-blue-600 rounded-xl p-3">
+                <div class="flex items-start gap-3 mb-2">
+                  <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-bold text-white text-sm">自宅<span class="text-blue-200 text-xs">（年4回モニタリング）</span></p>
+                  </div>
+                </div>
+                <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                  <li>• (尿) がんリスク検査<span class="text-blue-300 text-xs ml-1">（特許取得済）</span></li>
+                  <li>• (指先) 血液検査</li>
+                  <li>• (唾液) 遺伝子検査<span class="text-blue-300 text-xs ml-1">（初回のみ）</span></li>
+                </ul>
               </div>
             </div>
-            <ul class="text-sm text-blue-100 space-y-1 ml-2">
-              <li>• 人間ドック</li>
-              <li>• 健康診断</li>
-            </ul>
-          </div>
 
-          <!-- 自宅 -->
-          <div class="bg-blue-600 rounded-xl p-4">
-            <div class="flex items-start gap-3 mb-3">
-              <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
-              </div>
-              <div>
-                <p class="font-bold text-white">自宅<span class="text-blue-200 text-sm">（年4回モニタリング）</span></p>
+            <!-- Arrow (Desktop) -->
+            <div class="hidden lg:flex items-center justify-center absolute left-[46%] top-1/2 transform -translate-y-1/2 z-10">
+              <div class="flex items-center">
+                <div class="w-8 h-6 bg-teal-500 rounded-l-sm shadow-lg"></div>
+                <div class="w-0 h-0 border-t-[16px] border-t-transparent border-b-[16px] border-b-transparent border-l-[14px] border-l-teal-500 drop-shadow-lg"></div>
               </div>
             </div>
-            <ul class="text-sm text-blue-100 space-y-1 ml-2">
-              <li>• (尿) がんリスク検査<br/><span class="text-blue-300 text-xs ml-3">（特許取得済技術）</span></li>
-              <li>• (指先) 血液検査</li>
-              <li>• (唾液) 遺伝子検査<br/><span class="text-blue-300 text-xs ml-3">（初回のみ）</span></li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Arrow 1 (Desktop) - Big Block Arrow -->
-        <div class="hidden lg:flex items-center justify-center absolute left-[30%] top-[45%] transform -translate-y-1/2 z-10">
-          <div class="flex items-center">
-            <div class="w-12 h-8 bg-teal-500 rounded-l-sm shadow-lg"></div>
-            <div class="w-0 h-0 border-t-[24px] border-t-transparent border-b-[24px] border-b-transparent border-l-[20px] border-l-teal-500 drop-shadow-lg"></div>
-          </div>
-        </div>
+            <!-- Column 2: AI分析 -->
+            <div class="bg-blue-700 rounded-2xl p-5 text-white">
+              <h5 class="text-lg font-bold text-center mb-4 bg-blue-800/50 rounded-lg py-2">AI分析</h5>
 
-        <!-- Column 2: ウェルテクト会員 / AI分析 -->
-        <div class="bg-blue-700 rounded-2xl p-6 text-white">
-          <h3 class="text-xl font-bold text-center mb-6 bg-blue-800/50 rounded-lg py-2">ウェルテクト会員 / AI分析</h3>
-
-          <!-- AI Icon -->
-          <div class="flex justify-center mb-6">
-            <div class="w-24 h-24 bg-white/20 rounded-2xl flex items-center justify-center">
-              <svg class="w-16 h-16 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1V5.73A2 2 0 0112 2M9.5 13A1.5 1.5 0 008 14.5a1.5 1.5 0 001.5 1.5 1.5 1.5 0 001.5-1.5A1.5 1.5 0 009.5 13m5 0a1.5 1.5 0 00-1.5 1.5 1.5 1.5 0 001.5 1.5 1.5 1.5 0 001.5-1.5 1.5 1.5 0 00-1.5-1.5z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- AI報告書 -->
-          <div class="bg-white rounded-xl p-4 text-gray-800">
-            <h4 class="font-bold text-blue-800 text-center mb-3">AI報告書 by 医師監修</h4>
-            <ul class="text-sm text-gray-700 space-y-2">
-              <li>• 1000万人ビッグデータとAIによる将来の疾病予測報告書</li>
-              <li>• AIによる疾病予防報告書</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Arrow 2 (Desktop) - Big Block Arrow -->
-        <div class="hidden lg:flex items-center justify-center absolute left-[63%] top-[45%] transform -translate-y-1/2 z-10">
-          <div class="flex items-center">
-            <div class="w-12 h-8 bg-teal-500 rounded-l-sm shadow-lg"></div>
-            <div class="w-0 h-0 border-t-[24px] border-t-transparent border-b-[24px] border-b-transparent border-l-[20px] border-l-teal-500 drop-shadow-lg"></div>
-          </div>
-        </div>
-
-        <!-- Column 3: 予防ソリューション -->
-        <div class="bg-blue-700 rounded-2xl p-6 text-white">
-          <h3 class="text-xl font-bold text-center mb-6 bg-blue-800/50 rounded-lg py-2">予防ソリューション</h3>
-
-          <!-- サプリメーカー -->
-          <a href="/sapuri" class="block bg-blue-600 rounded-xl p-4 mb-3 hover:bg-blue-500 transition-colors">
-            <div class="flex items-center gap-2 mb-2">
-              <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6 2h12v2H6zm0 18h12v2H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6z"/>
-                </svg>
+              <!-- AI Icon -->
+              <div class="flex justify-center mb-4">
+                <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center">
+                  <svg class="w-12 h-12 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1V5.73A2 2 0 0112 2M9.5 13A1.5 1.5 0 008 14.5a1.5 1.5 0 001.5 1.5 1.5 1.5 0 001.5-1.5A1.5 1.5 0 009.5 13m5 0a1.5 1.5 0 00-1.5 1.5 1.5 1.5 0 001.5 1.5 1.5 1.5 0 001.5-1.5 1.5 1.5 0 00-1.5-1.5z"/>
+                  </svg>
+                </div>
               </div>
-              <span class="font-bold text-sm">サプリ 提携/研究/開発/販売</span>
-            </div>
-            <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
-              <li>• 免疫アップドリンク</li>
-              <li>• アンチエイジングサプリ</li>
-              <li>• 腸内環境改善サプリ</li>
-            </ul>
-          </a>
 
-          <!-- 提携クリニック -->
-          <a href="/teikei" class="block bg-blue-600 rounded-xl p-4 mb-3 hover:bg-blue-500 transition-colors">
-            <div class="flex items-center gap-2 mb-2">
-              <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
-                </svg>
+              <!-- AI報告書 -->
+              <div class="bg-white rounded-xl p-3 text-gray-800">
+                <h6 class="font-bold text-blue-800 text-center mb-2 text-sm">AI報告書 by 医師監修</h6>
+                <ul class="text-xs text-gray-700 space-y-1">
+                  <li>• 1000万人ビッグデータとAIによる将来の疾病予測報告書</li>
+                  <li>• AIによる疾病予防報告書</li>
+                </ul>
               </div>
-              <span class="font-bold text-sm">提携クリニック</span>
-            </div>
-            <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
-              <li>• 免疫検査</li>
-              <li>• 高濃度ビタミンC点滴等</li>
-            </ul>
-          </a>
-
-          <!-- 提携パーソナルトレーニングジム -->
-          <a href="/teikei" class="block bg-blue-600 rounded-xl p-4 hover:bg-blue-500 transition-colors">
-            <div class="flex items-center gap-2 mb-2">
-              <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
-                </svg>
-              </div>
-              <span class="font-bold text-sm">提携パーソナルトレーニングジム</span>
-            </div>
-            <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
-              <li>• パーソナルトレーニング</li>
-              <li>• インディバ</li>
-              <li>• 水素吸引</li>
-            </ul>
-          </a>
-        </div>
-      </div>
-
-      <!-- Mobile Arrows -->
-      <div class="flex lg:hidden justify-center my-6">
-        <div class="flex flex-col items-center">
-          <div class="w-8 h-10 bg-teal-500 rounded-t-md"></div>
-          <div class="w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-t-[16px] border-t-teal-500"></div>
-        </div>
-      </div>
-
-      <!-- Point Mall Section -->
-      <div class="relative mt-8">
-        <!-- Cycle Arrows (visible on desktop) -->
-        <div class="hidden lg:block">
-          <!-- Right side down arrow -->
-          <div class="absolute -top-6 right-[12%]">
-            <div class="flex flex-col items-center">
-              <div class="w-6 h-8 bg-orange-500 rounded-t-md shadow-lg"></div>
-              <div class="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[14px] border-t-orange-500 drop-shadow-lg"></div>
             </div>
           </div>
-          <!-- Left side up arrow -->
-          <div class="absolute -top-6 left-[12%]">
-            <div class="flex flex-col items-center">
-              <div class="w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-b-[14px] border-b-orange-500 drop-shadow-lg"></div>
-              <div class="w-6 h-8 bg-orange-500 rounded-b-md shadow-lg"></div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Point Mall Card -->
-        <a href="/pointmall" class="block bg-slate-400 rounded-2xl p-6 text-white max-w-4xl mx-auto hover:bg-slate-500 transition-colors">
-          <h3 class="text-2xl font-bold text-center mb-4">ポイントモール</h3>
-          <p class="text-center text-lg">
-            ウェルテクトの使用金額と同額のポイントを付与。<br/>
-            日用品やサプリ等が仕入れ価格で購入可能。
+          <!-- 対象者説明 -->
+          <p class="text-center text-gray-600 text-sm mt-4">
+            法人（経営幹部、一般社員）向け、個人向けパッケージ
           </p>
-        </a>
+        </div>
+
+        <!-- ===== その他予防ソリューション枠 ===== -->
+        <div class="solution-wrapper">
+          <h4 class="text-xl font-bold text-gray-800 mb-4 text-center lg:text-right">その他予防ソリューション</h4>
+
+          <div class="flex flex-col gap-3 h-full">
+            <!-- サプリメーカー -->
+            <a href="/sapuri" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 2h12v2H6zm0 18h12v2H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6zm0-3h12v1H6z"/>
+                  </svg>
+                </div>
+                <span class="font-bold text-sm">サプリ 提携/研究/開発/販売</span>
+              </div>
+              <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                <li>• 免疫アップドリンク</li>
+                <li>• アンチエイジングサプリ</li>
+                <li>• 腸内環境改善サプリ</li>
+              </ul>
+            </a>
+
+            <!-- 提携クリニック -->
+            <a href="/teikei" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+                  </svg>
+                </div>
+                <span class="font-bold text-sm">提携クリニック</span>
+              </div>
+              <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                <li>• 免疫検査</li>
+                <li>• 高濃度ビタミンC点滴等</li>
+              </ul>
+            </a>
+
+            <!-- 提携パーソナルトレーニングジム -->
+            <a href="/teikei" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-8 h-8 bg-white/20 rounded flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/>
+                  </svg>
+                </div>
+                <span class="font-bold text-sm">提携パーソナルジム</span>
+              </div>
+              <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
+                <li>• パーソナルトレーニング</li>
+                <li>• インディバ</li>
+                <li>• 水素吸引</li>
+              </ul>
+            </a>
+          </div>
+        </div>
       </div>
+
+      <!-- ===== Wellfortポイントモール ===== -->
+      <a href="/pointmall" class="block bg-slate-400 rounded-2xl p-5 text-white hover:bg-slate-500 transition-colors border-2 border-gray-400">
+        <h4 class="text-xl lg:text-2xl font-bold text-center mb-2">Wellfortポイントモール</h4>
+        <p class="text-center text-sm lg:text-base">
+          ウェルテクトの使用金額と同額のポイントを付与。日用品やサプリ等が仕入れ価格で購入可能。
+        </p>
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  .platform-outer-wrapper {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .welltect-wrapper {
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+</style>
