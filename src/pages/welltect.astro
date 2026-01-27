@@ -10,7 +10,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
 
   <main>
     <!-- Hero -->
-    <section class="pt-32 pb-16 bg-gradient-to-b from-teal-50 to-white">
+    <section class="pt-32 pb-12 bg-gradient-to-b from-teal-50 to-white">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
           Welltect（モニタリングサービス）
@@ -22,7 +22,91 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       </div>
     </section>
 
-    <!-- プラン選択UI -->
+    <!-- ===== Welltect サービス説明セクション ===== -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+          <!-- 自宅モニタリング説明 -->
+          <div class="bg-gradient-to-br from-tiffany-50 to-cyan-50 rounded-2xl overflow-hidden shadow-lg">
+            <img src="/images/slider/slide-02.png" alt="自宅で完結する高頻度モニタリング" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                自宅で完結、高頻度モニタリング。<br />だから「予兆」を見逃さない。
+              </h3>
+              <p class="text-sm text-gray-600 mb-4">
+                年1回の人間ドック + 年4回の自宅モニタリングのハイブリッドモデル。
+                忙しい現代人のために自宅で完結する仕組みを実現しました。
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
+                  <svg class="w-6 h-6 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="4">
+                    <rect x="60" y="80" width="40" height="70" rx="4"/>
+                    <rect x="120" y="70" width="10" height="80" rx="2"/>
+                  </svg>
+                  <span class="text-xs font-bold text-gray-800">がんリスク検査</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
+                  <svg class="w-6 h-6 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="4">
+                    <ellipse cx="80" cy="100" rx="20" ry="35"/>
+                    <circle cx="80" cy="90" r="8"/>
+                    <path d="M 110 85 Q 115 75 120 85 L 120 95 Q 115 100 110 95 Z"/>
+                  </svg>
+                  <span class="text-xs font-bold text-gray-800">血液検査</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
+                  <svg class="w-6 h-6 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="4">
+                    <path d="M 60 70 L 80 90 L 80 120 L 75 125 L 75 135 Q 75 140 80 140 L 95 140 Q 100 140 100 135 L 100 125 L 95 120 L 95 90 L 115 70 Z"/>
+                  </svg>
+                  <span class="text-xs font-bold text-gray-800">遺伝子検査</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AIビッグデータ説明 -->
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl overflow-hidden shadow-lg">
+            <img src="/images/slider/slide-03.png" alt="1000万人のビッグデータによるAI分析" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-3">
+                1000万人のビッグデータが導き出す、<br />あなたの「5年後の未来」。
+              </h3>
+              <p class="text-sm text-gray-600 mb-4">
+                自宅検査の結果をAIが分析。5年後の疾病リスク予測と、
+                具体的な予防アドバイスを提供します。
+              </p>
+              <div class="flex flex-wrap gap-3">
+                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
+                  <div class="w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-bold text-gray-800">AI疾病予測</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
+                  <div class="w-6 h-6 bg-gradient-to-br from-teal-500 to-teal-600 rounded flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <span class="text-xs font-bold text-gray-800">AI予防アドバイス</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2">
+                  <svg class="w-6 h-6 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  <span class="text-xs font-bold text-gray-800">医師監修</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== プラン選択UI ===== -->
     <section id="plan-selector" class="py-20 bg-gradient-to-br from-white via-tiffany-50/20 to-cyan-50/30">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -85,15 +169,29 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="age-selector">
             <button type="button" data-age="50over"
-              class="age-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
-              <div class="text-3xl font-bold text-gray-900 mb-1">50代〜</div>
-              <div class="text-sm text-gray-500">50歳以上</div>
+              class="age-card p-6 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="flex justify-center mb-2">
+                <svg class="w-12 h-12 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M5.5 21v-2a5.5 5.5 0 0111 0v2" />
+                  <path d="M17 10l1.5 1.5L22 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="text-2xl font-bold text-gray-900 mb-1">50代以上</div>
+              <div class="text-sm text-gray-500">リスク重点モニタリング</div>
             </button>
 
             <button type="button" data-age="50under"
-              class="age-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
-              <div class="text-3xl font-bold text-gray-900 mb-1">〜40代</div>
-              <div class="text-sm text-gray-500">50歳未満</div>
+              class="age-card p-6 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="flex justify-center mb-2">
+                <svg class="w-12 h-12 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M5.5 21v-2a5.5 5.5 0 0111 0v2" />
+                  <path d="M17 11v4m2-2h-4" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="text-2xl font-bold text-gray-900 mb-1">50代未満</div>
+              <div class="text-sm text-gray-500">予防重点モニタリング</div>
             </button>
           </div>
         </div>
@@ -109,17 +207,39 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
               <h3 class="text-2xl font-bold text-gray-900" id="plan-name"></h3>
             </div>
 
-            <!-- プラン詳細 -->
+            <!-- プラン詳細（アイコン付き） -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
               <div class="bg-gray-50 rounded-xl p-4 text-center">
+                <div class="flex justify-center mb-2">
+                  <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" stroke-linecap="round" />
+                  </svg>
+                </div>
                 <div class="text-xs text-gray-500 mb-1">検査頻度</div>
                 <div class="text-xl font-bold text-gray-900" id="plan-frequency"></div>
               </div>
               <div class="bg-gray-50 rounded-xl p-4 text-center">
+                <div class="flex justify-center mb-2">
+                  <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="4">
+                    <path d="M 60 70 L 80 90 L 80 120 L 75 125 L 75 135 Q 75 140 80 140 L 95 140 Q 100 140 100 135 L 100 125 L 95 120 L 95 90 L 115 70 Z"/>
+                    <g transform="translate(125, 75)">
+                      <path d="M 0 0 L 5 10 L 0 20" stroke-width="3"/>
+                      <path d="M 15 0 L 10 10 L 15 20" stroke-width="3"/>
+                    </g>
+                  </svg>
+                </div>
                 <div class="text-xs text-gray-500 mb-1">遺伝子検査</div>
                 <div class="text-xl font-bold text-gray-900" id="plan-gene"></div>
               </div>
               <div class="bg-gray-50 rounded-xl p-4 text-center">
+                <div class="flex justify-center mb-2">
+                  <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                </div>
                 <div class="text-xs text-gray-500 mb-1">AI疾病予測報告書</div>
                 <div class="text-xl font-bold text-gray-900" id="plan-ai"></div>
               </div>
@@ -134,7 +254,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <!-- 価格 -->
             <div class="bg-gradient-to-r from-tiffany-50 to-cyan-50 rounded-2xl p-6 mb-8 text-center">
               <div class="text-sm text-gray-600 mb-2">年間パッケージ料金（税込）</div>
-              <div class="flex items-baseline justify-center gap-1">
+              <div class="flex items-baseline justify-center gap-1 flex-wrap">
                 <span class="text-sm text-gray-500">初年度</span>
                 <span class="text-3xl font-bold text-tiffany-700" id="plan-price-first"></span>
                 <span class="text-sm text-gray-500 ml-4">2年目以降</span>
@@ -158,13 +278,88 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     </section>
 
     <IndividualTests />
+
+    <!-- ===== プラン診断セクション ===== -->
+    <section id="plan-finder" class="py-16 bg-gradient-to-r from-teal-600 to-teal-500">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl p-8 lg:p-10 text-center shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">あなたに合ったプラン診断</h3>
+          <p class="text-gray-600 mb-6">簡単な質問に答えるだけで、最適なプランをご提案します</p>
+          <button class="inline-block px-12 py-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold rounded-full text-lg hover:from-teal-600 hover:to-teal-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1" id="openShindanBtn">
+            診断を始める
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 検査一覧ページへ -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <a href="/products" class="inline-flex items-center justify-center px-10 py-4 bg-white border-2 border-tiffany-500 text-tiffany-700 font-bold rounded-xl hover:bg-tiffany-50 transition-all shadow-md">
+          検査商品一覧を見る
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
   </main>
 
   <Footer />
 </BaseLayout>
 
+<!-- 診断モーダル -->
+<div id="shindanModal" class="shindan-modal">
+  <div class="shindan-modal-content">
+    <span class="shindan-close-modal">&times;</span>
+    <iframe id="shindanIframe" src="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<style>
+  .shindan-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .shindan-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+  }
+  .shindan-close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .shindan-close-modal:hover {
+    color: #0d9488;
+  }
+  #shindanIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
 <script>
-  const plans = {
+  const plans: Record<string, {name: string; frequency: string; gene: string; ai: string; items: string[]; priceFirst: string; priceRenewal: string; link: string}> = {
     'executive_50over': {
       name: '経営幹部プラン（50代以上）',
       frequency: '年4回',
@@ -231,7 +426,6 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
   let selectedAge = '';
 
   function updateSelection() {
-    // Role cards
     document.querySelectorAll('.role-card').forEach(card => {
       const role = card.getAttribute('data-role');
       if (role === selectedRole) {
@@ -243,13 +437,11 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       }
     });
 
-    // Age step activation
     const ageStep = document.getElementById('age-step');
     if (selectedRole) {
       ageStep?.classList.remove('opacity-40', 'pointer-events-none');
     }
 
-    // Age cards
     document.querySelectorAll('.age-card').forEach(card => {
       const age = card.getAttribute('data-age');
       if (age === selectedAge) {
@@ -261,18 +453,17 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       }
     });
 
-    // Show result
     const result = document.getElementById('plan-result');
     if (selectedRole && selectedAge) {
       const key = selectedRole + '_' + selectedAge;
       const plan = plans[key];
       if (plan && result) {
-        document.getElementById('plan-name').textContent = plan.name;
-        document.getElementById('plan-frequency').textContent = plan.frequency;
-        document.getElementById('plan-gene').textContent = plan.gene;
-        document.getElementById('plan-ai').textContent = plan.ai;
+        (document.getElementById('plan-name') as HTMLElement).textContent = plan.name;
+        (document.getElementById('plan-frequency') as HTMLElement).textContent = plan.frequency;
+        (document.getElementById('plan-gene') as HTMLElement).textContent = plan.gene;
+        (document.getElementById('plan-ai') as HTMLElement).textContent = plan.ai;
 
-        const itemsEl = document.getElementById('plan-items');
+        const itemsEl = document.getElementById('plan-items') as HTMLElement;
         itemsEl.innerHTML = plan.items.map(item =>
           `<div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
             <svg class="w-5 h-5 text-tiffany-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -282,9 +473,9 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
           </div>`
         ).join('');
 
-        document.getElementById('plan-price-first').textContent = plan.priceFirst;
-        document.getElementById('plan-price-renewal').textContent = plan.priceRenewal;
-        document.getElementById('plan-link').setAttribute('href', plan.link);
+        (document.getElementById('plan-price-first') as HTMLElement).textContent = plan.priceFirst;
+        (document.getElementById('plan-price-renewal') as HTMLElement).textContent = plan.priceRenewal;
+        document.getElementById('plan-link')?.setAttribute('href', plan.link);
 
         result.classList.remove('hidden');
         result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -294,7 +485,6 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     }
   }
 
-  // Role card clicks
   document.querySelectorAll('.role-card').forEach(card => {
     card.addEventListener('click', () => {
       selectedRole = card.getAttribute('data-role') || '';
@@ -303,11 +493,42 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     });
   });
 
-  // Age card clicks
   document.querySelectorAll('.age-card').forEach(card => {
     card.addEventListener('click', () => {
       selectedAge = card.getAttribute('data-age') || '';
       updateSelection();
+    });
+  });
+
+  // 診断モーダル
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('shindanModal');
+    const openBtn = document.getElementById('openShindanBtn');
+    const closeBtn = document.querySelector('.shindan-close-modal');
+    const iframe = document.getElementById('shindanIframe') as HTMLIFrameElement;
+
+    if (openBtn && modal && iframe) {
+      openBtn.addEventListener('click', () => {
+        iframe.src = '/shindan.html';
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    if (closeBtn && modal && iframe) {
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        iframe.src = '';
+        document.body.style.overflow = 'auto';
+      });
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal && iframe) {
+        modal.style.display = 'none';
+        iframe.src = '';
+        document.body.style.overflow = 'auto';
+      }
     });
   });
 </script>
