@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import TestPackages from '../components/sections/TestPackages.astro';
+import IndividualTests from '../components/sections/IndividualTests.astro';
+---
+
+<BaseLayout title="Welltect（モニタリングサービス） | Wellfort">
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-teal-50 to-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Welltect（モニタリングサービス）
+        </h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          自宅で手軽に、高精度な健康モニタリング。<br />
+          経営幹部から一般社員まで、最適なパッケージをご用意しています。
+        </p>
+      </div>
+    </section>
+
+    <TestPackages />
+    <IndividualTests />
+  </main>
+
+  <Footer />
+</BaseLayout>
