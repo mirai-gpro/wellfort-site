@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import TestPackages from '../components/sections/TestPackages.astro';
 import IndividualTests from '../components/sections/IndividualTests.astro';
 ---
 
@@ -23,9 +22,292 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       </div>
     </section>
 
-    <TestPackages />
+    <!-- プラン選択UI -->
+    <section id="plan-selector" class="py-20 bg-gradient-to-br from-white via-tiffany-50/20 to-cyan-50/30">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="inline-block px-6 py-2 bg-tiffany-100 rounded-full text-tiffany-700 font-medium text-sm mb-6">
+            法人向けプラン
+          </div>
+          <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">最適なプランを選択</h2>
+          <p class="text-gray-600">
+            役職と年代を選択すると、推奨プランが表示されます。
+          </p>
+        </div>
+
+        <!-- Step 1: 役職選択 -->
+        <div class="mb-10">
+          <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-tiffany-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+            役職を選択
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="role-selector">
+            <button type="button" data-role="executive"
+              class="role-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div class="font-bold text-gray-900">経営層・幹部</div>
+              <div class="text-xs text-gray-500 mt-1">CEO / 役員 / 経営幹部</div>
+            </button>
+
+            <button type="button" data-role="middle"
+              class="role-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <div class="font-bold text-gray-900">中堅社員</div>
+              <div class="text-xs text-gray-500 mt-1">管理職 / マネージャー</div>
+            </button>
+
+            <button type="button" data-role="general"
+              class="role-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="w-14 h-14 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="font-bold text-gray-900">一般社員</div>
+              <div class="text-xs text-gray-500 mt-1">一般職 / スタッフ</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: 年代選択 -->
+        <div class="mb-10 opacity-40 pointer-events-none transition-all" id="age-step">
+          <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 bg-tiffany-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+            年代を選択
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="age-selector">
+            <button type="button" data-age="50over"
+              class="age-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="text-3xl font-bold text-gray-900 mb-1">50代〜</div>
+              <div class="text-sm text-gray-500">50歳以上</div>
+            </button>
+
+            <button type="button" data-age="50under"
+              class="age-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
+              <div class="text-3xl font-bold text-gray-900 mb-1">〜40代</div>
+              <div class="text-sm text-gray-500">50歳未満</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 結果表示 -->
+        <div class="hidden" id="plan-result">
+          <div class="bg-white rounded-3xl shadow-lg border-2 border-tiffany-200 p-6 lg:p-10">
+            <!-- プラン名 -->
+            <div class="text-center mb-8">
+              <div class="inline-block px-4 py-1 bg-tiffany-100 rounded-full text-tiffany-700 font-medium text-xs mb-3">
+                あなたにおすすめ
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900" id="plan-name"></h3>
+            </div>
+
+            <!-- プラン詳細 -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div class="bg-gray-50 rounded-xl p-4 text-center">
+                <div class="text-xs text-gray-500 mb-1">検査頻度</div>
+                <div class="text-xl font-bold text-gray-900" id="plan-frequency"></div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4 text-center">
+                <div class="text-xs text-gray-500 mb-1">遺伝子検査</div>
+                <div class="text-xl font-bold text-gray-900" id="plan-gene"></div>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-4 text-center">
+                <div class="text-xs text-gray-500 mb-1">AI疾病予測報告書</div>
+                <div class="text-xl font-bold text-gray-900" id="plan-ai"></div>
+              </div>
+            </div>
+
+            <!-- 検査内容 -->
+            <div class="mb-8">
+              <h4 class="font-bold text-gray-800 mb-3">検査内容</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="plan-items"></div>
+            </div>
+
+            <!-- 価格 -->
+            <div class="bg-gradient-to-r from-tiffany-50 to-cyan-50 rounded-2xl p-6 mb-8 text-center">
+              <div class="text-sm text-gray-600 mb-2">年間パッケージ料金（税込）</div>
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-sm text-gray-500">初年度</span>
+                <span class="text-3xl font-bold text-tiffany-700" id="plan-price-first"></span>
+                <span class="text-sm text-gray-500 ml-4">2年目以降</span>
+                <span class="text-3xl font-bold text-tiffany-700" id="plan-price-renewal"></span>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">※遺伝子検査は初年度のみのため、2年目以降は価格が異なります</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#" id="plan-link" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-tiffany-500 to-tiffany-600 text-white font-bold rounded-xl hover:from-tiffany-600 hover:to-tiffany-700 transition-all shadow-lg">
+                このプランの詳細・購入ページへ
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <IndividualTests />
   </main>
 
   <Footer />
 </BaseLayout>
+
+<script>
+  const plans = {
+    'executive_50over': {
+      name: '経営幹部プラン（50代以上）',
+      frequency: '年4回',
+      gene: '初年度あり',
+      ai: 'あり',
+      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
+      priceFirst: '¥198,000',
+      priceRenewal: '¥148,000',
+      link: '/products/12f01544-0eee-43fc-a62b-9c9783c131ef'
+    },
+    'executive_50under': {
+      name: '経営幹部プラン（50代未満）',
+      frequency: '年4回',
+      gene: '初年度あり',
+      ai: 'あり',
+      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
+      priceFirst: '¥198,000',
+      priceRenewal: '¥148,000',
+      link: '/products/12f01544-0eee-43fc-a62b-9c9783c131ef'
+    },
+    'middle_50over': {
+      name: '中堅社員プラン（50代以上）',
+      frequency: '年4回',
+      gene: '初年度あり',
+      ai: 'あり',
+      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
+      priceFirst: '¥148,000',
+      priceRenewal: '¥98,000',
+      link: '/products/14c1d6af-cb60-4896-9392-383836e7bd25'
+    },
+    'middle_50under': {
+      name: '中堅社員プラン（50代未満）',
+      frequency: '年4回',
+      gene: '初年度あり',
+      ai: 'あり',
+      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI疾病予測報告書×4回', 'AI予防アドバイス×4回'],
+      priceFirst: '¥148,000',
+      priceRenewal: '¥98,000',
+      link: '/products/14c1d6af-cb60-4896-9392-383836e7bd25'
+    },
+    'general_50over': {
+      name: '一般社員プラン（50代以上）',
+      frequency: '年4回',
+      gene: '初年度あり',
+      ai: 'オプション',
+      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI予防アドバイス×4回'],
+      priceFirst: '¥128,000',
+      priceRenewal: '¥78,000',
+      link: '/products/3a0aad30-6fbc-4527-8999-a885e0f17949'
+    },
+    'general_50under': {
+      name: '一般社員プラン（50代未満）',
+      frequency: '年4回',
+      gene: '初年度あり',
+      ai: 'オプション',
+      items: ['がんリスク検査（尿）×4回', '血液検査（指先）×4回', '遺伝子検査（唾液）×1回（初年度）', 'AI予防アドバイス×4回'],
+      priceFirst: '¥98,000',
+      priceRenewal: '¥58,000',
+      link: '/products/3c5d7de5-fdcb-45e3-8b17-13c9540269ea'
+    }
+  };
+
+  let selectedRole = '';
+  let selectedAge = '';
+
+  function updateSelection() {
+    // Role cards
+    document.querySelectorAll('.role-card').forEach(card => {
+      const role = card.getAttribute('data-role');
+      if (role === selectedRole) {
+        card.classList.add('border-tiffany-500', 'bg-tiffany-50', 'shadow-md');
+        card.classList.remove('border-gray-200', 'bg-white');
+      } else {
+        card.classList.remove('border-tiffany-500', 'bg-tiffany-50', 'shadow-md');
+        card.classList.add('border-gray-200', 'bg-white');
+      }
+    });
+
+    // Age step activation
+    const ageStep = document.getElementById('age-step');
+    if (selectedRole) {
+      ageStep?.classList.remove('opacity-40', 'pointer-events-none');
+    }
+
+    // Age cards
+    document.querySelectorAll('.age-card').forEach(card => {
+      const age = card.getAttribute('data-age');
+      if (age === selectedAge) {
+        card.classList.add('border-tiffany-500', 'bg-tiffany-50', 'shadow-md');
+        card.classList.remove('border-gray-200', 'bg-white');
+      } else {
+        card.classList.remove('border-tiffany-500', 'bg-tiffany-50', 'shadow-md');
+        card.classList.add('border-gray-200', 'bg-white');
+      }
+    });
+
+    // Show result
+    const result = document.getElementById('plan-result');
+    if (selectedRole && selectedAge) {
+      const key = selectedRole + '_' + selectedAge;
+      const plan = plans[key];
+      if (plan && result) {
+        document.getElementById('plan-name').textContent = plan.name;
+        document.getElementById('plan-frequency').textContent = plan.frequency;
+        document.getElementById('plan-gene').textContent = plan.gene;
+        document.getElementById('plan-ai').textContent = plan.ai;
+
+        const itemsEl = document.getElementById('plan-items');
+        itemsEl.innerHTML = plan.items.map(item =>
+          `<div class="flex items-center gap-2 bg-gray-50 rounded-lg p-3">
+            <svg class="w-5 h-5 text-tiffany-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+            <span class="text-sm text-gray-800">${item}</span>
+          </div>`
+        ).join('');
+
+        document.getElementById('plan-price-first').textContent = plan.priceFirst;
+        document.getElementById('plan-price-renewal').textContent = plan.priceRenewal;
+        document.getElementById('plan-link').setAttribute('href', plan.link);
+
+        result.classList.remove('hidden');
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } else {
+      result?.classList.add('hidden');
+    }
+  }
+
+  // Role card clicks
+  document.querySelectorAll('.role-card').forEach(card => {
+    card.addEventListener('click', () => {
+      selectedRole = card.getAttribute('data-role') || '';
+      selectedAge = '';
+      updateSelection();
+    });
+  });
+
+  // Age card clicks
+  document.querySelectorAll('.age-card').forEach(card => {
+    card.addEventListener('click', () => {
+      selectedAge = card.getAttribute('data-age') || '';
+      updateSelection();
+    });
+  });
+</script>
