@@ -2,7 +2,7 @@
 ---
 
 <section id="individual-tests" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 fade-in">
       <div class="inline-block px-6 py-2 bg-tiffany-100 rounded-full text-tiffany-700 font-medium text-sm mb-6">
         単品でのご利用も可能
@@ -13,109 +13,99 @@
       </p>
     </div>
 
-    <div class="plan-container fade-in">
-      <div class="plan-image-wrapper">
-        <img src="/images/sample_slide_018.png" alt="個別検査" class="plan-image">
+    <div class="space-y-4 fade-in">
 
-        <!-- 商品1のボタン -->
-        <a href="/products/a7621d74-28e8-4926-9c02-57eea01bcaf9" class="product-detail-btn btn-1">検査商品の詳細を見る</a>
+      <!-- がんリスク検査（保証あり） -->
+      <a href="/products/a7621d74-28e8-4926-9c02-57eea01bcaf9" class="flex items-center gap-4 bg-gray-50 rounded-xl p-5 hover:shadow-md hover:bg-white border-2 border-transparent hover:border-tiffany-200 transition-all group">
+        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-rose-400 to-rose-600 rounded-xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a3.187 3.187 0 01-4.06.39L12 17l-.47.36a3.187 3.187 0 01-4.06-.39L5 14.5m14 0V17a2 2 0 01-2 2H7a2 2 0 01-2-2v-2.5" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-gray-900 text-lg">がんリスク検査<span class="ml-2 text-xs font-medium text-white bg-rose-500 rounded-full px-2 py-0.5">保証あり</span></div>
+          <div class="text-sm text-gray-500">尿検査によるがんリスク判定（陽性時の精密検査費用保証付き）</div>
+        </div>
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-gray-400 group-hover:text-tiffany-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
 
-        <!-- 商品2のボタン -->
-        <a href="/products/9c82500f-dc4d-49b9-ba51-67d8faa18e9d" class="product-detail-btn btn-2">検査商品の詳細を見る</a>
+      <!-- がんリスク検査（保証なし） -->
+      <a href="/products/9c82500f-dc4d-49b9-ba51-67d8faa18e9d" class="flex items-center gap-4 bg-gray-50 rounded-xl p-5 hover:shadow-md hover:bg-white border-2 border-transparent hover:border-tiffany-200 transition-all group">
+        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-rose-300 to-rose-400 rounded-xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-2.47 2.47a3.187 3.187 0 01-4.06.39L12 17l-.47.36a3.187 3.187 0 01-4.06-.39L5 14.5m14 0V17a2 2 0 01-2 2H7a2 2 0 01-2-2v-2.5" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-gray-900 text-lg">がんリスク検査<span class="ml-2 text-xs font-medium text-gray-600 bg-gray-200 rounded-full px-2 py-0.5">保証なし</span></div>
+          <div class="text-sm text-gray-500">尿検査によるがんリスク判定</div>
+        </div>
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-gray-400 group-hover:text-tiffany-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
 
-        <!-- 商品3のボタン -->
-        <a href="/products/d25342de-485c-45c5-8393-d60e372c0208" class="product-detail-btn btn-3">検査商品の詳細を見る</a>
+      <!-- AI疾病予測報告書 -->
+      <a href="/products/d25342de-485c-45c5-8393-d60e372c0208" class="flex items-center gap-4 bg-gray-50 rounded-xl p-5 hover:shadow-md hover:bg-white border-2 border-transparent hover:border-tiffany-200 transition-all group">
+        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-gray-900 text-lg">AI疾病予測報告書</div>
+          <div class="text-sm text-gray-500">5年後の疾病リスクをAIが分析</div>
+        </div>
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-gray-400 group-hover:text-tiffany-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
 
-        <!-- 商品4のボタン -->
-        <a href="/products/ca73245d-7ca2-46d4-b998-b08dbfeba43d" class="product-detail-btn btn-4">検査商品の詳細を見る</a>
+      <!-- AI疾病予防報告書 -->
+      <a href="/products/ca73245d-7ca2-46d4-b998-b08dbfeba43d" class="flex items-center gap-4 bg-gray-50 rounded-xl p-5 hover:shadow-md hover:bg-white border-2 border-transparent hover:border-tiffany-200 transition-all group">
+        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-gray-900 text-lg">AI疾病予防報告書</div>
+          <div class="text-sm text-gray-500">生活習慣改善の具体的アドバイス</div>
+        </div>
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-gray-400 group-hover:text-tiffany-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
 
-        <!-- 商品5のボタン -->
-        <a href="/products/2a50e538-fcad-4134-8915-7983cdec05f0" class="product-detail-btn btn-5">検査商品の詳細を見る</a>
-      </div>
+      <!-- 遺伝子検査 -->
+      <a href="/products/2a50e538-fcad-4134-8915-7983cdec05f0" class="flex items-center gap-4 bg-gray-50 rounded-xl p-5 hover:shadow-md hover:bg-white border-2 border-transparent hover:border-tiffany-200 transition-all group">
+        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-4-4h8m-6-4h4" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-gray-900 text-lg">遺伝子検査</div>
+          <div class="text-sm text-gray-500">唾液による遺伝的リスク解析</div>
+        </div>
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-gray-400 group-hover:text-tiffany-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
-
-<style>
-  .plan-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .plan-image-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .plan-image {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-
-  .product-detail-btn {
-    position: absolute;
-    background: rgba(33, 150, 243, 0.9);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14.4px;
-    text-align: center;
-    line-height: 1.3;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: 1px solid white;
-    white-space: nowrap;
-    z-index: 10;
-    transform: translateX(-50%);
-  }
-
-  .product-detail-btn:hover {
-    background: rgba(25, 118, 210, 0.95);
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-1 {
-    top: 18%;
-    left: 55%;
-  }
-
-  .btn-2 {
-    top: 35%;
-    left: 55%;
-  }
-
-  .btn-3 {
-    top: 46%;
-    left: 55%;
-  }
-
-  .btn-4 {
-    top: 63%;
-    left: 55%;
-  }
-
-  .btn-5 {
-    top: 86%;
-    left: 55%;
-  }
-
-  @media (max-width: 768px) {
-    .product-detail-btn {
-      padding: 6px 10px;
-      font-size: 11px;
-      border-radius: 4px;
-    }
-  }
-</style>
