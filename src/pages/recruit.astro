@@ -1,0 +1,424 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="採用情報">
+  <Header />
+
+  <!-- メインビジュアル -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="container">
+        <h1 class="page-hero-title fade-in">採用情報</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- 採用情報セクション -->
+  <section class="recruit-section">
+    <div class="container">
+      <div class="recruit-intro fade-in">
+        <h2 class="intro-title">一緒に働く仲間を募集しています</h2>
+        <p class="intro-text">
+          株式会社ウェルフォートでは、健康寿命延伸という社会課題に取り組む仲間を募集しています。<br>
+          私たちと一緒に、お客様の健康と幸せをサポートしませんか？
+        </p>
+      </div>
+
+      <div class="recruit-message fade-in">
+        <h3>私たちが目指すもの</h3>
+        <p>
+          Wellfortは、予防医療の普及を通じて、人々の健康寿命延伸に貢献することを目指しています。
+          日本では平均寿命と健康寿命に約10年のギャップがあります。
+          私たちは、このギャップを埋めるために、最先端のテクノロジーと医療の知見を組み合わせた
+          健康モニタリングサービスを提供しています。
+        </p>
+        <p>
+          病気になってから治療するのではなく、病気にならないための予防。
+          この「未病」という考え方を広め、多くの方々の健康で豊かな人生をサポートしたい。
+          そんな想いを共有できる方をお待ちしています。
+        </p>
+      </div>
+
+      <div class="recruit-positions fade-in">
+        <h3 class="positions-title">募集職種</h3>
+
+        <div class="position-cards">
+          <div class="position-card">
+            <div class="position-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h4>営業・コンサルタント</h4>
+            <p>法人向け健康経営支援サービスの提案営業</p>
+            <ul>
+              <li>法人営業経験者歓迎</li>
+              <li>ヘルスケア業界経験者優遇</li>
+              <li>正社員・契約社員</li>
+            </ul>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h4>エンジニア</h4>
+            <p>健康管理プラットフォームの開発・運用</p>
+            <ul>
+              <li>Web開発経験者</li>
+              <li>フルスタック歓迎</li>
+              <li>正社員・業務委託</li>
+            </ul>
+          </div>
+
+          <div class="position-card">
+            <div class="position-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h4>カスタマーサクセス</h4>
+            <p>お客様の健康管理をサポート</p>
+            <ul>
+              <li>医療・ヘルスケア経験者歓迎</li>
+              <li>コミュニケーション力重視</li>
+              <li>正社員・パート</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="recruit-benefits fade-in">
+        <h3 class="benefits-title">福利厚生・働く環境</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <span class="benefit-icon">🏥</span>
+            <span>各種社会保険完備</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🚃</span>
+            <span>交通費全額支給</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">📅</span>
+            <span>完全週休2日制</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">🌴</span>
+            <span>有給休暇（初年度10日）</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">💊</span>
+            <span>ウェルテクト社員割引</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">📚</span>
+            <span>資格取得支援制度</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recruit-cta fade-in">
+        <h3>ご応募・お問い合わせ</h3>
+        <p>採用に関するお問い合わせは、下記よりお気軽にご連絡ください。</p>
+        <a href="/contact" class="btn-apply">お問い合わせフォーム</a>
+        <p class="contact-email">
+          または <a href="mailto:info@wellfort.co.jp">info@wellfort.co.jp</a> まで
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    width: 100%;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    padding: 140px 0 80px;
+  }
+
+  .page-hero-content {
+    text-align: center;
+  }
+
+  .page-hero-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+  .recruit-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .recruit-intro {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .intro-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+
+  .intro-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #555;
+  }
+
+  .recruit-message {
+    background: white;
+    border-radius: 20px;
+    padding: 60px;
+    margin-bottom: 80px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .recruit-message h3 {
+    font-size: 1.8rem;
+    color: #40b0a0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .recruit-message p {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .recruit-message p:last-child {
+    margin-bottom: 0;
+  }
+
+  .recruit-positions {
+    margin-bottom: 80px;
+  }
+
+  .positions-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .position-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .position-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .position-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  .position-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: white;
+  }
+
+  .position-card h4 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  .position-card > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .position-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .position-card li {
+    padding: 8px 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+
+  .position-card li:last-child {
+    border-bottom: none;
+  }
+
+  .recruit-benefits {
+    background: white;
+    border-radius: 20px;
+    padding: 60px;
+    margin-bottom: 80px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .benefits-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+  }
+
+  .benefit-icon {
+    font-size: 1.5rem;
+  }
+
+  .benefit-item span:last-child {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .recruit-cta {
+    text-align: center;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    border-radius: 20px;
+    padding: 60px;
+    color: white;
+  }
+
+  .recruit-cta h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .recruit-cta > p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+  }
+
+  .btn-apply {
+    display: inline-block;
+    background: white;
+    color: #40b0a0;
+    padding: 16px 50px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-apply:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-email {
+    margin-top: 25px;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .contact-email a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 120px 0 60px;
+    }
+
+    .page-hero-title {
+      font-size: 2rem;
+    }
+
+    .recruit-section {
+      padding: 60px 0;
+    }
+
+    .intro-title {
+      font-size: 1.8rem;
+    }
+
+    .recruit-message,
+    .recruit-benefits,
+    .recruit-cta {
+      padding: 40px 25px;
+    }
+
+    .position-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
