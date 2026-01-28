@@ -31,94 +31,135 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <form id="contact-form" class="contact-form">
-          <!-- お名前 -->
-          <div class="form-group">
-            <label for="name" class="form-label">
-              お名前 <span class="required">必須</span>
+          <!-- お問い合わせ区分（ラジオボタン） -->
+          <div class="form-group inquiry-type-group">
+            <label class="form-label">
+              お問い合わせ区分 <span class="required">必須</span>
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-input"
-              placeholder="山田 太郎"
-              required
-            />
+            <div class="radio-cards">
+              <label class="radio-card">
+                <input type="radio" name="inquiry_type" value="corporate" required />
+                <div class="radio-card-content">
+                  <span class="radio-card-title">法人の経営陣・ご担当者様</span>
+                  <span class="radio-card-desc">ウエルフォートについてご検討・ご質問のある法人のお客様</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="inquiry_type" value="individual" />
+                <div class="radio-card-content">
+                  <span class="radio-card-title">個人のお客様</span>
+                  <span class="radio-card-desc">ウエルフォートについてご検討・ご質問のある個人のお客様</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="inquiry_type" value="other" />
+                <div class="radio-card-content">
+                  <span class="radio-card-title">営業・提案・提携・その他</span>
+                  <span class="radio-card-desc">当社への営業、提案、提携を打診したい方、及びその他の方</span>
+                </div>
+              </label>
+            </div>
           </div>
 
-          <!-- フリガナ -->
-          <div class="form-group">
-            <label for="furigana" class="form-label">
-              フリガナ <span class="required">必須</span>
-            </label>
-            <input
-              type="text"
-              id="furigana"
-              name="furigana"
-              class="form-input"
-              placeholder="ヤマダ タロウ"
-              required
-            />
-          </div>
+          <!-- 動的フォームフィールド -->
+          <div id="dynamic-fields" style="display:none;">
 
-          <!-- メールアドレス -->
-          <div class="form-group">
-            <label for="email" class="form-label">
-              メールアドレス <span class="required">必須</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-input"
-              placeholder="example@email.com"
-              required
-            />
-          </div>
+            <!-- 法人・その他向けフィールド -->
+            <div id="fields-corporate" class="conditional-fields" style="display:none;">
+              <div class="form-group">
+                <label for="company" class="form-label">
+                  法人名 <span class="required">必須</span>
+                </label>
+                <input type="text" id="company" name="company" class="form-input" placeholder="株式会社〇〇" />
+              </div>
+              <div class="form-group">
+                <label for="department" class="form-label">
+                  部署名 <span class="optional">任意</span>
+                </label>
+                <input type="text" id="department" name="department" class="form-input" placeholder="人事部" />
+              </div>
+              <div class="form-group">
+                <label for="name" class="form-label">
+                  ご担当者名 <span class="required">必須</span>
+                </label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="山田 太郎" />
+              </div>
+            </div>
 
-          <!-- 電話番号 -->
-          <div class="form-group">
-            <label for="phone" class="form-label">
-              電話番号 <span class="optional">任意</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="form-input"
-              placeholder="090-1234-5678"
-            />
-          </div>
+            <!-- 個人向けフィールド -->
+            <div id="fields-individual" class="conditional-fields" style="display:none;">
+              <div class="form-group">
+                <label for="gender" class="form-label">
+                  性別 <span class="optional">任意</span>
+                </label>
+                <select id="gender" name="gender" class="form-select">
+                  <option value="">選択してください</option>
+                  <option value="male">男性</option>
+                  <option value="female">女性</option>
+                  <option value="other">その他</option>
+                  <option value="no_answer">回答しない</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="age" class="form-label">
+                  年齢 <span class="optional">任意</span>
+                </label>
+                <select id="age" name="age" class="form-select">
+                  <option value="">選択してください</option>
+                  <option value="~19">19歳以下</option>
+                  <option value="20-29">20代</option>
+                  <option value="30-39">30代</option>
+                  <option value="40-49">40代</option>
+                  <option value="50-59">50代</option>
+                  <option value="60-69">60代</option>
+                  <option value="70~">70歳以上</option>
+                </select>
+              </div>
+            </div>
 
-          <!-- お問い合わせ種別 -->
-          <div class="form-group">
-            <label for="category" class="form-label">
-              お問い合わせ種別 <span class="required">必須</span>
-            </label>
-            <select id="category" name="category" class="form-select" required>
-              <option value="">選択してください</option>
-              <option value="service">サービス内容について</option>
-              <option value="inspection">検査について</option>
-              <option value="price">料金について</option>
-              <option value="consultation">オンライン面談について</option>
-              <option value="technical">技術的なサポート</option>
-              <option value="other">その他</option>
-            </select>
-          </div>
+            <!-- メールアドレス（共通） -->
+            <div class="form-group">
+              <label for="email" class="form-label">
+                メールアドレス <span class="required">必須</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="example@email.com"
+                required
+              />
+            </div>
 
-          <!-- お問い合わせ内容 -->
-          <div class="form-group">
-            <label for="message" class="form-label">
-              お問い合わせ内容 <span class="required">必須</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              class="form-textarea"
-              rows="8"
-              placeholder="お問い合わせ内容をご記入ください"
-              required
-            ></textarea>
+            <!-- 電話番号（法人・その他のみ） -->
+            <div id="field-phone" class="form-group" style="display:none;">
+              <label for="phone" class="form-label">
+                電話番号 <span class="optional">任意</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="03-1234-5678"
+              />
+            </div>
+
+            <!-- お問い合わせ内容 -->
+            <div class="form-group">
+              <label for="message" class="form-label">
+                お問い合わせ内容 <span class="required">必須</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                rows="8"
+                placeholder="お問い合わせ内容をご記入ください"
+                required
+              ></textarea>
+            </div>
           </div>
 
           <!-- プライバシーポリシー同意 -->
@@ -225,6 +266,41 @@ import Footer from '../components/Footer.astro';
     });
   });
 
+  // ラジオボタンによるフォーム切り替え
+  const radios = document.querySelectorAll<HTMLInputElement>('input[name="inquiry_type"]');
+  const dynamicFields = document.getElementById('dynamic-fields') as HTMLElement;
+  const fieldsCorporate = document.getElementById('fields-corporate') as HTMLElement;
+  const fieldsIndividual = document.getElementById('fields-individual') as HTMLElement;
+  const fieldPhone = document.getElementById('field-phone') as HTMLElement;
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      const val = radio.value;
+      dynamicFields.style.display = 'block';
+
+      // フィールド表示切り替え
+      if (val === 'corporate' || val === 'other') {
+        fieldsCorporate.style.display = 'block';
+        fieldsIndividual.style.display = 'none';
+        fieldPhone.style.display = 'block';
+        // required設定
+        (document.getElementById('company') as HTMLInputElement).required = true;
+        (document.getElementById('name') as HTMLInputElement).required = true;
+      } else {
+        // 個人
+        fieldsCorporate.style.display = 'none';
+        fieldsIndividual.style.display = 'block';
+        fieldPhone.style.display = 'none';
+        (document.getElementById('company') as HTMLInputElement).required = false;
+        (document.getElementById('name') as HTMLInputElement).required = false;
+      }
+
+      // ラジオカードの選択スタイル
+      document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('selected'));
+      (radio.closest('.radio-card') as HTMLElement)?.classList.add('selected');
+    });
+  });
+
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const formMessage = document.getElementById('form-message') as HTMLElement;
 
@@ -311,6 +387,73 @@ import Footer from '../components/Footer.astro';
     font-size: 16px;
     color: #666;
     line-height: 1.8;
+  }
+
+  .inquiry-type-group {
+    margin-bottom: 40px;
+  }
+
+  .radio-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .radio-card {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fafafa;
+  }
+
+  .radio-card:hover {
+    border-color: #40b0a0;
+    background: #f0faf8;
+  }
+
+  .radio-card.selected {
+    border-color: #40b0a0;
+    background: #e8f7f5;
+    box-shadow: 0 0 0 3px rgba(64, 176, 160, 0.15);
+  }
+
+  .radio-card input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    accent-color: #40b0a0;
+    flex-shrink: 0;
+  }
+
+  .radio-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .radio-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .radio-card-desc {
+    font-size: 13px;
+    color: #888;
+  }
+
+  .conditional-fields {
+    animation: fadeSlideIn 0.3s ease;
+  }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .form-group {
