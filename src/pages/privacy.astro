@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="プライバシーポリシー">
+<BaseLayout title="プライバシーポリシー | 株式会社ウェルフォート">
   <Header />
 
   <!-- メインビジュアル -->
@@ -28,13 +28,14 @@ import Footer from '../components/Footer.astro';
           株式会社ウェルフォート（以下「当社」といいます）は、ウェルテクト（以下「本サービス」といいます）を利用するお客様（以下「会員」といいます）に関する情報（以下「会員情報」といいます）の取扱いについて、以下のとおり【ウェルテクト】プライバシーポリシー（以下「本ポリシー」といいます）を定めます。
         </p>
         <p>
-          なお本ポリシーに定めのない事項については当社の活動全般にかかわる[プライバシーポリシー]（以下「共通ポリシー」といいます）が適用されます。共通ポリシーと本ポリシーの間に相違がある場合は、本ポリシーが優先して適用されます。
+          なお本ポリシーに定めのない事項については当社の活動全般にかかわる<br>
+          [プライバシーポリシー]（以下「共通ポリシー」といいます）が適用されます。共通ポリシーと本ポリシーの間に相違がある場合は、本ポリシーが優先して適用されます。
         </p>
       </div>
 
       <!-- 1. 取得する会員情報 -->
       <article class="policy-article fade-in">
-        <h3 class="article-title">1 取得する会員情報の項目と利用目的</h3>
+        <h3 class="article-title">１ 取得する会員情報の項目と利用目的</h3>
         <div class="article-content">
           <p>
             当社は、以下の各項目に記載する会員情報を、それぞれ会員から直接または第三者から取得し、会員はこれに同意します。また、それら入手した会員情報を、以下の利用目的の範囲内で利用し、会員は当社がこれらの個人情報を取得することに同意します。
@@ -42,46 +43,64 @@ import Footer from '../components/Footer.astro';
 
           <h4 class="subsection-title">(1) 会員から直接取得する情報</h4>
 
-          <div class="info-list">
-            <div class="info-item">
-              <h5>会員情報の項目</h5>
-              <ul>
-                <li>氏名、生年月日、性別、その他会員のプロフィールに関する情報</li>
-                <li>メールアドレス、住所、電話番号等、ご連絡先に関する情報</li>
-                <li>その他上記の各情報に関連する情報</li>
-              </ul>
+          <div class="info-table">
+            <div class="table-row">
+              <div class="table-header">会員情報の項目</div>
+              <div class="table-header">利用目的</div>
             </div>
-            <div class="info-item">
-              <h5>利用目的</h5>
-              <ul>
-                <li>本サービスの提供や会員のサポート</li>
-                <li>本サービスへの登録、本人確認</li>
-                <li>会員からの問い合わせへの対応</li>
-                <li>パートナー企業（健康相談）への検査結果の提供</li>
-                <li>サービス利用料の請求等及び解約等に関する事務処理</li>
-                <li>本サービスの運営上必要となる事項の通知</li>
-              </ul>
+            <div class="table-row">
+              <div class="table-cell">
+                <p>・氏名、生年月日、性別、その他会員のプロフィールに関する情報</p>
+                <p>・メールアドレス、住所、電話番号等、ご連絡先に関する情報</p>
+                <p>・その他上記の各情報に関連する情報</p>
+              </div>
+              <div class="table-cell">
+                <p>・本サービスの提供や会員のサポート</p>
+                <p>・本サービスへの登録、本人確認</p>
+                <p>・会員からの問い合わせへの対応</p>
+                <p>・パートナー企業（健康相談）への検査結果の提供</p>
+                <p>・パートナー企業（検査／健康相談）との間での会員特定のための共有</p>
+                <p>・パートナー企業（検査／健康相談）からの問い合わせ対応</p>
+                <p>・サービス利用料の請求等及び解約等に関する事務処理</p>
+                <p>・本サービスの運営上必要となる事項の通知</p>
+              </div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <p>・クレジットカード情報、銀行口座情報等、お支払いやご決済に必要な情報</p>
+              </div>
+              <div class="table-cell">
+                <p>・サービス利用料の支払い及び関連する事務処理</p>
+              </div>
             </div>
           </div>
 
           <h4 class="subsection-title">(2) 第三者から提供を受ける情報</h4>
 
-          <div class="info-list">
-            <div class="info-item">
-              <h5>会員情報の項目</h5>
-              <ul>
-                <li>会員が本サービスのパートナー企業（検査）に提供した氏名その他会員のプロフィールに関する情報</li>
-                <li>会員がパートナー企業（検査）に提供した会員の健康に関する情報</li>
-                <li>会員の検体に関するパートナー企業（検査）による検査結果</li>
-              </ul>
+          <div class="info-table">
+            <div class="table-row">
+              <div class="table-header">会員情報の項目</div>
+              <div class="table-header">利用目的</div>
             </div>
-            <div class="info-item">
-              <h5>利用目的</h5>
-              <ul>
-                <li>本サービスの提供や会員のサポート</li>
-                <li>パートナー企業（健康相談）への提供</li>
-                <li>パートナー企業との間での会員の特定のための共有</li>
-              </ul>
+            <div class="table-row">
+              <div class="table-cell">
+                <p>・会員が本サービスのパートナー企業（検査）に提供した氏名その他会員のプロフィールに関する情報</p>
+                <p>・会員がパートナー企業（検査）に提供した会員の健康に関する情報</p>
+                <p>・会員の検体に関するパートナー企業（検査）による検査結果（がん検査、遺伝子検査、血液検査を含む本サービスによって実施される全ての検査）</p>
+              </div>
+              <div class="table-cell">
+                <p>・本サービスの提供や会員のサポート</p>
+                <p>・パートナー企業（健康相談）への提供</p>
+                <p>・パートナー企業との間での会員の特定のための共有</p>
+              </div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">
+                <p>・会員が決済代行会社に提供した、決済に必要となる情報</p>
+              </div>
+              <div class="table-cell">
+                <p>・サービス利用料の請求、支払い等及び解約等に関する事務処理</p>
+              </div>
             </div>
           </div>
         </div>
@@ -89,46 +108,155 @@ import Footer from '../components/Footer.astro';
 
       <!-- 2. 個人データの共同利用 -->
       <article class="policy-article fade-in">
-        <h3 class="article-title">2 個人データの共同利用</h3>
+        <h3 class="article-title">２ 個人データの共同利用</h3>
         <div class="article-content">
           <p>当社は、会員の個人データを、以下のとおり共同利用する場合があります。</p>
 
           <h4 class="subsection-title">(1) 共同利用する個人データの項目</h4>
-          <p>本ポリシー「1 取得する会員情報の項目と利用目的」記載の個人データ。ただし、決済に必要となる情報は除く。</p>
+          <p>本ポリシー「２ 取得する会員情報の項目と利用目的」記載の個人データ。ただし、決済に必要となる情報は除く。</p>
 
           <h4 class="subsection-title">(2) 共同利用者の範囲</h4>
           <p>本サービスのパートナー企業</p>
 
           <h4 class="subsection-title">(3) 共同利用する個人データの利用目的</h4>
-          <p>本ポリシー「1 取得する会員情報の項目と利用目的」記載の利用目的</p>
+          <p>本ポリシー「２ 取得する会員情報の項目と利用目的」記載の利用目的</p>
 
           <h4 class="subsection-title">(4) 共同利用する個人データの管理責任者</h4>
           <p>当社【株式会社ウェルフォート】</p>
-          <p>〒106-0032 東京都港区六本木7丁目7-7 トライセブンロッポンギ 8階</p>
+          <p>〒 106-0032</p>
+          <p>東京都港区六本木７丁目７−７ トライセブンロッポンギ 8階</p>
+          <p>（登記簿上の本店所在地 東京都港区南麻布一丁目8番16-1506号）</p>
           <p>代表者代表取締役社長 物部慶幸</p>
         </div>
       </article>
 
       <!-- 3. 会員情報の第三者提供 -->
       <article class="policy-article fade-in">
-        <h3 class="article-title">3 会員情報の第三者提供</h3>
+        <h3 class="article-title">３ 会員情報の第三者提供</h3>
         <div class="article-content">
           <p>
-            当社は、本ポリシー「1 取得する会員情報の項目と利用目的」記載の会員情報について、同記載の利用目的の限度で、本サービスの検査実施機関および健康相談実施機関に提供する場合があります。
+            当社は、本ポリシー「２ 取得する会員情報の項目と利用目的」記載の会員情報について、同記載の利用目的の限度で、本サービスの検査実施機関および健康相談実施機関に提供する場合があります。
           </p>
         </div>
       </article>
 
-      <!-- 個人情報苦情及び相談窓口 -->
+      <!-- 保有個人データに関する事項の周知 -->
       <article class="policy-article fade-in">
-        <h3 class="article-title">個人情報苦情及び相談窓口</h3>
+        <h3 class="article-title">保有個人データ又は第三者提供記録に関する事項の周知について</h3>
         <div class="article-content">
-          <p>個人情報の取扱いに関する苦情相談、開示等の請求につきましては、下記連絡先までご連絡ください。</p>
-          <div class="contact-info">
-            <p>株式会社ウェルフォート</p>
-            <p>〒106-0032 東京都港区六本木7-7-7 8階</p>
-            <p>E-mail: info@wellfort.co.jp</p>
+          <p>
+            株式会社ウェルフォートでは、保有個人データの開示等（利用目的の通知、開示、内容の訂正、追加又は削除、利用の停止、消去及び第三者への提供の停止）の請求及び第三者提供記録の開示に関する請求（以下、まとめて「開示等の請求」といいます。）について、以下の事項を周知致します。
+          </p>
+
+          <h4 class="subsection-title">（１）名称及び住所、代表者の氏名</h4>
+          <p>名称： 株式会社ウェルフォート</p>
+          <p>住所：〒 106-0032 東京都港区六本木７丁目７−７ トライセブンロッポンギ 8階</p>
+          <p>代表者： 代表取締役 物部 慶幸</p>
+
+          <h4 class="subsection-title">（２）個人情報保護管理者</h4>
+          <p>・役職名： 代表取締役</p>
+          <p>・連絡先： メールアドレス <a href="mailto:info@wellfort.co.jp">info@wellfort.co.jp</a></p>
+
+          <h4 class="subsection-title">（３）保有個人データの利用目的</h4>
+
+          <div class="purpose-section">
+            <p class="purpose-category">1) 会員から直接取得する情報</p>
+            <p>・氏名、生年月日、性別、その他会員のプロフィールに関する情報</p>
+            <p>・メールアドレス、住所、電話番号等、ご連絡先に関する情報</p>
+            <p>・その他上記の各情報に関連する情報</p>
+
+            <p class="purpose-category">2)第三者から提供を受ける情報</p>
+            <p>・メールアドレス、住所、電話番号等、ご連絡先に関する情報</p>
+            <p>・その他上記の各情報に関連する情報</p>
+
+            <ul class="purpose-list">
+              <li>①本サービスの提供や会員のサポートのため</li>
+              <li>②本サービスへの登録、本人確認のため</li>
+              <li>③会員からの問い合わせへの対応のため</li>
+              <li>④パートナー企業（健康相談）への検査結果の提供のため</li>
+              <li>⑤パートナー企業（検査／健康相談）との間での会員特定のための共有のため</li>
+              <li>⑥パートナー企業（検査／健康相談）からの問い合わせ対応のため</li>
+              <li>⑦サービス利用料の請求等及び解約等に関する事務処理のため</li>
+              <li>⑧本サービスの運営上必要となる事項の通知のため</li>
+            </ul>
+
+            <p class="purpose-category">・クレジットカード情報、銀行口座情報等、お支払いやご決済に必要な情報</p>
+            <ul class="purpose-list">
+              <li>①サービス利用料の支払い及び関連する事務処理のため</li>
+            </ul>
+
+            <p class="purpose-category">3) 会員情報の第三者提供</p>
+            <p>・利用目的の範囲内で本サービスの検査実施機関および健康相談実施機関に提供</p>
+
+            <p class="purpose-category">4)個人情報の共同利用</p>
+            <ul class="purpose-list">
+              <li>①会員のがん検査、遺伝子検査、血液検査、その他検査の実施のため</li>
+              <li>②会員の健康相談のため</li>
+            </ul>
+
+            <p class="purpose-category">5)電子メール配信による商品・サービスに関する有用な情報を提供するため</p>
+            <p class="purpose-category">6)当社へ入社を希望される方への連絡、情報のご提供、および採用選考を行うため</p>
+            <p class="purpose-category">7)従業員の皆様への連絡、情報のご提供、および人事・労務管理を行うため</p>
+            <p class="purpose-category">8)退職した方の個人情報 を本人からの問い合わせのため</p>
+            <p class="purpose-category">9)当社の従業者の個人情報は、人事管理、労務管理、賃金の支払い、健康管理等のため</p>
+            <p class="purpose-category">10)特定個人情報等:源泉徴収票・支払調書作成事務、健康保険・厚生年金保険届出事務、雇用保険届出事務を法令に基づき適切に実施するため</p>
+            <p class="purpose-category">11)お客さまからのご意見・ご感想をいただくため個人情報を利用するため</p>
+            <p class="purpose-category">12)当社業務に関する調査・分析のため</p>
           </div>
+
+          <h4 class="subsection-title">（４）認定個人情報保護団体の名称及び苦情の解決の申し出先</h4>
+          <p>・当社は認定個人情報保護団体の対象事業者ではありません。</p>
+
+          <h4 class="subsection-title">（５）保有個人データ又は第三者提供記録に関する事項の周知など</h4>
+          <p>
+            1) 当社が保有するご本人の個人情報について開示等（利用目的の通知、開示又は第三者提供記録の開示、内容の訂正、追加又は削除、利用の停止、消去及び第三者への提供の停止）の請求に応じます。（２）に記載の連絡先宛にご連絡ください、請求に必要な手順の説明と必要な書類などをお送りします。
+          </p>
+
+          <h4 class="subsection-title">（６）保有個人データの安全管理のために講じている措置</h4>
+
+          <div class="security-measures">
+            <div class="measure-item">
+              <h5>1).基本方針の策定</h5>
+              <p>保有個人データの適正な取扱いの確保のため、関係法令・ガイドライン等の遵守、苦情処理の窓口等についての基本方針を策定しております。</p>
+            </div>
+
+            <div class="measure-item">
+              <h5>2).保有個人データの取扱いに係る規律の整備</h5>
+              <p>取得、利用、保存、提供、削除・廃棄等の段階ごとに、取扱方法、責任者・担当者及びその任務等について保有個人データの取扱規程を策定しております。</p>
+            </div>
+
+            <div class="measure-item">
+              <h5>3).組織的安全管理措置</h5>
+              <p>保有個人データの取扱いに関する責任者を設置するとともに、保有個人データを取り扱う従業者及び当該従業者が取り扱う保有個人データの範囲を明確化し、法や取扱規程に違反している事実又は兆候を把握した場合の責任者への報告連絡体制を整備 しております。</p>
+              <p>保有個人データの取扱状況について、定期的に自己点検を実施し、監査をしております。</p>
+            </div>
+
+            <div class="measure-item">
+              <h5>4).人的安全管理措置</h5>
+              <p>保有個人データの取扱いに関する留意事項について、従業者に定期的な研修を実施しております。</p>
+              <p>保有個人データについての秘密保持に関して従業者と契約を締結しております。</p>
+            </div>
+
+            <div class="measure-item">
+              <h5>5).物理的安全管理措置</h5>
+              <p>保有個人データを取り扱う区域において、従業者の入退室管理及び持ち込む機器等の管理を行うとともに、権限をしない者による保有個人データの閲覧を防止する措置を実施しております。</p>
+              <p>保有個人データを取り扱う機器、電子媒体及び書類等の盗難又は紛失等を防止するための措置を講じるとともに、事業所内の移動を含め、当該機器、電子媒体等を持ち運ぶ場合、容易に保有個人データが判明しないよう措置を実施しております。</p>
+            </div>
+
+            <div class="measure-item">
+              <h5>6).技術的安全管理措置</h5>
+              <p>アクセス制御を実施して、担当者及び取り扱う個人情報データベース等の個人データを取り扱う情報システムを外部からの不正アクセス又は不正ソフトウェアから保護する仕組みを導入しております。</p>
+              <p>当社がクラウドサービス会社を利用する際に外国において個人データを取り扱う場合、当該外国の個人情報の保護に関する制度等を把握した上で、個人データの安全管理のために必要かつ適切な措置（契約約款など締結）を講じております。</p>
+            </div>
+
+            <div class="measure-item">
+              <h5>7).本人が容易に認識できない方法による個人情報の取得</h5>
+              <p>当ウェブサイトでは、利用者が当ウェブサイトを閲覧した状況を分析するためにクッキーを利用しています。個人情報の取得はございません。また、取得したCookie情報を第三者に提供することもございません。なお、Cookieを拒否した場合は機能に制約が生じる場合がありますので予めご了承願います。</p>
+            </div>
+          </div>
+
+          <h4 class="subsection-title">（７）個人情報苦情及び相談窓口</h4>
+          <p>個人情報の取扱いに関する苦情相談、開示等の請求につきましては、（２）に記載の連絡先までご連絡ください。</p>
           <p class="end-mark">以上</p>
         </div>
       </article>
@@ -139,10 +267,11 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
+  /* ページヒーロー */
   .page-hero {
     width: 100%;
-    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
-    padding: 140px 0 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 100px 0;
   }
 
   .page-hero-content {
@@ -157,12 +286,14 @@ import Footer from '../components/Footer.astro';
     letter-spacing: 0.05em;
   }
 
+  /* コンテナ */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
+  /* フェードインアニメーション */
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -183,11 +314,13 @@ import Footer from '../components/Footer.astro';
   .fade-in:nth-child(5) { animation-delay: 0.5s; }
   .fade-in:nth-child(6) { animation-delay: 0.6s; }
 
+  /* プライバシーセクション */
   .privacy-section {
     padding: 100px 0;
     background: #f8f9fa;
   }
 
+  /* ポリシーヘッダー */
   .policy-header {
     text-align: center;
     margin-bottom: 60px;
@@ -200,6 +333,7 @@ import Footer from '../components/Footer.astro';
     line-height: 1.4;
   }
 
+  /* イントロ */
   .policy-intro {
     background: white;
     border-radius: 20px;
@@ -219,6 +353,7 @@ import Footer from '../components/Footer.astro';
     margin-bottom: 0;
   }
 
+  /* ポリシー記事 */
   .policy-article {
     background: white;
     border-radius: 20px;
@@ -230,10 +365,10 @@ import Footer from '../components/Footer.astro';
   .article-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #40b0a0;
+    color: #667eea;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 3px solid #40b0a0;
+    border-bottom: 3px solid #667eea;
   }
 
   .article-content {
@@ -253,57 +388,116 @@ import Footer from '../components/Footer.astro';
     margin: 30px 0 20px;
   }
 
-  .info-list {
-    margin: 20px 0;
-    padding: 25px;
-    background: #f8f9fa;
+  /* テーブル */
+  .info-table {
+    margin: 30px 0;
+    border: 2px solid #e0e0e0;
     border-radius: 10px;
+    overflow: hidden;
   }
 
-  .info-item {
-    margin-bottom: 20px;
+  .table-row {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
   }
 
-  .info-item:last-child {
+  .table-row:last-child {
+    border-bottom: none;
+  }
+
+  .table-header {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .table-cell {
+    flex: 1;
+    padding: 25px;
+    background: white;
+  }
+
+  .table-cell p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+
+  .table-cell p:last-child {
     margin-bottom: 0;
   }
 
-  .info-item h5 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #40b0a0;
-    margin-bottom: 10px;
+  /* 目的セクション */
+  .purpose-section {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0;
   }
 
-  .info-item ul {
+  .purpose-category {
+    font-weight: bold;
+    color: #667eea;
+    margin: 20px 0 10px;
+  }
+
+  .purpose-list {
     list-style: none;
     padding-left: 0;
+    margin: 15px 0;
   }
 
-  .info-item li {
+  .purpose-list li {
     padding-left: 1.5em;
     text-indent: -1.5em;
     margin-bottom: 8px;
     line-height: 1.8;
   }
 
-  .info-item li::before {
-    content: "・";
-    margin-right: 0.5em;
-    color: #40b0a0;
+  /* セキュリティ措置 */
+  .security-measures {
+    margin-top: 20px;
   }
 
-  .contact-info {
-    background: #e0f5f2;
+  .measure-item {
+    background: #f8f9fa;
     padding: 25px;
     border-radius: 10px;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
   }
 
-  .contact-info p {
-    margin-bottom: 8px;
+  .measure-item h5 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
   }
 
+  .measure-item p {
+    margin-bottom: 15px;
+    line-height: 1.9;
+  }
+
+  .measure-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* リンク */
+  a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+  }
+
+  /* 終了マーク */
   .end-mark {
     text-align: right;
     font-weight: bold;
@@ -311,9 +505,10 @@ import Footer from '../components/Footer.astro';
     color: #2c3e50;
   }
 
+  /* レスポンシブ */
   @media (max-width: 768px) {
     .page-hero {
-      padding: 120px 0 60px;
+      padding: 60px 0;
     }
 
     .page-hero-title {
@@ -339,6 +534,20 @@ import Footer from '../components/Footer.astro';
 
     .subsection-title {
       font-size: 1.15rem;
+    }
+
+    .table-row {
+      flex-direction: column;
+    }
+
+    .table-header,
+    .table-cell {
+      width: 100%;
+    }
+
+    .purpose-section,
+    .measure-item {
+      padding: 20px;
     }
   }
 </style>

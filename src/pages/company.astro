@@ -4,14 +4,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="企業情報">
+<BaseLayout title="企業情報 | 株式会社ウェルフォート">
   <Header />
 
   <!-- メインビジュアル -->
   <section class="page-hero">
-    <div class="page-hero-content">
-      <div class="container">
-        <h1 class="page-hero-title fade-in">企業情報</h1>
+    <div class="page-hero-image">
+      <img src="/images/company.jpg" alt="企業情報">
+      <div class="page-hero-overlay">
+        <h1 class="page-hero-title">企業情報</h1>
       </div>
     </div>
   </section>
@@ -41,7 +42,7 @@ import Footer from '../components/Footer.astro';
           真の寿命とは人生を楽しむことができる健康寿命のこと。日本では平均寿命と健康寿命に約10年程度のギャップがあります。
         </p>
         <p>
-          Wellfortでは、そのギャップを埋めるために3つの課題（予防医療、検診の理解と促進、がんの早期発見）に取り組んでいきます。
+          Wellfortでは、そのギャップを埋めるために３つの課題（予防医療、検診の理解と促進、がんの早期発見）に取り組んでいきます。
         </p>
         <p>
           病気に罹り、健康保険を利用し通院するというフローから、病院に罹らなくてもよい健康管理と対策といった予防医療、検診<sup>※</sup>といった病気にならないため（未病）ための活動推進。そして、日本人の死亡原因1位（約30%）であるがんの早期発見（ステージI以前）のサポートをすることで皆様の健康寿命延伸に貢献することを目指しております。
@@ -58,6 +59,116 @@ import Footer from '../components/Footer.astro';
         <p class="ceo-company">株式会社ウェルフォート</p>
         <p class="ceo-title">CEO 物部慶幸</p>
       </div>
+    </div>
+  </section>
+
+  <!-- 主要メンバープロフィール -->
+  <section class="profile-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label-en">Profile</span>
+        <h2 class="section-title">主要メンバープロフィール</h2>
+      </div>
+
+      <!-- 本田大作 -->
+      <article class="member-card fade-in">
+        <div class="member-image">
+          <img src="/images/honda.jpg" alt="本田大作">
+        </div>
+        <div class="member-info">
+          <p class="member-role">代表取締役会長</p>
+          <h3 class="member-name-ja">本田大作</h3>
+          <p class="member-name-en">Daisaku Honda</p>
+          <ul class="member-career">
+            <li>東京工業大学大学院 工学修士 修了</li>
+            <li>株式会社三菱総合研究所 環境関連部署に研究員として入社</li>
+            <li>株式会社リサイクルワン（現 レノバ、プライム市場上場）創業</li>
+            <li>取締役として環境コンサルティング事業、プラスチックリサイクル事業を管掌</li>
+            <li>ヴェオリアジャパン株式会社 上級副社長、その他関連する子会社の代表取締役などを歴任</li>
+            <li>2023年7月より、株式会社ウェルフォート代表取締役会長、ヴェオリアジャパン株式会社特別顧問</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 物部慶幸 -->
+      <article class="member-card fade-in">
+        <div class="member-image">
+          <img src="/images/monobe.jpg" alt="物部慶幸">
+        </div>
+        <div class="member-info">
+          <p class="member-role">代表取締役社長</p>
+          <h3 class="member-name-ja">物部慶幸</h3>
+          <p class="member-name-en">Yoshiyuki Monobe</p>
+          <ul class="member-career">
+            <li>コロンビア大学大学院 工学修士 修了（米国）</li>
+            <li>日本テキサスインスツルメント株式会社 プロセスエンジニアとして入社</li>
+            <li>インテル株式会社でPMを経験後、モトローラ株式会社にて技術・戦略企画部門長</li>
+            <li>副社長としてインコム・ジャパン株式会社設立・創業し、POS対応のギフトカードを日本市場に導入にほぼ100％シェア達成</li>
+            <li>日本マイクロソフト株式会社にてマーケテイング本部長、その他外資系IT企業のカントリーマネージャーなどを歴任</li>
+            <li>2022年9月より株式会社ウェルフォート代表取締役社長</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 岡部正寛 -->
+      <article class="member-card fade-in">
+        <div class="member-image">
+          <img src="/images/okabe.jpg" alt="岡部正寛">
+        </div>
+        <div class="member-info">
+          <p class="member-role">取締役</p>
+          <h3 class="member-name-ja">岡部正寛</h3>
+          <p class="member-name-en">Masahiro Okabe</p>
+          <p class="member-subtitle">ステージ4の癌からのサバイバー＆プロ患者</p>
+          <p class="member-description">
+            転移が多数見られたステージ４の下咽頭癌と食道癌から、数々のセカンドオピニオンや独自調査に基づく癌闘病方法を実践し1年半で完治。今後の人生を人々がより健康で幸せな人生を送るためにコミットしたいと、ウェルフォートに参画。
+          </p>
+          <ul class="member-career">
+            <li>アンダーセンコンサルティング（現アクセンチュア）</li>
+            <li>イーエントリー株式会社社長（アクセンチュア／ソフトバンクJV、MBO後現任）</li>
+            <li>株式会社システムソフト（東証7527）元社長</li>
+            <li>Gigi株式会社（こどもごちめし）元取締役</li>
+            <li>株式会社Orb（ブロックチェーン）社長</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 新藤幹雄 -->
+      <article class="member-card fade-in">
+        <div class="member-image">
+          <img src="/images/shindo.jpg" alt="新藤幹雄">
+        </div>
+        <div class="member-info">
+          <p class="member-role">技術部長</p>
+          <h3 class="member-name-ja">新藤幹雄</h3>
+          <p class="member-name-en">Mikio Shindo</p>
+          <ul class="member-career">
+            <li>芝浦工業大学 工学部 電子工学科 光電応用研究室 卒業</li>
+            <li>富士ゼロックス(現:富士フィルムビジネスイノベーション)株式会社入社 ゼログラフィー技術研究所所属</li>
+            <li>プラス株式会社及び HOYA 株式会社 R&D センターでマネージャー / プロジェクトリーダー</li>
+            <li>株式会社タムロンで開発統括部長、株式会社タニタ 執行役員 / コア技術研究所・品質監査部 担当を歴任</li>
+            <li>NPO法人 セルフメディケーション推進協議会 理事 / 公益 財団法人 大原記念労働科学研究所 安全運行サポーター協議会 幹事等に所属</li>
+            <li>2022年9月より株式会社ウェルフォート技術部長</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 倉岡生夏 -->
+      <article class="member-card fade-in">
+        <div class="member-image">
+          <img src="/images/kuraoka.jpg" alt="倉岡生夏">
+        </div>
+        <div class="member-info">
+          <p class="member-role">栄養士</p>
+          <h3 class="member-name-ja">倉岡生夏</h3>
+          <p class="member-name-en">Kinatsu Kuraoka</p>
+          <ul class="member-career">
+            <li>2016年に株式会社KINABIOを設立</li>
+            <li>病院で栄養士として勤務しながら、累計131億円を売り上げた「すっきりフルーツ青汁」のレシピ監修・会報誌連載、企業タイアップ、飲食店のメニュー開発など、食のプロデュースを幅広く手がける</li>
+            <li>ウェルテクトでは、食の専門家として、続けやすく実践しやすい"生活に寄り添う健康レシピ"の考案を担当</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -105,30 +216,54 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
+  /* ページヒーロー */
   .page-hero {
     width: 100%;
-    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
-    padding: 140px 0 80px;
+    margin-bottom: 0;
   }
 
-  .page-hero-content {
-    text-align: center;
+  .page-hero-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .page-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .page-hero-title {
     color: white;
     font-size: 3rem;
     font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.05em;
   }
 
+  /* コンテナ */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
+  /* セクション共通 */
   .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -151,6 +286,7 @@ import Footer from '../components/Footer.astro';
     line-height: 1.4;
   }
 
+  /* フェードインアニメーション */
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -171,9 +307,10 @@ import Footer from '../components/Footer.astro';
   .fade-in:nth-child(5) { animation-delay: 0.5s; }
   .fade-in:nth-child(6) { animation-delay: 0.6s; }
 
+  /* 経営理念セクション */
   .philosophy-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f3 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   }
 
   .philosophy-main {
@@ -227,7 +364,7 @@ import Footer from '../components/Footer.astro';
 
   .philosophy-content sup {
     font-size: 0.75em;
-    color: #40b0a0;
+    color: #007bff;
   }
 
   .ceo-signature {
@@ -249,9 +386,116 @@ import Footer from '../components/Footer.astro';
     color: #333;
   }
 
+  /* プロフィールセクション */
+  .profile-section {
+    padding: 100px 0;
+    background: white;
+  }
+
+  .member-card {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid #e8e8e8;
+    align-items: flex-start;
+  }
+
+  .member-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .member-image {
+    flex-shrink: 0;
+    width: 220px;
+  }
+
+  .member-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .member-card:hover .member-image img {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .member-info {
+    flex: 1;
+  }
+
+  .member-role {
+    font-size: 0.95rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .member-name-ja {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2c3e50;
+  }
+
+  .member-name-en {
+    font-size: 1.00rem;
+    color: #888;
+    margin-bottom: 25px;
+    font-weight: 500;
+  }
+
+  .member-subtitle {
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #e74c3c;
+    padding: 8px 12px;
+    background: #fef5e7;
+    border-left: 4px solid #e74c3c;
+    display: inline-block;
+  }
+
+  .member-description {
+    margin-bottom: 2px;
+    line-height: 1.9;
+    color: #555;
+    font-size: 1.02rem;
+  }
+
+  .member-career {
+    list-style: none;
+    padding: 0;
+  }
+
+  .member-career li {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    margin-bottom: 12px;
+    line-height: 1.8;
+    color: #555;
+    position: relative;
+  }
+
+  .member-career li:before {
+    content: "●";
+    color: #007bff;
+    margin-right: 0.7em;
+    font-size: 0.7em;
+    vertical-align: middle;
+  }
+
+  /* 会社概要セクション */
   .outline-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
 
   .outline-section .section-label-en {
@@ -303,9 +547,10 @@ import Footer from '../components/Footer.astro';
     font-size: 1.02rem;
   }
 
+  /* レスポンシブ */
   @media (max-width: 768px) {
-    .page-hero {
-      padding: 120px 0 60px;
+    .page-hero-image {
+      height: 250px;
     }
 
     .page-hero-title {
@@ -317,6 +562,7 @@ import Footer from '../components/Footer.astro';
     }
 
     .philosophy-section,
+    .profile-section,
     .outline-section {
       padding: 60px 0;
     }
@@ -335,6 +581,23 @@ import Footer from '../components/Footer.astro';
 
     .ceo-signature {
       padding-right: 25px;
+    }
+
+    .member-card {
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+    }
+
+    .member-image {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .member-name-ja {
+      font-size: 1.6rem;
     }
 
     .outline-list {
