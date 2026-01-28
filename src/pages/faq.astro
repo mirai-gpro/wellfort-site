@@ -1,0 +1,621 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="よくあるご質問">
+  <Header />
+
+  <!-- ヒーローセクション -->
+  <section class="faq-hero">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1 class="hero-title">よくあるご質問</h1>
+        <p class="hero-subtitle">
+          お客様からよくいただくご質問をまとめました
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 検索バー -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-wrapper fade-in">
+        <input
+          type="text"
+          id="faq-search"
+          class="search-input"
+          placeholder="キーワードで検索..."
+        />
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- カテゴリータブ -->
+  <section class="category-section">
+    <div class="container">
+      <div class="category-tabs fade-in">
+        <button class="category-btn active" data-category="all">すべて</button>
+        <button class="category-btn" data-category="service">サービスについて</button>
+        <button class="category-btn" data-category="inspection">検査について</button>
+        <button class="category-btn" data-category="price">料金について</button>
+        <button class="category-btn" data-category="usage">ご利用方法</button>
+        <button class="category-btn" data-category="other">その他</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQリスト -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-list">
+
+        <!-- サービスについて -->
+        <div class="faq-item fade-in" data-category="service">
+          <div class="faq-question">
+            <h3>ウェルテクトとはどのようなサービスですか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>ウェルテクトは、遺伝子検査・血液検査・がんのリスク検査・AIによる健康アドバイス・オンライン健康相談の5つのサービスを組み合わせた、総合的な健康モニタリングサービスです。検査結果をもとに医師がオンラインで健康相談を行い、病気の早期発見・早期治療をサポートします。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="service">
+          <div class="faq-question">
+            <h3>検査がこれらの組み合わせなのはなぜですか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>がんやその他疾病の発症には、先天的要素と後天的要素があり、生活習慣病もその一因です。罹患しやすい疾病を「遺伝子検査」で、現在の健康状態を「血液検査」「がんのスクリーニング検査」で把握するためです。</p>
+            <p>各検査結果を確認した医師がオンライン上で総合的に健康アドバイスをしてくれます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="service">
+          <div class="faq-question">
+            <h3>どのような人が対象ですか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>以下の条件を満たす方が対象となります：</p>
+            <ul>
+              <li>日本国内に住所を持っている方</li>
+              <li>20歳以上満74歳以下の方</li>
+              <li>現在がんに罹患していない方</li>
+              <li>過去5年間がんに罹患していない方（がん治療が完了してから5年以上経過している方）</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 検査について -->
+        <div class="faq-item fade-in" data-category="inspection">
+          <div class="faq-question">
+            <h3>検査キットはいつ届きますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>お申し込みから5営業日以内にご自宅に検査キットをお届けします。遺伝子検査キット、血液検査キット、がんのリスク検査キットがまとめて届きます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="inspection">
+          <div class="faq-question">
+            <h3>検査結果はいつわかりますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>検査キット到着後、2〜4週間程度で各検査結果をご連絡いたします。結果が出次第、オンライン健康診断の予約メールをお送りします。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="inspection">
+          <div class="faq-question">
+            <h3>検査は自宅でできますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>はい、すべての検査はご自宅で実施できます。遺伝子検査は唾液採取、血液検査は指先からの微量採血、がんのリスク検査は尿の採取となります。詳しい手順は検査キットに同梱されている説明書をご覧ください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="inspection">
+          <div class="faq-question">
+            <h3>がんドックが受けられる病院はどこがありますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>国立研究開発法人国立がん研究センター中央病院 検診センター、公益財団法人がん研究会 有明病院検診センター等、全国700の提携医療機関でご利用いただけます。</p>
+            <p>詳しい提携医療機関については、お問い合わせください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="inspection">
+          <div class="faq-question">
+            <h3>なぜ年3回検査する必要があるのですか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>健康状態は常に変化しています。年3回の定期検査により、体調の変化を早期に発見し、適切な予防策を講じることができます。</p>
+            <p>検査結果の推移を継続的に追跡することで、生活習慣の改善効果を実感できるだけでなく、病気の兆候を見逃さず、早期発見・早期治療につなげることが可能になります。</p>
+          </div>
+        </div>
+
+        <!-- 料金について -->
+        <div class="faq-item fade-in" data-category="price">
+          <div class="faq-question">
+            <h3>料金はいくらですか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>料金は選択されるプランによって異なります。詳しくは検査商品一覧ページをご覧いただくか、お問い合わせください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="price">
+          <div class="faq-question">
+            <h3>支払い方法は何がありますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>クレジットカード決済に対応しております。VISA、MasterCard、JCB、American Express、Diners Clubがご利用いただけます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="price">
+          <div class="faq-question">
+            <h3>がんリスクが高かった場合の補償について教えてください</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>がんリスクが高かった場合は、がんドックの受診料を弊社が負担いたします。D判定時の場合、年間20万円まで補償いたします。</p>
+          </div>
+        </div>
+
+        <!-- ご利用方法 -->
+        <div class="faq-item fade-in" data-category="usage">
+          <div class="faq-question">
+            <h3>オンライン健康相談はどのように行われますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>検査結果をもとに医師とオンラインで健康相談を行います。初回は30分、2回目以降は15分のパーソナルな医療サポートを提供します。ビデオ通話を使用し、ご予約いただいた日時に実施いたします。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="usage">
+          <div class="faq-question">
+            <h3>マイページではどのようなことができますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>マイページでは、検査結果の閲覧、過去の検査履歴の確認、オンライン健康相談の予約、AIによる健康アドバイスの閲覧などができます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="usage">
+          <div class="faq-question">
+            <h3>検査キットの返送方法を教えてください</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>検査キットには返信用封筒が同梱されています。採取した検体を封筒に入れ、ポストに投函するだけで完了します。送料は無料です。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="usage">
+          <div class="faq-question">
+            <h3>解約はできますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>はい、解約は可能です。マイページまたはお問い合わせフォームよりご連絡ください。解約のタイミングや条件については、利用規約をご確認ください。</p>
+          </div>
+        </div>
+
+        <!-- その他 -->
+        <div class="faq-item fade-in" data-category="other">
+          <div class="faq-question">
+            <h3>個人情報の取り扱いについて教えてください</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>お客様の個人情報は、プライバシーポリシーに基づき厳重に管理しております。検査結果などの医療情報も、法令に基づき適切に保管・管理いたします。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="other">
+          <div class="faq-question">
+            <h3>医療機関との連携はありますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>はい、全国700以上の医療機関と提携しております。必要に応じて、提携医療機関での精密検査や治療をご案内することができます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in" data-category="other">
+          <div class="faq-question">
+            <h3>家族で利用することはできますか？</h3>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>はい、ご家族それぞれでお申し込みいただけます。各自のマイページで個別に管理することができます。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせCTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card fade-in">
+        <h2>解決しない疑問がありますか？</h2>
+        <p>お気軽にお問い合わせください。専門スタッフが丁寧にお答えいたします。</p>
+        <a href="/contact" class="btn-cta">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // フェードインアニメーション
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -80px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      fadeInObserver.observe(el);
+    });
+
+    // FAQ アコーディオン機能
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+
+      question?.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // カテゴリーフィルター機能
+    const categoryBtns = document.querySelectorAll('.category-btn');
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-category');
+
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        faqItems.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            (item as HTMLElement).style.display = 'block';
+          } else {
+            (item as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 検索機能
+    const searchInput = document.getElementById('faq-search') as HTMLInputElement;
+
+    searchInput?.addEventListener('input', (e) => {
+      const searchTerm = (e.target as HTMLInputElement).value.toLowerCase();
+
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question h3')?.textContent?.toLowerCase() || '';
+        const answer = item.querySelector('.faq-answer')?.textContent?.toLowerCase() || '';
+
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+          (item as HTMLElement).style.display = 'block';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+
+      if (searchTerm) {
+        categoryBtns.forEach(btn => btn.classList.remove('active'));
+        categoryBtns[0].classList.add('active');
+      }
+    });
+  });
+</script>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .faq-hero {
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    padding: 140px 0 80px;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+
+  .search-section {
+    padding: 40px 0;
+    background: white;
+  }
+
+  .search-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #40b0a0;
+    box-shadow: 0 0 0 4px rgba(64, 176, 160, 0.1);
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+  }
+
+  .category-section {
+    padding: 30px 0;
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .category-btn {
+    padding: 10px 24px;
+    background: #f5f5f5;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .category-btn:hover {
+    background: #e0f5f2;
+    color: #40b0a0;
+  }
+
+  .category-btn.active {
+    background: #40b0a0;
+    color: white;
+    border-color: #40b0a0;
+  }
+
+  .faq-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .faq-question {
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .faq-question h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin: 0;
+    padding-right: 20px;
+    line-height: 1.6;
+  }
+
+  .faq-icon {
+    font-size: 28px;
+    color: #40b0a0;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 30px;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding: 0 30px 25px 30px;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .faq-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-answer ul {
+    margin: 15px 0;
+    padding-left: 25px;
+  }
+
+  .faq-answer li {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e0f5f2 0%, #d0ebe7 100%);
+  }
+
+  .cta-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+
+  .cta-card h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+
+  .cta-card p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.8;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    color: white;
+    padding: 16px 50px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(64, 176, 160, 0.3);
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(64, 176, 160, 0.4);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+  .fade-in.is-visible {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero {
+      padding: 120px 0 60px;
+    }
+
+    .category-tabs {
+      flex-direction: column;
+    }
+
+    .category-btn {
+      width: 100%;
+    }
+
+    .faq-question {
+      padding: 20px;
+    }
+
+    .faq-question h3 {
+      font-size: 16px;
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 20px 20px 20px;
+    }
+
+    .cta-card {
+      padding: 40px 30px;
+    }
+
+    .cta-card h2 {
+      font-size: 26px;
+    }
+  }
+</style>
