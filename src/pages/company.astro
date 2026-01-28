@@ -1,0 +1,354 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="企業情報">
+  <Header />
+
+  <!-- メインビジュアル -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="container">
+        <h1 class="page-hero-title fade-in">企業情報</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- 経営理念 -->
+  <section class="philosophy-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label-en">Philosophy</span>
+        <h2 class="section-title">経営理念</h2>
+      </div>
+
+      <div class="philosophy-main fade-in">
+        <p>
+          お客様の満足のために、<br>
+          新しい技術とサービスを取り入れながら<br>
+          健康寿命延伸を実現します。
+        </p>
+      </div>
+
+      <h3 class="philosophy-subtitle fade-in">
+        健康で長寿を<br>楽しめる未来へ
+      </h3>
+
+      <div class="philosophy-content fade-in">
+        <p>
+          真の寿命とは人生を楽しむことができる健康寿命のこと。日本では平均寿命と健康寿命に約10年程度のギャップがあります。
+        </p>
+        <p>
+          Wellfortでは、そのギャップを埋めるために3つの課題（予防医療、検診の理解と促進、がんの早期発見）に取り組んでいきます。
+        </p>
+        <p>
+          病気に罹り、健康保険を利用し通院するというフローから、病院に罹らなくてもよい健康管理と対策といった予防医療、検診<sup>※</sup>といった病気にならないため（未病）ための活動推進。そして、日本人の死亡原因1位（約30%）であるがんの早期発見（ステージI以前）のサポートをすることで皆様の健康寿命延伸に貢献することを目指しております。
+        </p>
+        <p>
+          更に、健康寿命延伸と共にアンチエイジングや美の追及もサポートしていきます。
+        </p>
+        <p class="note">
+          ※健診：健康状態を確認する健康診断、検診：病気を発見するために行う検査
+        </p>
+      </div>
+
+      <div class="ceo-signature fade-in">
+        <p class="ceo-company">株式会社ウェルフォート</p>
+        <p class="ceo-title">CEO 物部慶幸</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社概要 -->
+  <section class="outline-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label-en">Outline</span>
+        <h2 class="section-title">会社概要</h2>
+      </div>
+
+      <dl class="outline-list fade-in">
+        <div class="outline-item">
+          <dt>商号</dt>
+          <dd>株式会社ウェルフォート</dd>
+        </div>
+        <div class="outline-item">
+          <dt>オフィス</dt>
+          <dd>東京都港区六本木7-7-7 8階</dd>
+        </div>
+        <div class="outline-item">
+          <dt>設立日</dt>
+          <dd>令和4年9月28日</dd>
+        </div>
+        <div class="outline-item">
+          <dt>資本金</dt>
+          <dd>12,000万円（準備金2,500万円含む）</dd>
+        </div>
+        <div class="outline-item">
+          <dt>事業・サービス</dt>
+          <dd>
+            ヘルスケア関連ビジネスの運営業務、ヘルスケア関連サービス、<br>
+            製品の販売業務、経営コンサルティング等
+          </dd>
+        </div>
+        <div class="outline-item">
+          <dt>代表取締役</dt>
+          <dd>物部慶幸</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    width: 100%;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    padding: 140px 0 80px;
+  }
+
+  .page-hero-content {
+    text-align: center;
+  }
+
+  .page-hero-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-label-en {
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+    letter-spacing: 0.15em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.4;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in:nth-child(5) { animation-delay: 0.5s; }
+  .fade-in:nth-child(6) { animation-delay: 0.6s; }
+
+  .philosophy-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f3 100%);
+  }
+
+  .philosophy-main {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .philosophy-main p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 2;
+    color: #333;
+  }
+
+  .philosophy-subtitle {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    color: #2c3e50;
+  }
+
+  .philosophy-content {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .philosophy-content p {
+    margin-bottom: 25px;
+    line-height: 2;
+    color: #555;
+    font-size: 1.05rem;
+  }
+
+  .philosophy-content p:last-of-type:not(.note) {
+    margin-bottom: 0;
+  }
+
+  .philosophy-content .note {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .philosophy-content sup {
+    font-size: 0.75em;
+    color: #40b0a0;
+  }
+
+  .ceo-signature {
+    text-align: right;
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding-right: 50px;
+  }
+
+  .ceo-company {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #666;
+  }
+
+  .ceo-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .outline-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+  }
+
+  .outline-section .section-label-en {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .outline-section .section-title {
+    color: white;
+  }
+
+  .outline-list {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .outline-item {
+    display: flex;
+    padding: 25px 0;
+    border-bottom: 1px solid #e8e8e8;
+    align-items: flex-start;
+  }
+
+  .outline-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .outline-item:first-child {
+    padding-top: 0;
+  }
+
+  .outline-item dt {
+    width: 200px;
+    font-weight: bold;
+    flex-shrink: 0;
+    color: #2c3e50;
+    font-size: 1.05rem;
+  }
+
+  .outline-item dd {
+    flex: 1;
+    line-height: 1.9;
+    color: #555;
+    margin: 0;
+    font-size: 1.02rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 120px 0 60px;
+    }
+
+    .page-hero-title {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .philosophy-section,
+    .outline-section {
+      padding: 60px 0;
+    }
+
+    .philosophy-main p {
+      font-size: 1.2rem;
+    }
+
+    .philosophy-subtitle {
+      font-size: 1.6rem;
+    }
+
+    .philosophy-content {
+      padding: 30px 25px;
+    }
+
+    .ceo-signature {
+      padding-right: 25px;
+    }
+
+    .outline-list {
+      padding: 30px 25px;
+    }
+
+    .outline-item {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+
+    .outline-item dt {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+</style>

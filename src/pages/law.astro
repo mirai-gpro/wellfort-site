@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="特定商取引法に基づく表記">
+  <Header />
+
+  <!-- メインビジュアル -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="container">
+        <h1 class="page-hero-title fade-in">特定商取引法に基づく表記</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特定商取引法セクション -->
+  <section class="law-section">
+    <div class="container">
+      <div class="law-intro fade-in">
+        <p>
+          特定商取引法に基づき、インターネット通信販売業務について、以下のとおり表記いたします。
+        </p>
+      </div>
+
+      <div class="law-table fade-in">
+        <dl class="law-list">
+          <div class="law-item">
+            <dt>販売事業者名</dt>
+            <dd>株式会社ウェルフォート</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>運営統括責任者</dt>
+            <dd>代表取締役 物部 慶幸</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>所在地</dt>
+            <dd>〒106-0032 東京都港区六本木7-7-7 8階</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>電話番号</dt>
+            <dd>03-6629-3522</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>電話対応時間</dt>
+            <dd>平日午前中10時〜午後6時まで（土日祝日・年末年始を除く）</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>メールアドレス</dt>
+            <dd><a href="mailto:info@wellfort.co.jp">info@wellfort.co.jp</a></dd>
+          </div>
+
+          <div class="law-item">
+            <dt>お問い合わせ</dt>
+            <dd>
+              お問い合わせは上記メールアドレスまたは<a href="/contact">お問い合わせフォーム</a>よりお気軽にお問い合わせください。
+            </dd>
+          </div>
+
+          <div class="law-item">
+            <dt>サイトURL</dt>
+            <dd><a href="https://wellfort.co.jp/">https://wellfort.co.jp/</a></dd>
+          </div>
+
+          <div class="law-item">
+            <dt>お支払い方法</dt>
+            <dd>クレジットカード・請求書払い</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>商品代金以外の必要料金</dt>
+            <dd>
+              ・消費税<br>
+              ・送料<br>
+              ・銀行振込手数料<br>
+              ・コンビニ（あと払い手数料）<br>
+              ・代金引換手数料（商品代引払いの場合）<br>
+              ・お客様都合によるキャンセルについては、キャンセル料として商品価格の10％と返金時の振込手数料及び返品に関わる送料はお客様のご負担となります。
+            </dd>
+          </div>
+
+          <div class="law-item">
+            <dt>お支払い金額</dt>
+            <dd>お支払い金額につきましては各商品ページをご確認ください。</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>送料</dt>
+            <dd>送料につきましては各商品ページを参照ください。</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>販売数量</dt>
+            <dd>商品ごとに設定しております。商品ページにてご確認ください。</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>お申込 有効期限</dt>
+            <dd>代引商品は14日間、前払い商品は3ヵ月間です。</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>商品引き渡し方法</dt>
+            <dd>当社手配後、物流会社による配送となります。</dd>
+          </div>
+
+          <div class="law-item">
+            <dt>返品・不良品について</dt>
+            <dd>
+              <p>「不良品・当社の商品の間違い」の場合は当社が負担いたします。配送途中の破損などの事故がございましたら、弊社までご連絡ください。送料・手数料ともに弊社負担でご連絡から14日以内に新品をご送付いたします。</p>
+              <p class="section-title">【返品対象】</p>
+              <p>「不良品・当社の商品の間違い」の場合</p>
+              <p class="section-title">【返品時期】</p>
+              <p>ご購入後14日以内にご連絡があった場合に返金可能となります。</p>
+              <p class="section-title">【返品方法】</p>
+              <p>カスタマーセンターへご連絡いただくか、返品受付フォームでご連絡ください。</p>
+            </dd>
+          </div>
+
+          <div class="law-item">
+            <dt>表現、および商品に関する注意書き</dt>
+            <dd>本商品に示された表現や再現性には個人差があり、必ずしも利益や効果を保証したものではございません。</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    width: 100%;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    padding: 140px 0 80px;
+  }
+
+  .page-hero-content {
+    text-align: center;
+  }
+
+  .page-hero-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+
+  .law-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .law-intro {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .law-intro p {
+    line-height: 2;
+    color: #555;
+    font-size: 1.05rem;
+  }
+
+  .law-table {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .law-list {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .law-item {
+    display: flex;
+    padding: 30px 0;
+    border-bottom: 2px solid #f0f0f0;
+    gap: 40px;
+  }
+
+  .law-item:first-child {
+    padding-top: 0;
+  }
+
+  .law-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .law-item dt {
+    width: 220px;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: #40b0a0;
+    font-size: 1.05rem;
+    padding-top: 3px;
+  }
+
+  .law-item dd {
+    flex: 1;
+    line-height: 2;
+    color: #555;
+    font-size: 1.02rem;
+    margin: 0;
+  }
+
+  .law-item dd p {
+    margin-bottom: 15px;
+  }
+
+  .law-item dd p:last-child {
+    margin-bottom: 0;
+  }
+
+  .law-item dd a {
+    color: #40b0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .law-item dd a:hover {
+    color: #2d8a7e;
+    text-decoration: underline;
+  }
+
+  .section-title {
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 20px 0 10px;
+    font-size: 1.05rem;
+  }
+
+  .law-item dd .section-title:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 120px 0 60px;
+    }
+
+    .page-hero-title {
+      font-size: 1.8rem;
+    }
+
+    .law-section {
+      padding: 60px 0;
+    }
+
+    .law-intro,
+    .law-table {
+      padding: 30px 25px;
+    }
+
+    .law-item {
+      flex-direction: column;
+      gap: 15px;
+      padding: 25px 0;
+    }
+
+    .law-item dt {
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+</style>
