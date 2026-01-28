@@ -4,14 +4,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="ニュース">
+<BaseLayout title="ニュース | 株式会社ウェルフォート">
   <Header />
 
   <!-- メインビジュアル -->
   <section class="page-hero">
-    <div class="page-hero-content">
-      <div class="container">
-        <h1 class="page-hero-title fade-in">ニュース</h1>
+    <div class="page-hero-image">
+      <img src="/images/news.jpg" alt="ニュース">
+      <div class="page-hero-overlay">
+        <h1 class="page-hero-title">ニュース</h1>
       </div>
     </div>
   </section>
@@ -26,8 +27,10 @@ import Footer from '../components/Footer.astro';
       <div class="news-list">
         <!-- ニュース記事1 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_250325180332_0.jpg" alt="吉成名高選手">
+          </div>
           <div class="news-content">
-            <div class="news-date">2025.03.25</div>
             <h3 class="news-title">吉成名高選手 さいたまスーパーアリーナ『ONE 172: TAKERU vs. RODTANG』にて3R KO勝利を収める</h3>
             <p class="news-text">
               ウェルフォートがパンツスポンサーを務める吉成名高選手が3月23日にさいたまスーパーアリーナで行われた『ONE 172: TAKERU vs. RODTANG』にてラック・エラワン選手に3RKO勝利を収め、ONE初陣を白星で飾って連勝を「36」に伸ばしました。名高選手、本当におめでとうございます。今後もウェルフォートでは名高選手を応援します！
@@ -37,11 +40,16 @@ import Footer from '../components/Footer.astro';
 
         <!-- ニュース記事2 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_250306160217_0.jpg" alt="もうひとつの太陽">
+          </div>
           <div class="news-content">
-            <div class="news-date">2025.03.06</div>
             <h3 class="news-title">健康モニタリングの重要性を訴求するショートムービー「もうひとつの太陽」を公開</h3>
             <p class="news-text">
               健康モニタリングサービス「ウェルテクト」を提供する株式会社ウェルフォート（所在地:東京都港区、代表取締役:物部慶幸）は2025年3月6日（木）より、健康予防の重要性を訴求する新しいショートムービー「もうひとつの太陽」を公開いたしました。
+            </p>
+            <p class="news-text">
+              本動画は、多くの方が健康を失ってから後悔するという現状に着目し、予防の重要性を分かりやすく伝えることを目的として制作いたしました。一部のガンを除いて、人間ドックでの腫瘍マーカーや便潜血検査では早期ガン（ステージ0~1）を発見することはできません。早期発見には医師のアドバイスのもと、定期的な検査が必要です。視聴者の方々に、健康維持の大切さを事前に認識していただき、予防的なアプローチの重要性について理解を深めていただくことを目指しています。
             </p>
             <a href="https://youtu.be/LtHVzxQNTHQ" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
           </div>
@@ -49,11 +57,22 @@ import Footer from '../components/Footer.astro';
 
         <!-- ニュース記事3 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_241202133014_0.jpg" alt="ムエタイRWS">
+          </div>
           <div class="news-content">
-            <div class="news-date">2024.12.02</div>
             <h3 class="news-title">ムエタイRWS（ラジャダムナンワールドシリーズ）第4回日本大会</h3>
             <p class="news-text">
               2024年12月1日に横浜大さん橋ホールで行われた＜ムエタイRWS（ラジャダムナンワールドシリーズ）第4回日本大会において、株式会社ウェルフォートは大会スポンサーをつとめました。また、代表取締役会長本田大作が、松田龍聖選手、ゴッダオ・ペットソンヌーン選手に試合前花束贈呈をさせて頂きました。
+            </p>
+            <p class="news-text">
+              本大会では当社が2023年よりオフィシャルスポンサーをつとめております、ラジャ3階級制覇を成し遂げた王者・吉成名高選手が、前ラジャ認定ライトフライ級王者ペットヌン・ペットムエタイジム選手にフルマークの判定3-0で圧勝。3度目の圧勝を果たし、自身34連勝と記録を伸ばしました。
+            </p>
+            <p class="news-text">
+              2025年も、当社は吉成名高選手を応援します！
+            </p>
+            <p class="news-text">
+              吉成名高選手公式ウェブサイトは下記よりご確認ください。
             </p>
             <a href="https://www.nadaka-eiwa.com/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
           </div>
@@ -61,11 +80,16 @@ import Footer from '../components/Footer.astro';
 
         <!-- ニュース記事4 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_241021114458_0.jpg" alt="オーディエンス賞">
+          </div>
           <div class="news-content">
-            <div class="news-date">2024.10.21</div>
             <h3 class="news-title">『The JSSA Tokyo Pitch Award & Power Matching Booth Vol.55』にて「オーディエンス賞」受賞</h3>
             <p class="news-text">
-              10月8日に実施されたスタートアップ支援協会主催『The JSSA Tokyo Pitch Award & Power Matching Booth Vol.55』にて、弊社会長本田大作が会場の皆様から投票頂き1番投票数が多い者に贈られる「オーディエンス賞」、審査員2名から「審査員賞」を其々受賞いたしました。
+              10月8日に実施されたスタートアップ支援協会主催『The JSSA Tokyo Pitch Award & Power Matching Booth Vol.55』にて、弊社会長本田大作が会場の皆様から投票頂き1番投票数が多い者に贈られる「オーディエンス賞」、審査員2名から「審査員賞」を其々受賞いたしました。今後もより良いサービスをご提供できるよう、日々邁進して参ります。
+            </p>
+            <p class="news-text">
+              イベントの様子は下記からご覧になれます。
             </p>
             <a href="https://prtimes.jp/main/html/rd/p/000000100.000037686.html" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
           </div>
@@ -73,22 +97,42 @@ import Footer from '../components/Footer.astro';
 
         <!-- ニュース記事5 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_241018143849_0.jpg" alt="ウェルテクト新ラインナップ">
+          </div>
           <div class="news-content">
-            <div class="news-date">2024.10.18</div>
             <h3 class="news-title">健康モニタリングサービス「ウェルテクト」に、新ラインナップが登場</h3>
             <p class="news-text">
               株式会社ウェルフォートは、年3回の検査と4回の健康相談を実施して健康モニタリングをする「ウェルテクト スタンダード」（330,000円）に加え、年2回の検査と2回の健康相談を実施する「ウェルテクト ライト」（165,000円）と、がんのリスク検査1回と健康相談1回が実施できる「ウェルテクト トライアル」（79,200円）の2つの新プランを提供いたします。
+            </p>
+            <p class="news-text">※表記価格は全て税込み</p>
+            <p class="news-text">
+              「ウェルテクト スタンダード」：初回遺伝子検査1回、血液検査3回、がんのリスク検査3回、オンライン健康相談4回
+            </p>
+            <p class="news-text">
+              「ウェルテクト ライト」：血液検査1回、がんのリスク検査2回、オンライン健康相談2回
+            </p>
+            <p class="news-text">
+              「ウェルテクト トライアル」：がんのリスク検査1回、オンライン健康相談1回
+            </p>
+            <p class="news-text">
+              今後も皆様の健康寿命延伸のため、邁進して参ります。
             </p>
           </div>
         </article>
 
         <!-- ニュース記事6 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240624151851_0.png" alt="東京メトロ広告">
+          </div>
           <div class="news-content">
-            <div class="news-date">2024.06.24</div>
             <h3 class="news-title">ウェルテクトの記事広告が東京メトロ16,500車両に掲載</h3>
             <p class="news-text">
               ウェルテクトの紹介記事広告が、東京メトロ（銀座線、日比谷線、丸ノ内線、南北線、半蔵門線、東西線、千代田線、有楽町・副都心線）16,500車両に、6月21日から約3週間にわたり掲載されます。
+            </p>
+            <p class="news-text">
+              是非この機会にご覧ください。
             </p>
             <a href="https://urbanlifemetro.jp/picks/shop-wellfort/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
           </div>
@@ -96,26 +140,231 @@ import Footer from '../components/Footer.astro';
 
         <!-- ニュース記事7 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240607170951_0.jpg" alt="愛媛大学共同研究">
+          </div>
           <div class="news-content">
-            <div class="news-date">2024.06.07</div>
             <h3 class="news-title">【共同研究】愛媛大学と連携し、高齢者のQOL向上と健康寿命延伸を目指した共同研究を実施</h3>
             <p class="news-text">
-              富裕層を対象に健康モニタリングサービスを提供する株式会社ウェルフォート（東京都港区、代表取締役CEO 物部慶幸）は、2023年4月1日より、愛媛大学（愛媛県松山市、学長 仁科弘重 教授）農学部 食品健康機能研究センター（副センター長 西甲介 准教授）と連携し、将来の少子高齢者社会の到来に備え、高齢者のQOL向上と健康寿命延伸を目指し、共同研究を実施しております。
+              富裕層を対象に健康モニタリングサービスを提供する株式会社ウェルフォート（東京都港区、代表取締役CEO 物部慶幸）は、2023年4月1日より、愛媛大学（愛媛県松山市、学長 仁科弘重 教授）農学部 食品健康機能研究センター（副センター長 西甲介 准教授）と連携し、将来の少子高齢者社会の到来に備え、高齢者のQOL向上と健康寿命延伸を目指し、以下のテーマで共同研究を実施しております。
+            </p>
+            <p class="news-text">
+              1．共同研究題目 高齢者のQOL向上に有効な黒生姜由来成分の探索
+            </p>
+            <p class="news-text">
+              2．研究目的 高齢者のQOLを阻害する要因（①認知症 ②サルコペニア/フレイル ③骨粗鬆症 ④抗炎症）の観点から、黒生姜由来成分の有効性を検証する。
             </p>
           </div>
         </article>
 
         <!-- ニュース記事8 -->
         <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124145219_0.jpg" alt="プレスリリース">
+          </div>
           <div class="news-content">
-            <div class="news-date">2023.07.10</div>
-            <h3 class="news-title">ヘルスケアサービス[ウェルテクト]の発売開始のプレスリリースを発信しました</h3>
+            <h3 class="news-title">7月10日 ヘルスケアサービス[ウェルテクト]の発売開始のプレスリリースを発信しました。</h3>
             <p class="news-text">
               株式会社ウェルフォートは、7月10日にヘルスケアサービス[ウェルテクト]の発売を開始したことを報道関係者に発表いたしました。
             </p>
           </div>
         </article>
 
+        <!-- ニュース記事9 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124145732_0.jpg" alt="名高吉成選手">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">5月14日 大田区総合体育館で開催された名高吉成選手の試合をスポンサーしました。</h3>
+            <p class="news-text">
+              『第一回国際親善大会 KICKBOXING WORLD CUP inJAPAN/TOKYO』が開催され、ウェルフォートがスポンサーをする名高吉成（日本/エイワスポーツジム）選手も出場し、1R2分35秒の鮮やかなKO勝ちを収めました。 名高選手はWellfortが運営するアンチエイジングサロン「AGEM」でのトレーニングでも、そのパフォーマンスを披露してくれました。今後もWellfortは名高吉成選手を応援していきます。
+            </p>
+          </div>
+        </article>
+
+        <!-- ニュース記事10 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124144950_0.jpg" alt="AGEMナイトプラン">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">AGEMお得なナイトプラン始まりました！</h3>
+            <p class="news-text">
+              今月から18-21時でお得なナイトプラン始めました！ 時間限定で通常よりも月会費、セッション金額がお安くご利用可能です。詳細か気になる方は、LINE＠までお問い合わせください。
+            </p>
+            <a href="https://a-gem.jp/230301/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事11 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124144618_0.jpg" alt="バレンタイン">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">AGEMバレンタイン情報</h3>
+            <p class="news-text">
+              今月はバレンタインということで、AGEMで販売している話題のチョコ【メディカレート】が、2月7日から3月14日までの期間限定で、大変お得になっております！ AGEMでは、通常価格の15％OFFで販売しており、この期間中は最大でさらに10％OFFでお買い求めいただけて、最大25%OFFです。医師とパティシエが共同開発した、健康に気を遣っている方や糖尿病の方でも安心して食べられる糖質フリーのチョコレートです。
+            </p>
+            <a href="https://a-gem.jp/230201/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事12 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124144451_0.jpg" alt="中村美里選手">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">AGEMにオリンピック銅メダリストの柔道家、中村美里選手がご来店</h3>
+            <p class="news-text">
+              現在は、選手兼アドバイザーとして活躍中のオリンピック銅メダリスト、柔道家の中村美里選手にご来店していただきました。
+            </p>
+            <a href="https://a-gem.jp/230115/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事13 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124144309_0.jpg" alt="年末年始">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">年末年始の営業のお知らせ</h3>
+            <p class="news-text">
+              日頃よりAGEMをご利用下さいまして誠にありがとうございます。 年末年始の営業についてご連絡させて頂きます。 年末は12/30までに営業となり、年明けは1/6より営業致します。 年末年始は混雑が予想されますので、ご予約はお早めにお願い致します！ 皆様のご来店を心よりお待ちしております。
+            </p>
+            <a href="https://a-gem.jp/221220/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事14 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240125112532_0.jpg" alt="名高選手来店">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">ムエタイ天才少年の名高選手がご来店</h3>
+            <p class="news-text">
+              先週、神奈川・大さん橋ホールで試合を終えたばかりのAGEMがスポンサーさせていただいてる名高選手がご来店！！！
+            </p>
+            <p class="news-text">
+              本日は、脱毛エステを受けて下さいました。
+            </p>
+            <p class="news-text">
+              AGEMは、トレーニングとエステを同時に受けられる事がお客様から大変、好評頂いております！
+            </p>
+            <p class="news-text">
+              今後のご活躍をスタッフ一同で応援・サポートして参ります。
+            </p>
+            <a href="https://a-gem.jp/221219/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事15 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240125112637_0.jpg" alt="小倉ひまわり">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">プロゴルファーの小倉ひまわりさんご来店</h3>
+            <p class="news-text">
+              ジュニア時代は日本代表のキャプテンとして世界ジュニアゴルフ選手権に出場し優勝を果たすなど、ジュニア時代から活躍をしてきたプロゴルファーの小倉ひまわりさんにご来店していただきました。
+            </p>
+            <p class="news-text">
+              AGEMは、トレーニングとエステを同時に受けられる事がお客様から大変、好評頂いております！
+            </p>
+            <p class="news-text">
+              今後のご活躍をスタッフ一同で応援しております！
+            </p>
+            <a href="https://a-gem.jp/221216/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事16 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124143930_0.jpg" alt="卜部功也選手">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">初代『K-1』王座獲得者・卜部功也選手がAGEMにご来店</h3>
+            <p class="news-text">
+              【初代『K-1』K-1王座獲得者・卜部功也選手がAGEMでトレーニング！】卓越したテクニックとディフェンスを持つ王座獲得者！ 有名な打撃系格闘技イベント『K-1』でも「アンタッチャブル」の異名を冠する「卜部功也」選手に、AGEMにご来店いただきました。
+            </p>
+            <a href="https://a-gem.jp/221120/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事17 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124083358_0.jpg" alt="本野美香選手">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">DEEP JEWELSストロー級暫定王者本野美香選手がご来店</h3>
+            <p class="news-text">
+              AGEMがスポンサーをしているDEEP JEWELSストロー級暫定王者本野美香選手にご来店していただきました。
+            </p>
+            <a href="https://a-gem.jp/221105/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事18 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124083327_0.jpg" alt="石井一成選手">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">K-1の石井一成選手がご来店</h3>
+            <p class="news-text">
+              AGEMがスポンサーをしているキッズ・ジュニア時代から数々のタイトルを総なめにし、ムエタイの強豪選手として注目を集めるK-1の石井一成選手がご来店してくださいました。
+            </p>
+            <a href="https://a-gem.jp/221030/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事19 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124083247_0.jpg" alt="河村美咲">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">モデルや女優で活躍されている河村美咲さんご来店</h3>
+            <p class="news-text">
+              モデルや女優で活躍されている河村美咲さんご来店 ファッション雑誌やテレビでご活躍されている美咲さん 久々とは思えない綺麗なフォームでした。 夏の肌見せ前にトレーニングやエステで美ボディ作りましょう！
+            </p>
+            <a href="https://a-gem.jp/220501/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事20 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124143621_0.jpg" alt="LINE開始">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">LINE@始めました</h3>
+            <p class="news-text">
+              AGEMのLINE＠はじめました！ご登録者様限定のお得なクーポンなどを配信しておりますのでぜひご登録くださいませ！ 登録していただいたお客様にはプロテインもしくはエステ30分を無料でプレゼントしております。 LINEのID検索で@tcj7527jを検索！
+            </p>
+            <a href="https://a-gem.jp/220401/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
+
+        <!-- ニュース記事21 -->
+        <article class="news-item fade-in">
+          <div class="news-image">
+            <img src="/files/news_240124144653_0.jpg" alt="AGEMリニューアル">
+          </div>
+          <div class="news-content">
+            <h3 class="news-title">3/1 AGEMリニューアルオープン</h3>
+            <p class="news-text">
+              3/1 AGEMリニューアルオープン！トレーニングジムに加え新たにエステルームを増設いたしました。 インディバ、ハイパーナイフ、ルミクスA9、幹細胞フェイシャルなど豊富に取り揃え体の内側外側から美しくなるサポートできるアンチエイジングサロンとして生まれ変わります。 初回体験8,650円です。ご予約お待ちしております。
+            </p>
+            <a href="https://a-gem.jp/220301/" class="news-link" target="_blank" rel="noopener">詳細はこちら</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -124,30 +373,55 @@ import Footer from '../components/Footer.astro';
 </BaseLayout>
 
 <style>
+  /* ページヒーロー */
   .page-hero {
     width: 100%;
-    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
-    padding: 140px 0 80px;
+    margin-bottom: 0;
   }
 
-  .page-hero-content {
-    text-align: center;
+  .page-hero-image {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .page-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #f0f0f0;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .page-hero-title {
     color: white;
     font-size: 3rem;
     font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     letter-spacing: 0.05em;
   }
 
+  /* コンテナ */
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
+  /* セクションヘッダー */
   .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -160,6 +434,7 @@ import Footer from '../components/Footer.astro';
     line-height: 1.4;
   }
 
+  /* フェードインアニメーション */
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -174,26 +449,31 @@ import Footer from '../components/Footer.astro';
   }
 
   .fade-in:nth-child(1) { animation-delay: 0.1s; }
-  .fade-in:nth-child(2) { animation-delay: 0.15s; }
-  .fade-in:nth-child(3) { animation-delay: 0.2s; }
-  .fade-in:nth-child(4) { animation-delay: 0.25s; }
-  .fade-in:nth-child(5) { animation-delay: 0.3s; }
-  .fade-in:nth-child(6) { animation-delay: 0.35s; }
-  .fade-in:nth-child(7) { animation-delay: 0.4s; }
-  .fade-in:nth-child(8) { animation-delay: 0.45s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in:nth-child(5) { animation-delay: 0.5s; }
+  .fade-in:nth-child(6) { animation-delay: 0.6s; }
+  .fade-in:nth-child(7) { animation-delay: 0.7s; }
+  .fade-in:nth-child(8) { animation-delay: 0.8s; }
 
+  /* ニュースセクション */
   .news-section {
     padding: 100px 0;
     background: #f8f9fa;
   }
 
+  /* ニュースリスト */
   .news-list {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
   }
 
+  /* ニュースアイテム */
   .news-item {
+    display: flex;
+    gap: 40px;
     background: white;
     border-radius: 20px;
     padding: 40px;
@@ -206,30 +486,43 @@ import Footer from '../components/Footer.astro';
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
   }
 
+  .news-image {
+    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .news-item:hover .news-image img {
+    transform: scale(1.05);
+  }
+
   .news-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
 
-  .news-date {
-    font-size: 0.9rem;
-    color: #40b0a0;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-
   .news-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #2c3e50;
     margin-bottom: 20px;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .news-text {
     line-height: 1.9;
     color: #555;
-    font-size: 1rem;
+    font-size: 1.02rem;
     margin-bottom: 15px;
   }
 
@@ -239,24 +532,27 @@ import Footer from '../components/Footer.astro';
 
   .news-link {
     display: inline-block;
-    color: #40b0a0;
+    color: #667eea;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 10px 25px;
-    border: 2px solid #40b0a0;
+    margin-top: auto;
+    padding: 10px 20px;
+    border: 2px solid #667eea;
     border-radius: 25px;
     align-self: flex-start;
   }
 
   .news-link:hover {
-    background: #40b0a0;
+    background: #667eea;
     color: white;
+    transform: translateX(5px);
   }
 
+  /* レスポンシブ */
   @media (max-width: 768px) {
-    .page-hero {
-      padding: 120px 0 60px;
+    .page-hero-image {
+      height: 250px;
     }
 
     .page-hero-title {
@@ -276,11 +572,18 @@ import Footer from '../components/Footer.astro';
     }
 
     .news-item {
+      flex-direction: column;
+      gap: 25px;
       padding: 30px 25px;
     }
 
+    .news-image {
+      width: 100%;
+      max-height: 250px;
+    }
+
     .news-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 </style>
