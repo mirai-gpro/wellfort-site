@@ -146,6 +146,84 @@ import Footer from '../components/Footer.astro';
               />
             </div>
 
+            <!-- オンライン面談希望（法人・個人のみ） -->
+            <div id="field-online-meeting" class="form-group" style="display:none;">
+              <label class="checkbox-label meeting-checkbox">
+                <input
+                  type="checkbox"
+                  id="online-meeting"
+                  name="online_meeting"
+                  class="form-checkbox"
+                />
+                <span class="meeting-label-text">オンライン面談を希望する</span>
+              </label>
+
+              <!-- 希望日時選択（チェック時のみ表示） -->
+              <div id="meeting-datetime" class="meeting-datetime" style="display:none;">
+                <p class="meeting-note">ご希望の日時を最大3つまでお選びください（平日 10:00〜19:00）</p>
+
+                <div class="datetime-slot">
+                  <span class="slot-label">第1希望</span>
+                  <div class="slot-inputs">
+                    <input type="date" id="meeting-date-1" name="meeting_date_1" class="form-input date-input" />
+                    <select id="meeting-time-1" name="meeting_time_1" class="form-select time-select">
+                      <option value="">時間を選択</option>
+                      <option value="10:00">10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="datetime-slot">
+                  <span class="slot-label">第2希望</span>
+                  <div class="slot-inputs">
+                    <input type="date" id="meeting-date-2" name="meeting_date_2" class="form-input date-input" />
+                    <select id="meeting-time-2" name="meeting_time_2" class="form-select time-select">
+                      <option value="">時間を選択</option>
+                      <option value="10:00">10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="datetime-slot">
+                  <span class="slot-label">第3希望</span>
+                  <div class="slot-inputs">
+                    <input type="date" id="meeting-date-3" name="meeting_date_3" class="form-input date-input" />
+                    <select id="meeting-time-3" name="meeting_time_3" class="form-select time-select">
+                      <option value="">時間を選択</option>
+                      <option value="10:00">10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- お問い合わせ内容 -->
             <div class="form-group">
               <label for="message" class="form-label">
@@ -272,6 +350,17 @@ import Footer from '../components/Footer.astro';
   const fieldsCorporate = document.getElementById('fields-corporate') as HTMLElement;
   const fieldsIndividual = document.getElementById('fields-individual') as HTMLElement;
   const fieldPhone = document.getElementById('field-phone') as HTMLElement;
+  const fieldOnlineMeeting = document.getElementById('field-online-meeting') as HTMLElement;
+  const onlineMeetingCheckbox = document.getElementById('online-meeting') as HTMLInputElement;
+  const meetingDatetime = document.getElementById('meeting-datetime') as HTMLElement;
+
+  // 日付入力の最小値を明日に設定
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split('T')[0];
+  document.querySelectorAll<HTMLInputElement>('.date-input').forEach(input => {
+    input.min = minDate;
+  });
 
   radios.forEach(radio => {
     radio.addEventListener('change', () => {
@@ -283,11 +372,9 @@ import Footer from '../components/Footer.astro';
         fieldsCorporate.style.display = 'block';
         fieldsIndividual.style.display = 'none';
         fieldPhone.style.display = 'block';
-        // required設定
         (document.getElementById('company') as HTMLInputElement).required = true;
         (document.getElementById('name') as HTMLInputElement).required = true;
       } else {
-        // 個人
         fieldsCorporate.style.display = 'none';
         fieldsIndividual.style.display = 'block';
         fieldPhone.style.display = 'none';
@@ -295,10 +382,24 @@ import Footer from '../components/Footer.astro';
         (document.getElementById('name') as HTMLInputElement).required = false;
       }
 
+      // オンライン面談は法人・個人のみ表示（営業・その他は非表示）
+      if (val === 'corporate' || val === 'individual') {
+        fieldOnlineMeeting.style.display = 'block';
+      } else {
+        fieldOnlineMeeting.style.display = 'none';
+        onlineMeetingCheckbox.checked = false;
+        meetingDatetime.style.display = 'none';
+      }
+
       // ラジオカードの選択スタイル
       document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('selected'));
       (radio.closest('.radio-card') as HTMLElement)?.classList.add('selected');
     });
+  });
+
+  // オンライン面談チェックボックスの切り替え
+  onlineMeetingCheckbox?.addEventListener('change', () => {
+    meetingDatetime.style.display = onlineMeetingCheckbox.checked ? 'block' : 'none';
   });
 
   const form = document.getElementById('contact-form') as HTMLFormElement;
@@ -504,6 +605,83 @@ import Footer from '../components/Footer.astro';
     resize: vertical;
     min-height: 150px;
     font-family: inherit;
+  }
+
+  .meeting-checkbox {
+    padding: 14px 0;
+  }
+
+  .meeting-label-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .meeting-datetime {
+    margin-top: 20px;
+    padding: 24px;
+    background: #f0faf8;
+    border: 1px solid #c8e6e0;
+    border-radius: 12px;
+    animation: fadeSlideIn 0.3s ease;
+  }
+
+  .meeting-note {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .datetime-slot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .datetime-slot:last-child {
+    margin-bottom: 0;
+  }
+
+  .slot-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #40b0a0;
+    min-width: 60px;
+    white-space: nowrap;
+  }
+
+  .slot-inputs {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .date-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .time-select {
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .datetime-slot {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .slot-inputs {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .time-select {
+      width: 100%;
+    }
   }
 
   .checkbox-group {
