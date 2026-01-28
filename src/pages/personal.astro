@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="個人情報保護方針">
+  <Header />
+
+  <!-- メインビジュアル -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="container">
+        <h1 class="page-hero-title fade-in">個人情報保護方針</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- 個人情報保護方針セクション -->
+  <section class="privacy-policy-section">
+    <div class="container">
+      <div class="policy-intro fade-in">
+        <p>
+          株式会社ウェルフォート（以下、当社）はヘルスケア関連ビジネスの運営業務、ヘルスケア関連サービスを営む企業として、個人情報の取扱いについてその保護の重要性を最重要事項と捉えております。当社は、個人情報を取扱う企業としての社会的責任を自覚しており、以下に個人情報保護方針を定め、従業者に周知するとともに、方針に則り適切な個人情報保護対策を講じてまいります。
+        </p>
+      </div>
+
+      <div class="contact-box fade-in">
+        <h2 class="contact-title">個人情報保護方針の内容についての問合せ先</h2>
+        <h3 class="contact-subtitle">個人情報苦情及び相談窓口</h3>
+        <div class="contact-details">
+          <p>株式会社ウェルフォート 担当：物部 慶幸</p>
+          <p>〒106-0032 東京都港区六本木7-7-7 8階</p>
+          <p>Tel: 03-6629-3523</p>
+          <p>E-mail: info@wellfort.co.jp</p>
+        </div>
+      </div>
+
+      <div class="policy-items">
+        <article class="policy-item fade-in">
+          <div class="policy-number">1</div>
+          <div class="policy-content">
+            <p>
+              当社の事業体制を考慮し、個人情報を取扱う管理責任者をおき、法令等に準拠した適法、かつ、適切な方法で個人情報を取得、利用及び提供します。個人情報の利用に際しては、特定した利用目的の達成に必要な範囲を超えた目的外利用を行わないこと、及びそのための適切な措置を講じます。
+            </p>
+          </div>
+        </article>
+
+        <article class="policy-item fade-in">
+          <div class="policy-number">2</div>
+          <div class="policy-content">
+            <p>
+              個人情報を取扱う業務において、個人情報の保護に関する法令及び国が定める指針その他規範を遵守するとともに、社内規程に準拠して行動します。
+            </p>
+          </div>
+        </article>
+
+        <article class="policy-item fade-in">
+          <div class="policy-number">3</div>
+          <div class="policy-content">
+            <p>
+              個人情報を適切に取扱うためには、従業者に対する教育啓蒙活動を実施するほか、必要かつ適切なセキュリティ対策を講じることにより、当社で取扱う個人情報の漏えい、滅失、又はき損の防止及び是正に努めます。
+            </p>
+          </div>
+        </article>
+
+        <article class="policy-item fade-in">
+          <div class="policy-number">4</div>
+          <div class="policy-content">
+            <p>
+              個人情報の取扱い及び当社の個人情報保護マネジメントシステムに関して、本人からの苦情及び相談を受け付ける窓口を設け、適切に対応します。
+            </p>
+          </div>
+        </article>
+
+        <article class="policy-item fade-in">
+          <div class="policy-number">5</div>
+          <div class="policy-content">
+            <p>
+              個人情報の保護措置が常に適切に講じられるよう、個人情報保護マネジメントシステムの内容を見直すとともに、継続的にその改善に努めます。
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="policy-signature fade-in">
+        <div class="signature-row">
+          <p class="signature-date">制定年月日 2024年4月1日</p>
+        </div>
+        <div class="signature-row">
+          <p class="signature-date">最終改定年月日 2024年4月1日</p>
+        </div>
+        <div class="signature-company">
+          <p class="company-name">株式会社ウェルフォート</p>
+          <p class="representative">代表取締役 物部 慶幸</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    width: 100%;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    padding: 140px 0 80px;
+  }
+
+  .page-hero-content {
+    text-align: center;
+  }
+
+  .page-hero-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+  .privacy-policy-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .policy-intro {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .policy-intro p {
+    line-height: 2;
+    color: #555;
+    font-size: 1.05rem;
+  }
+
+  .contact-box {
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .contact-subtitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    opacity: 0.95;
+  }
+
+  .contact-details {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 2;
+  }
+
+  .contact-details p {
+    margin-bottom: 10px;
+  }
+
+  .policy-items {
+    margin-bottom: 60px;
+  }
+
+  .policy-item {
+    display: flex;
+    gap: 30px;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .policy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .policy-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .policy-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(64, 176, 160, 0.3);
+  }
+
+  .policy-content {
+    flex: 1;
+  }
+
+  .policy-content p {
+    line-height: 2;
+    color: #555;
+    font-size: 1.05rem;
+  }
+
+  .policy-signature {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .signature-row {
+    margin-bottom: 20px;
+  }
+
+  .signature-date {
+    color: #555;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .signature-company {
+    text-align: right;
+    margin-top: 30px;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+
+  .representative {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #40b0a0;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 120px 0 60px;
+    }
+
+    .page-hero-title {
+      font-size: 2rem;
+    }
+
+    .privacy-policy-section {
+      padding: 60px 0;
+    }
+
+    .policy-intro,
+    .contact-box {
+      padding: 30px 25px;
+    }
+
+    .contact-title {
+      font-size: 1.4rem;
+    }
+
+    .contact-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .policy-item {
+      flex-direction: column;
+      gap: 20px;
+      padding: 30px 25px;
+    }
+
+    .policy-number {
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      margin: 0 auto;
+    }
+
+    .policy-signature {
+      padding: 30px 25px;
+    }
+
+    .signature-company {
+      text-align: center;
+    }
+  }
+</style>
