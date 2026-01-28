@@ -19,85 +19,121 @@
       </h3>
 
       <!-- メインコンテンツエリア: Welltect + その他予防ソリューション -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-8 items-stretch">
 
         <!-- ===== Welltect（モニタリングサービス）枠 ===== -->
-        <div class="lg:col-span-2 welltect-wrapper bg-white/50 rounded-2xl p-4 border-2 border-gray-400">
-          <h4 class="text-xl font-bold text-gray-800 mb-4">Welltect（モニタリングサービス）</h4>
+        <div class="lg:col-span-2 welltect-wrapper bg-teal-50 rounded-2xl p-4 border-2 border-gray-400">
+          <a href="/welltect" class="block text-xl font-bold text-gray-800 mb-4 hover:text-tiffany-700 transition-colors">
+            Welltect（モニタリングサービス）
+            <svg class="w-5 h-5 inline-block ml-1 text-tiffany-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
 
-          <!-- Welltect内の2カラム: 各種検査 + AI分析 -->
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 relative">
-
-            <!-- Column 1: 各種検査 -->
-            <div class="bg-blue-700 rounded-2xl p-5 text-white relative">
-              <h5 class="text-lg font-bold text-center mb-4 bg-blue-800/50 rounded-lg py-2">各種検査</h5>
-
-              <!-- 病院・クリニック -->
-              <div class="bg-blue-600 rounded-xl p-3 mb-3">
-                <div class="flex items-start gap-3 mb-2">
-                  <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="font-bold text-white text-sm">病院、クリニック<span class="text-blue-200 text-xs">（年1回 法定）</span></p>
-                  </div>
-                </div>
-                <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
-                  <li>• 人間ドック</li>
-                  <li>• 健康診断</li>
-                </ul>
-              </div>
-
-              <!-- 自宅 -->
-              <div class="bg-blue-600 rounded-xl p-3">
-                <div class="flex items-start gap-3 mb-2">
-                  <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="font-bold text-white text-sm">自宅<span class="text-blue-200 text-xs">（年4回モニタリング）</span></p>
-                  </div>
-                </div>
-                <ul class="text-xs text-blue-100 space-y-0.5 ml-2">
-                  <li>• (尿) がんリスク検査<span class="text-blue-300 text-xs ml-1">（特許取得済）</span></li>
-                  <li>• (指先) 血液検査</li>
-                  <li>• (唾液) 遺伝子検査<span class="text-blue-300 text-xs ml-1">（初回のみ）</span></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Arrow (Desktop) -->
-            <div class="hidden lg:flex items-center justify-center absolute left-[46%] top-1/2 transform -translate-y-1/2 z-10">
-              <div class="flex items-center">
-                <div class="w-8 h-6 bg-teal-500 rounded-l-sm shadow-lg"></div>
-                <div class="w-0 h-0 border-t-[16px] border-t-transparent border-b-[16px] border-b-transparent border-l-[14px] border-l-teal-500 drop-shadow-lg"></div>
-              </div>
-            </div>
-
-            <!-- Column 2: AI分析 -->
-            <div class="bg-blue-700 rounded-2xl p-5 text-white">
-              <h5 class="text-lg font-bold text-center mb-4 bg-blue-800/50 rounded-lg py-2">AI分析</h5>
-
-              <!-- AI Icon -->
-              <div class="flex justify-center mb-4">
-                <div class="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center">
-                  <svg class="w-12 h-12 text-yellow-300" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 011 1v3a1 1 0 01-1 1h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 01-1-1v-3a1 1 0 011-1h1a7 7 0 017-7h1V5.73A2 2 0 0112 2M9.5 13A1.5 1.5 0 008 14.5a1.5 1.5 0 001.5 1.5 1.5 1.5 0 001.5-1.5A1.5 1.5 0 009.5 13m5 0a1.5 1.5 0 00-1.5 1.5 1.5 1.5 0 001.5 1.5 1.5 1.5 0 001.5-1.5 1.5 1.5 0 00-1.5-1.5z"/>
+          <!-- Welltect内: データソース + 健康管理アプリケーション -->
+          <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4">
+            <!-- 左列: データソース -->
+            <div class="flex flex-col gap-4 justify-center">
+              <!-- 法定健康診断データ -->
+              <div class="bg-gray-100 rounded-xl p-4 text-center border border-gray-300">
+                <div class="flex justify-center mb-2">
+                  <svg class="w-10 h-10 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
                   </svg>
                 </div>
+                <p class="font-bold text-gray-800 text-sm">法定健康診断</p>
+                <p class="font-bold text-gray-800 text-sm">データ</p>
               </div>
 
-              <!-- AI報告書 -->
-              <div class="bg-white rounded-xl p-3 text-gray-800">
-                <h6 class="font-bold text-blue-800 text-center mb-2 text-sm">AI報告書 by 医師監修</h6>
-                <ul class="text-xs text-gray-700 space-y-1">
-                  <li>• 1000万人ビッグデータとAIによる将来の疾病予測報告書</li>
-                  <li>• AIによる疾病予防報告書</li>
-                </ul>
+              <!-- 1000万人ビッグデータ -->
+              <div class="bg-gray-100 rounded-xl p-4 text-center border border-gray-300">
+                <div class="flex justify-center mb-2">
+                  <svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <ellipse cx="12" cy="6" rx="8" ry="3"/>
+                    <path d="M4 6v4c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/>
+                    <path d="M4 10v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4"/>
+                    <path d="M4 14v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4"/>
+                  </svg>
+                </div>
+                <p class="font-bold text-gray-800 text-sm">1000万人</p>
+                <p class="font-bold text-gray-800 text-sm">ビッグデータ</p>
+              </div>
+            </div>
+
+            <!-- 右: 健康管理アプリケーション -->
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-300">
+              <h5 class="font-bold text-gray-800 text-center mb-4">健康管理アプリケーション</h5>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- 左: 検査系 -->
+                <div class="space-y-3">
+                  <!-- 遺伝子検査 -->
+                  <a href="#home-monitoring" class="block bg-white rounded-lg p-3 border border-gray-200 text-center hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-center mb-1">
+                      <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="2">
+                        <path d="M 60 70 L 80 90 L 80 120 L 75 125 L 75 135 Q 75 140 80 140 L 95 140 Q 100 140 100 135 L 100 125 L 95 120 L 95 90 L 115 70 Z" stroke-width="4"/>
+                        <g transform="translate(125, 75)">
+                          <path d="M 0 0 L 5 10 L 0 20" stroke-width="3"/>
+                          <path d="M 15 0 L 10 10 L 15 20" stroke-width="3"/>
+                        </g>
+                      </svg>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">遺伝子検査</p>
+                  </a>
+
+                  <!-- がんリスク検査 -->
+                  <a href="#home-monitoring" class="block bg-white rounded-lg p-3 border border-gray-200 text-center hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-center mb-1">
+                      <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="2">
+                        <rect x="60" y="80" width="40" height="70" rx="4" stroke-width="4"/>
+                        <rect x="120" y="70" width="10" height="80" rx="2" stroke-width="3"/>
+                        <line x1="120" y1="90" x2="130" y2="90" stroke-width="2"/>
+                        <line x1="120" y1="100" x2="130" y2="100" stroke-width="2"/>
+                      </svg>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">がんリスク検査</p>
+                  </a>
+
+                  <!-- 血液検査 -->
+                  <a href="#home-monitoring" class="block bg-white rounded-lg p-3 border border-gray-200 text-center hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-center mb-1">
+                      <svg class="w-8 h-8 text-tiffany-600" fill="none" stroke="currentColor" viewBox="0 0 200 200" stroke-width="2">
+                        <ellipse cx="80" cy="100" rx="20" ry="35" stroke-width="4"/>
+                        <circle cx="80" cy="90" r="8" stroke-width="3"/>
+                        <path d="M 110 85 Q 115 75 120 85 L 120 95 Q 115 100 110 95 Z" stroke-width="3"/>
+                      </svg>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">血液検査</p>
+                  </a>
+                </div>
+
+                <!-- 右: AI系 -->
+                <div class="space-y-3">
+                  <!-- AI疾病予測 -->
+                  <a href="#technology" class="block bg-white rounded-lg p-3 border border-gray-200 text-center hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-center mb-1">
+                      <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">AI疾病予測</p>
+                  </a>
+
+                  <!-- AI予防アドバイス -->
+                  <a href="#technology" class="block bg-white rounded-lg p-3 border border-gray-200 text-center hover:bg-gray-50 transition-colors">
+                    <div class="flex justify-center mb-1">
+                      <div class="w-8 h-8 bg-gradient-to-br from-tiffany-500 to-tiffany-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <p class="font-bold text-gray-800 text-sm">AI予防</p>
+                    <p class="font-bold text-gray-800 text-sm">アドバイス</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -109,10 +145,10 @@
         </div>
 
         <!-- ===== その他予防ソリューション枠 ===== -->
-        <div class="solution-wrapper">
-          <h4 class="text-xl font-bold text-gray-800 mb-4 text-center lg:text-right">その他予防ソリューション</h4>
+        <div class="solution-wrapper flex flex-col">
+          <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">その他予防ソリューション</h4>
 
-          <div class="flex flex-col gap-3 h-full">
+          <div class="flex flex-col gap-3 flex-1">
             <!-- サプリメーカー -->
             <a href="/sapuri" class="flex-1 block bg-blue-700 rounded-xl p-4 text-white hover:bg-blue-600 transition-colors">
               <div class="flex items-center gap-2 mb-2">
