@@ -1,0 +1,500 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="ご利用方法と流れ | Wellfort">
+  <Header />
+
+  <!-- ヒーローセクション -->
+  <section class="flow-hero-section">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1 class="hero-title">ご利用方法と流れ</h1>
+        <p class="hero-subtitle">
+          ウェルテクトのサービスをご利用いただく際の流れをご案内いたします
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- スケジュールセクション -->
+  <section id="schedule-section" class="schedule-section">
+    <div class="container">
+      <div class="schedule-header fade-in">
+        <h2 class="schedule-title">SCHEDULE　ご利用の流れ</h2>
+        <p class="schedule-description">
+          ウェルテクトでは、4つのサービスと1年を通じたモニタリングであなたの健康をサポートします。<br>
+          3ヶ月に一度は健康状態をチェックし、医師に相談することで、疾病を未然に防ぎます。
+        </p>
+      </div>
+
+      <div class="schedule-image-container fade-in">
+        <img src="/images/022_step-photo_sp.png" alt="健康チェックの流れ" class="schedule-image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 入会後の流れセクション -->
+  <section id="flow" class="flow-section">
+    <div class="container">
+      <div class="flow-hero fade-in">
+        <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-kv.png" alt="入会後の流れ" class="flow-kv" />
+      </div>
+
+      <h2 class="section-title fade-in">入会後の流れ</h2>
+      <p class="section-subtitle fade-in">初回の流れ - お申し込みから健康相談まで</p>
+
+      <div class="flow-steps">
+        <div class="flow-step fade-in">
+          <div class="flow-number">1</div>
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-icon01.png" alt="お申し込み" class="flow-icon" />
+          <h3>お申し込み</h3>
+          <p>「ウェルテクト」にお申込みください。5営業日以内にご自宅にキットがまとめて届きます。（遺伝子検査キット、血液検査キット、がんのリスク検査キット）</p>
+        </div>
+
+        <div class="flow-step fade-in">
+          <div class="flow-number">2</div>
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-icon02.png" alt="マイページ登録" class="flow-icon" />
+          <h3>マイページ登録</h3>
+          <p>弊社より「お申込完了」メールを送信させていただきます。メール記載のURLより、会員登録をお願い致します。</p>
+        </div>
+
+        <div class="flow-step fade-in">
+          <div class="flow-number">3</div>
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-icon03.png" alt="検査実施" class="flow-icon" />
+          <h3>検査実施</h3>
+          <p>検査キット到着後、各検査の実施をお願い致します。検査の詳細につきましては「検査方法」セクションをご覧ください。</p>
+        </div>
+
+        <div class="flow-step fade-in">
+          <div class="flow-number">4</div>
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-icon04.png" alt="検査キット返送" class="flow-icon" />
+          <h3>検査キット返送</h3>
+          <p>同封の「チェックリスト」活用し同封漏れが無いかご確認の上、各検査キットをポストに投函ください。到着後、解析致します。</p>
+        </div>
+
+        <div class="flow-step fade-in">
+          <div class="flow-number">5</div>
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-icon05.png" alt="検査結果のご連絡" class="flow-icon" />
+          <h3>検査結果のご連絡</h3>
+          <p>2~4週間程度で各検査結果をご連絡し、オンライン健康診断の予約メールをお送り致します。</p>
+        </div>
+
+        <div class="flow-step fade-in">
+          <div class="flow-number">6</div>
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/flow-icon06.png" alt="オンライン健康相談実施" class="flow-icon" />
+          <h3>オンライン健康相談実施</h3>
+          <p>ご予約の日時になりましたら、ご予約完了メール記載のURLより「健康相談」を実施ください。（初回30分）</p>
+        </div>
+      </div>
+
+      <div class="flow-note fade-in">
+        <p>※2回目(初回検査から4ヶ月後)、3回目（2回目検査から3ヶ月後）については、弊社より自動で検査キットを送らせていただき、初回検査と同様の流れになります。</p>
+        <p>※2回目、3回目のオンライン健康相談は15分となります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Whyなぜ年3回セクション -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-content fade-in">
+        <h2>Why なぜ年３回検査する必要があるのか</h2>
+        <div class="why-illustration">
+          <img src="https://shop.wellfort.co.jp/Contents/img/Flow-Page/why-illustration.png" alt="年3回検査の重要性" />
+        </div>
+
+        <div class="why-text">
+          <p>
+            <strong>健康状態は常に変化しています。</strong><br>
+            年3回の定期検査により、体調の変化を早期に発見し、適切な予防策を講じることができます。
+          </p>
+          <p>
+            検査結果の推移を継続的に追跡することで、生活習慣の改善効果を実感できるだけでなく、
+            病気の兆候を見逃さず、早期発見・早期治療につなげることが可能になります。
+          </p>
+          <p>
+            特に働き盛りの方々は、忙しさから健康管理が後回しになりがちです。
+            定期的な検査スケジュールで、確実に健康をモニタリングし続けることが重要です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content fade-in">
+        <h2>今すぐ健康モニタリングを始めましょう</h2>
+        <p>あなたに最適なプランをお選びいただけます</p>
+        <div class="cta-buttons">
+          <a href="/welltect" class="btn-primary">Welltectを見る</a>
+          <a href="/products" class="btn-secondary">検査商品一覧</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -80px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      fadeInObserver.observe(el);
+    });
+  });
+</script>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ヒーローセクション */
+  .flow-hero-section {
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+    padding: 140px 0 80px;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.8;
+    opacity: 0.95;
+  }
+
+  /* スケジュールセクション */
+  .schedule-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+
+  .schedule-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .schedule-title {
+    font-size: clamp(28px, 5vw, 36px);
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .schedule-description {
+    font-size: clamp(16px, 2.5vw, 18px);
+    color: #555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .schedule-image-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .schedule-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 入会後の流れセクション */
+  .flow-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  }
+
+  .flow-hero {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .flow-kv {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 5vw, 36px);
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .section-subtitle {
+    font-size: clamp(16px, 2.5vw, 18px);
+    color: #555;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .flow-step {
+    background: white;
+    padding: 60px 30px 40px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .flow-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: #0066cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: 5px solid white;
+  }
+
+  .flow-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    object-fit: contain;
+  }
+
+  .flow-step h3 {
+    font-size: 22px;
+    color: #0066cc;
+    margin-bottom: 15px;
+  }
+
+  .flow-step p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  .flow-note {
+    margin-top: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  }
+
+  .flow-note p {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .flow-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Whyなぜ年3回セクション */
+  .why-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  }
+
+  .why-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+
+  .why-content h2 {
+    font-size: 32px;
+    color: #ff6b35;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .why-illustration {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .why-illustration img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .why-text p {
+    font-size: 18px;
+    line-height: 2;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .why-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .why-text p strong {
+    color: #ff6b35;
+  }
+
+  /* CTAセクション */
+  .cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #40b0a0 0%, #2d8a7e 100%);
+  }
+
+  .cta-content {
+    text-align: center;
+    color: white;
+  }
+
+  .cta-content h2 {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .cta-content p {
+    font-size: 18px;
+    opacity: 0.95;
+    margin-bottom: 30px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: white;
+    color: #40b0a0;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: #40b0a0;
+    transform: translateY(-3px);
+  }
+
+  /* フェードイン */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 768px) {
+    .flow-hero-section {
+      padding: 120px 0 60px;
+    }
+
+    .schedule-section,
+    .flow-section,
+    .why-section {
+      padding: 60px 0;
+    }
+
+    .schedule-header {
+      margin-bottom: 40px;
+    }
+
+    .schedule-image-container {
+      padding: 0 20px;
+    }
+
+    .flow-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .why-content {
+      padding: 40px 30px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  }
+</style>
