@@ -99,17 +99,6 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <img src="/images/welltect04.png" alt="合計で年間4回の監視体制" class="w-full rounded-lg shadow-md" />
           </div>
         </div>
-
-        <!-- CTA -->
-        <div class="text-center mt-12">
-          <a href="#plan-selector" class="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold text-lg rounded-full hover:from-teal-600 hover:to-teal-700 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
-            あなたに最適なプランを見る
-            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </a>
-        </div>
-
       </div>
     </section>
 
@@ -201,20 +190,17 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     <section id="plan-selector" class="py-20 bg-gradient-to-br from-white via-tiffany-50/20 to-cyan-50/30">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <div class="inline-block px-6 py-2 bg-tiffany-100 rounded-full text-tiffany-700 font-medium text-sm mb-6">
-            法人向けプラン
-          </div>
           <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">最適なプランを選択</h2>
           <p class="text-gray-600">
-            役職と年代を選択すると、推奨プランが表示されます。
+            ポジション/役割と年代を選択すると、推奨プランが表示されます。
           </p>
         </div>
 
-        <!-- Step 1: 役職選択 -->
+        <!-- Step 1: ポジション/役割選択 -->
         <div class="mb-10">
           <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span class="w-8 h-8 bg-tiffany-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-            役職を選択
+            ポジションを選択
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="role-selector">
             <button type="button" data-role="executive"
@@ -246,8 +232,8 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <div class="font-bold text-gray-900">一般社員</div>
-              <div class="text-xs text-gray-500 mt-1">一般職 / スタッフ</div>
+              <div class="font-bold text-gray-900">一般社員/個人申込</div>
+              <div class="text-xs text-gray-500 mt-1">一般職/スタッフ/個人</div>
             </button>
           </div>
         </div>
@@ -447,14 +433,6 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
 
   <Footer />
 </BaseLayout>
-
-<!-- 診断モーダル -->
-<div id="shindanModal" class="shindan-modal">
-  <div class="shindan-modal-content">
-    <span class="shindan-close-modal">&times;</span>
-    <iframe id="shindanIframe" src="" frameborder="0"></iframe>
-  </div>
-</div>
 
 <style>
   .shindan-modal {
