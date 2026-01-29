@@ -1,13 +1,33 @@
 ---
+// ナビゲーション構造
 const navItems = [
   { label: 'トップ', href: '/' },
-  { label: 'ソリューション', href: '/solutions' },
-  { label: 'エビデンス', href: '/evidence' },
-  { label: '支援活動', href: '/support' },
-  { label: '導入事例', href: '/case-studies' },
-  { label: '料金・プラン', href: '/pricing' },
-  { label: '会社情報', href: '/about' },
-  { label: 'お問い合わせ', href: '/contact' },
+  {
+    label: 'Welltect（健康管理）',
+    dropdown: [
+      { label: 'Wellfort未病プラットフォーム', href: '/' },
+      { label: 'Welltectについて', href: '/welltect' },
+    ]
+  },
+  {
+    label: 'サービス・商品',
+    dropdown: [
+      { label: 'Welltectモニタリング', href: '/welltect' },
+      { label: '検査商品一覧', href: '/products' },
+      { label: 'ご利用の流れ', href: '/flow' },
+    ]
+  },
+  {
+    label: 'Wellfortとは',
+    dropdown: [
+      { label: '企業情報', href: '/company' },
+      { label: '個人情報保護方針', href: '/personal' },
+      { label: 'プライバシーポリシー', href: '/privacy' },
+      { label: '特定商取引法に基づく表記', href: '/law' },
+    ]
+  },
+  { label: 'ニュース', href: '/news' },
+  { label: 'お問合せ', href: '/contact' },
 ];
 ---
 
@@ -16,9 +36,9 @@ const navItems = [
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center space-x-3 group">
-        <img 
-          src="/images/wellfort_logo.png" 
-          alt="Wellfort Logo" 
+        <img
+          src="/images/wellfort_logo.png"
+          alt="Wellfort Logo"
           class="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
         />
       </a>
@@ -26,12 +46,36 @@ const navItems = [
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-1">
         {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="px-4 py-2 text-sm font-medium text-white/90 hover:text-tiffany-400 rounded-lg hover:bg-white/10 transition-all duration-200"
-          >
-            {item.label}
-          </a>
+          item.dropdown ? (
+            <div class="nav-dropdown relative">
+              <button
+                type="button"
+                class="nav-link px-3 py-2 text-sm font-medium text-white/90 hover:text-tiffany-400 rounded-lg hover:bg-white/10 transition-all duration-200 flex items-center gap-1"
+              >
+                {item.label}
+                <svg class="w-4 h-4 dropdown-arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="dropdown-menu absolute top-full left-0 mt-1 bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[200px] opacity-0 invisible transition-all duration-200">
+                {item.dropdown.map((subItem) => (
+                  <a
+                    href={subItem.href}
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-tiffany-50 hover:text-tiffany-600 transition-colors"
+                  >
+                    {subItem.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class="nav-link px-3 py-2 text-sm font-medium text-white/90 hover:text-tiffany-400 rounded-lg hover:bg-white/10 transition-all duration-200"
+            >
+              {item.label}
+            </a>
+          )
         ))}
       </div>
 
@@ -56,15 +100,39 @@ const navItems = [
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-neutral-100 bg-white">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-neutral-100 bg-white max-h-[80vh] overflow-y-auto">
     <div class="px-4 py-6 space-y-1">
       {navItems.map((item) => (
-        <a
-          href={item.href}
-          class="block px-4 py-3 text-base font-medium text-neutral-700 hover:text-tiffany-600 hover:bg-tiffany-50 rounded-lg transition-all"
-        >
-          {item.label}
-        </a>
+        item.dropdown ? (
+          <div class="mobile-dropdown">
+            <button
+              type="button"
+              class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-base font-medium text-neutral-700 hover:text-tiffany-600 hover:bg-tiffany-50 rounded-lg transition-all"
+            >
+              {item.label}
+              <svg class="w-5 h-5 mobile-dropdown-arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="mobile-dropdown-menu hidden pl-4">
+              {item.dropdown.map((subItem) => (
+                <a
+                  href={subItem.href}
+                  class="block px-4 py-2 text-sm text-gray-600 hover:text-tiffany-600 hover:bg-tiffany-50 rounded-lg transition-all"
+                >
+                  {subItem.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class="block px-4 py-3 text-base font-medium text-neutral-700 hover:text-tiffany-600 hover:bg-tiffany-50 rounded-lg transition-all"
+          >
+            {item.label}
+          </a>
+        )
       ))}
       <div class="pt-4">
         <a href="/online-meeting" class="btn-primary w-full text-center">
@@ -79,40 +147,66 @@ const navItems = [
   // Mobile menu toggle
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   mobileMenuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Desktop dropdown hover
+  document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const arrow = dropdown.querySelector('.dropdown-arrow');
+
+    dropdown.addEventListener('mouseenter', () => {
+      menu?.classList.remove('opacity-0', 'invisible');
+      menu?.classList.add('opacity-100', 'visible');
+      arrow?.classList.add('rotate-180');
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      menu?.classList.add('opacity-0', 'invisible');
+      menu?.classList.remove('opacity-100', 'visible');
+      arrow?.classList.remove('rotate-180');
+    });
+  });
+
+  // Mobile dropdown toggle
+  document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dropdown = btn.closest('.mobile-dropdown');
+      const menu = dropdown?.querySelector('.mobile-dropdown-menu');
+      const arrow = btn.querySelector('.mobile-dropdown-arrow');
+
+      menu?.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
+    });
   });
 
   // Header scroll effect
   let lastScroll = 0;
   const header = document.getElementById('header');
-  
+
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 100) {
       header?.classList.remove('bg-tiffany-500/20', 'border-tiffany-200/30');
       header?.classList.add('bg-white/95', 'border-tiffany-100', 'shadow-soft');
-      // Change text colors
-      header?.querySelectorAll('a').forEach((el) => {
-        if (el.classList.contains('text-white/90')) {
-          el.classList.remove('text-white/90');
-          el.classList.add('text-neutral-700');
-        }
+      // Change text colors for nav links
+      header?.querySelectorAll('.nav-link').forEach((el) => {
+        el.classList.remove('text-white/90');
+        el.classList.add('text-neutral-700');
       });
     } else {
       header?.classList.remove('bg-white/95', 'border-tiffany-100', 'shadow-soft');
       header?.classList.add('bg-tiffany-500/20', 'border-tiffany-200/30');
       // Restore white colors
-      header?.querySelectorAll('a').forEach((el) => {
-        if (el.classList.contains('text-neutral-700')) {
-          el.classList.remove('text-neutral-700');
-          el.classList.add('text-white/90');
-        }
+      header?.querySelectorAll('.nav-link').forEach((el) => {
+        el.classList.remove('text-neutral-700');
+        el.classList.add('text-white/90');
       });
     }
-    
+
     lastScroll = currentScroll;
   });
 </script>
@@ -120,5 +214,14 @@ const navItems = [
 <style>
   #header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-menu {
+    transform-origin: top;
   }
 </style>
