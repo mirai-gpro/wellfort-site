@@ -37,43 +37,73 @@
       </div>
     </div>
 
-    <div class="doctor-interview fade-in">
-      <h3 class="interview-title">INTERVIEW</h3>
-      <div class="interview-content">
-        <div class="video-container">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/_MjD8AtrqrI"
-            title="森田医師インタビュー"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- お客様の声セクション -->
-<section class="testimonials-section">
+<!-- メディアコーナー（3つ横並び） -->
+<section class="media-corners-section">
   <div class="container">
-    <h2 class="section-title fade-in">お客様の声</h2>
+    <div class="media-corners-grid">
+      <!-- 公式YouTubeチャンネル -->
+      <div class="media-corner fade-in">
+        <h3 class="media-corner-title">
+          <svg class="media-icon youtube-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          公式YouTubeチャンネル
+        </h3>
+        <div class="media-content">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/_MjD8AtrqrI"
+              title="森田医師インタビュー"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="media-description">森田医師インタビュー</p>
+        </div>
+      </div>
 
-    <div class="testimonials-grid">
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-content">
-          <div class="testimonial-icon">
-            <img src="https://shop.wellfort.co.jp/Contents/img/TopImage/user-voice.png" alt="K.Mさん" />
+      <!-- AIがウェルフォートをご紹介 -->
+      <div class="media-corner fade-in">
+        <h3 class="media-corner-title">
+          <svg class="media-icon ai-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+          AIがウェルフォートをご紹介
+        </h3>
+        <div class="media-content">
+          <div class="video-container">
+            <video
+              src="/images/WT promoV_k010.mp4"
+              title="ウェルフォートのWelltectのご案内"
+              controls
+              preload="metadata">
+              お使いのブラウザは動画タグをサポートしていません。
+            </video>
           </div>
-          <p class="testimonial-text">
-            日常的な健康管理が格段に効率化されました。忙しい中でも定期的に健康状態をチェックできるのは安心です。医師とのオンライン相談も非常に有益でした。
-          </p>
-          <div class="testimonial-author">
-            <strong>K.M さん</strong>
-            <span>会社経営者</span>
-          </div>
+          <p class="media-description">経営者様向けご紹介ビデオ</p>
+        </div>
+      </div>
+
+      <!-- 公式Instagram -->
+      <div class="media-corner fade-in">
+        <h3 class="media-corner-title">
+          <svg class="media-icon instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          公式Instagram
+        </h3>
+        <div class="media-content">
+          <a href="https://www.instagram.com/wellfort_official/" target="_blank" rel="noopener noreferrer" class="instagram-link">
+            <img src="/images/insta.jpg" alt="Wellfort公式Instagram" class="instagram-image" />
+            <div class="instagram-overlay">
+              <span>Instagramを見る</span>
+            </div>
+          </a>
+          <p class="media-description">@wellfort_official</p>
         </div>
       </div>
     </div>
@@ -241,70 +271,131 @@
   border: none;
 }
 
-/* お客様の声 */
-.testimonials-section {
-  padding: 80px 0;
-  background: white;
+/* メディアコーナーセクション */
+.media-corners-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
-.testimonials-section .section-title {
-  text-align: center;
-  font-size: clamp(28px, 5vw, 36px);
+.media-corners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.media-corner {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-corner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.media-corner-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
   font-weight: 700;
   color: #2c3e50;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
+.media-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.testimonial-card {
-  background: #f8f9fa;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+.youtube-icon {
+  color: #ff0000;
 }
 
-.testimonial-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
+.ai-icon {
+  color: #0066cc;
+}
+
+.instagram-icon {
+  color: #e1306c;
+}
+
+.media-content .video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
   overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
-.testimonial-icon img {
+.media-content .video-container iframe,
+.media-content .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
+  border-radius: 10px;
 }
 
-.testimonial-text {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.testimonial-author {
-  text-align: center;
-}
-
-.testimonial-author strong {
-  display: block;
-  font-size: 18px;
-  color: #0066cc;
-  margin-bottom: 5px;
-}
-
-.testimonial-author span {
+.media-description {
   font-size: 14px;
-  color: #999;
+  color: #666;
+  text-align: center;
+  margin: 0;
+}
+
+.instagram-link {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.instagram-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.instagram-link:hover .instagram-image {
+  transform: scale(1.05);
+}
+
+.instagram-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instagram-link:hover .instagram-overlay {
+  opacity: 1;
+}
+
+.instagram-overlay span {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: 20px;
 }
 
 /* レスポンシブ */
@@ -315,10 +406,6 @@
 
   .doctor-header {
     margin-bottom: 40px;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
   }
 
   .doctor-content {
@@ -337,13 +424,21 @@
     margin: 0 auto;
   }
 
-  .doctor-message,
-  .doctor-interview {
+  .doctor-message {
     padding: 30px;
   }
 
-  .testimonials-section {
-    padding: 60px 0;
+  .media-corners-section {
+    padding: 40px 0;
+  }
+
+  .media-corners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .media-corner {
+    padding: 20px;
   }
 }
 </style>
