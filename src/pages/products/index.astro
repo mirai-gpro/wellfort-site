@@ -49,6 +49,20 @@ function getFeaturesList(features: any): string[] {
 
   return allArrays;
 }
+
+// 商品名から価格表示を削除するヘルパー関数
+function cleanProductName(name: string): string {
+  if (!name) return '';
+  // 「販売価格:¥...」や「販売価格：¥...」のパターンを削除
+  return name.replace(/\s*販売価格[:：]?¥[\d,]+\s*\(税込\)\s*/g, '').trim();
+}
+
+// テキストを指定文字数で切り詰めるヘルパー関数
+function truncateText(text: string, maxLength: number = 190): { text: string; isTruncated: boolean } {
+  if (!text) return { text: '', isTruncated: false };
+  if (text.length <= maxLength) return { text, isTruncated: false };
+  return { text: text.slice(0, maxLength), isTruncated: true };
+}
 ---
 
 <BaseLayout title="検査商品一覧 - Wellfort">
@@ -82,14 +96,26 @@ function getFeaturesList(features: any): string[] {
         <div class="products-grid">
           {products && products.map((product, index) => {
             const featuresList = getFeaturesList(product.features);
+            const displayName = cleanProductName(product.name);
+            const { text: descriptionText, isTruncated } = truncateText(product.description, 190);
 
             return (
               <div class="product-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
                 <div class="product-badge">{product.category}</div>
 
                 <div class="product-content">
-                  <h3 class="product-name">{product.name}</h3>
-                  <p class="product-description">{product.description}</p>
+                  {/* 商品画像 */}
+                  {product.image_url && (
+                    <div class="product-image">
+                      <img src={product.image_url} alt={displayName} />
+                    </div>
+                  )}
+
+                  <h3 class="product-name">{displayName}</h3>
+                  <p class="product-description">
+                    {descriptionText}
+                    {isTruncated && <span class="description-more">...more</span>}
+                  </p>
 
                   {featuresList.length > 0 && (
                     <ul class="product-features">
@@ -107,7 +133,7 @@ function getFeaturesList(features: any): string[] {
                   <div class="product-footer">
                     <div class="product-price">
                       <span class="price-label">料金</span>
-                      <span class="price-amount">\{product.price.toLocaleString()}</span>
+                      <span class="price-amount">¥{product.price.toLocaleString()}</span>
                       <span class="price-tax">（税込）</span>
                     </div>
 
@@ -238,6 +264,21 @@ function getFeaturesList(features: any): string[] {
     padding: 40px 30px 30px;
   }
 
+  .product-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .product-name {
     font-size: 24px;
     font-weight: 700;
@@ -251,6 +292,16 @@ function getFeaturesList(features: any): string[] {
     color: #6b7280;
     line-height: 1.7;
     margin-bottom: 24px;
+  }
+
+  .description-more {
+    color: #0d9488;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .description-more:hover {
+    text-decoration: underline;
   }
 
   .product-features {
