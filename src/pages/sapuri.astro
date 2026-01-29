@@ -10,21 +10,21 @@ const supplements = [
     name: 'MUSE2',
     image: '/images/sup01.jpg',
     description: '100% Japanese RICE KOJI / enzyme ONLY. Additive/Gluten/Alcohol FREE, Vegan, Halal.',
-    url: 'https://shop.wellfort.co.jp/view/item/000000000023'
+    url: '/products/b167a936-77b6-46b4-b709-eee071b4446e'
   },
   {
     id: 'thedio',
     name: 'THE Dio',
     image: '/images/sup02.jpg',
     description: 'AUTOPHAGY DRINK. 贅沢な美容と健康のためのドリンク。',
-    url: 'https://shop.wellfort.co.jp/view/item/000000000024'
+    url: '/products/3754273c-2d9e-4553-80c0-f1624e066ed4'
   },
   {
     id: 'cenz',
     name: 'CENZ MAGMA MINERAL',
     image: '/images/sup03.jpg',
     description: '野生植物抽出ミネラル加工食品。日々のミネラル補給に。',
-    url: 'https://shop.wellfort.co.jp/view/item/000000000025'
+    url: '/products/40c0d59a-b263-4c6a-adcd-a821478356b4'
   }
 ];
 ---
@@ -60,7 +60,7 @@ const supplements = [
               <div class="product-content">
                 <h3 class="product-name">{product.name}</h3>
                 <p class="product-description">{product.description}</p>
-                <a href={product.url} target="_blank" rel="noopener noreferrer" class="product-btn">
+                <a href={product.url} class="product-btn">
                   詳細を見る
                 </a>
               </div>
