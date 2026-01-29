@@ -1,0 +1,72 @@
+---
+// 経営者様向け ウェルフォートのご紹介ビデオセクション
+---
+
+<section id="video-intro" class="video-section fade-in">
+  <div class="container">
+    <h2 class="section-title">経営者様向け ウェルフォートのご紹介ビデオ</h2>
+    <p class="section-subtitle">健康への投資は、高度な経営戦略です</p>
+
+    <div class="video-container">
+      <video
+        width="900"
+        height="506"
+        src="/images/WT promoV_k010.mp4"
+        title="ウェルフォートのWelltectのご案内"
+        controls
+        preload="metadata">
+        お使いのブラウザは動画タグをサポートしていません。
+      </video>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ビデオセクション */
+.video-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.video-section .section-title {
+  text-align: center;
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.video-section .section-subtitle {
+  text-align: center;
+  font-size: clamp(16px, 2.5vw, 18px);
+  color: #555;
+  margin-bottom: 0;
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 40px auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .video-section {
+    padding: 60px 0;
+  }
+
+  .video-container {
+    margin: 30px auto 0;
+  }
+}
+</style>
