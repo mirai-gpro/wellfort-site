@@ -2,92 +2,100 @@
 // InvestmentRisk.astro - 健康投資と経営リスクの統合セクション
 ---
 
-<section id="risk" class="py-16 bg-gradient-to-br from-slate-50 via-white to-gray-50">
+<section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- InvestmentHeroコンテンツ -->
+    <div class="text-center max-w-4xl mx-auto mb-10">
+      <h2 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-6 leading-relaxed">
+        健康への投資は、<span class="text-emerald-500">高度な経営戦略</span>です
+      </h2>
+      <p class="text-lg lg:text-xl text-gray-600 leading-relaxed">
+        企業の未来を託された「最高意思決定資源」を守り、<br class="hidden sm:inline" />
+        持続的な企業価値の最大化を保証する。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="risk" class="py-12 bg-gradient-to-br from-slate-50 via-white to-gray-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- セクションヘッダー -->
     <div class="text-center mb-10">
-      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
-        健康への投資は、<span class="text-emerald-500">高度な経営戦略</span>です
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 relative inline-block pb-4">
+        経営を脅かす最大の「潜在リスク」
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
       </h2>
-      <p class="text-gray-600 text-lg">
-        企業の未来を託された「最高意思決定資源」を守り、持続的な企業価値の最大化を保証する。
-      </p>
+      <p class="text-pink-600 font-bold text-lg">健康管理の現状と投資としての視点</p>
     </div>
 
-    <!-- 2列レイアウト: リスク vs 投資 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+    <!-- リスクカードフロー -->
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
 
-      <!-- 左側: 戦略なき現状（リスク） -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div class="relative">
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 to-red-600"></div>
-          <div class="p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-red-500">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </span>
-              <h3 class="text-lg font-bold text-gray-900">戦略なき現状:「年1回の健診」</h3>
-            </div>
-
-            <!-- イラスト -->
-            <div class="mb-4 rounded-xl overflow-hidden bg-gray-100">
-              <img src="/images/risk_workers.jpg" alt="従業員の健康リスク" class="w-full h-48 object-cover" />
-            </div>
-
-            <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-red-400 mt-0.5 flex-shrink-0">●</span>
-                <span>がんは3ヶ月で倍増するリスク</span>
-              </li>
-              <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-red-400 mt-0.5 flex-shrink-0">●</span>
-                <span>年1回の健診では機能不全</span>
-              </li>
-              <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-red-400 mt-0.5 flex-shrink-0">●</span>
-                <span>従来の安心は無防備な盲点</span>
-              </li>
-            </ul>
+      <!-- 戦略なき現状カード -->
+      <div class="w-full lg:flex-1 max-w-md bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 to-red-600"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-red-500 text-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+              </svg>
+            </span>
+            <h3 class="text-lg font-bold text-gray-900">戦略なき現状:「年1回の健診」</h3>
           </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-gray-600 text-sm border-b border-gray-100 pb-3">
+              <span class="text-red-400 mt-0.5">●</span>
+              がんは3ヶ月で倍増するリスク
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 text-sm border-b border-gray-100 pb-3">
+              <span class="text-red-400 mt-0.5">●</span>
+              年1回の健診では機能不全
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 text-sm pb-1">
+              <span class="text-red-400 mt-0.5">●</span>
+              従来の安心は無防備な盲点
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- 右側: 投資の視点 -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <div class="relative">
-          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
-          <div class="p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-emerald-500">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </span>
-              <h3 class="text-lg font-bold text-gray-900">健康はコストではない:"利益を守る投資"</h3>
-            </div>
+      <!-- 矢印アイコン -->
+      <div class="text-purple-500 flex-shrink-0">
+        <svg class="w-10 h-10 hidden lg:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+        <svg class="w-10 h-10 lg:hidden transform rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </div>
 
-            <!-- イラスト -->
-            <div class="mb-4 rounded-xl overflow-hidden bg-gray-100">
-              <img src="/images/investment_balance.jpg" alt="健康と経営のバランス" class="w-full h-48 object-cover" />
-            </div>
-
-            <ul class="space-y-2">
-              <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-emerald-500 mt-0.5 flex-shrink-0">●</span>
-                <span>経営陣/幹部離脱による、事業停止リスクの回避</span>
-              </li>
-              <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-emerald-500 mt-0.5 flex-shrink-0">●</span>
-                <span>意思決定者喪失による、未来の逸失利益を防ぐ</span>
-              </li>
-              <li class="flex items-start gap-2 text-gray-600 text-sm">
-                <span class="text-emerald-500 mt-0.5 flex-shrink-0">●</span>
-                <span>積極的な経営戦略投資</span>
-              </li>
-            </ul>
+      <!-- 投資の視点カード -->
+      <div class="w-full lg:flex-1 max-w-md bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-green-500 to-emerald-500"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-green-500 text-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </span>
+            <h3 class="text-lg font-bold text-gray-900">健康はコストではない:"利益を守る投資"</h3>
           </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-gray-600 text-sm border-b border-gray-100 pb-3">
+              <span class="text-green-500 mt-0.5">●</span>
+              経営陣/幹部離脱による、事業停止リスクの回避
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 text-sm border-b border-gray-100 pb-3">
+              <span class="text-green-500 mt-0.5">●</span>
+              意思決定者喪失による、未来の逸失利益を防ぐ
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 text-sm pb-1">
+              <span class="text-green-500 mt-0.5">●</span>
+              積極的な経営戦略投資
+            </li>
+          </ul>
         </div>
       </div>
     </div>
