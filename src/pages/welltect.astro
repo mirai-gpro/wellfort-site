@@ -42,7 +42,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <div class="mt-4 lg:mt-0 flex-shrink-0">
               <div class="thumbnail-image cursor-pointer" data-image="/images/welltect01.png" data-title="性別・年齢階級別がん罹患者数（1975年・2014年）">
                 <img src="/images/welltect01.png" alt="性別・年齢階級別がん罹患者数（1975年・2014年）" class="w-32 lg:w-40 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
-                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+                <p class="text-xs text-center text-gray-500 mt-1">ホバーで拡大</p>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <div class="mt-4 lg:mt-0 flex-shrink-0">
               <div class="thumbnail-image cursor-pointer" data-image="/images/welltect02.png" data-title="がんの5年生存率">
                 <img src="/images/welltect02.png" alt="がんの5年生存率" class="w-32 lg:w-40 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
-                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+                <p class="text-xs text-center text-gray-500 mt-1">ホバーで拡大</p>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <div class="mt-4 lg:mt-0 flex-shrink-0">
               <div class="thumbnail-image cursor-pointer" data-image="/images/welltect03.png" data-title="腫瘍マーカーとがんステージの関係">
                 <img src="/images/welltect03.png" alt="腫瘍マーカーとがんステージの関係" class="w-32 lg:w-40 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
-                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+                <p class="text-xs text-center text-gray-500 mt-1">ホバーで拡大</p>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <div class="p-4 flex justify-center">
               <div class="thumbnail-image cursor-pointer" data-image="/images/slider/slide-03.png" data-title="自宅で完結する高頻度モニタリング">
                 <img src="/images/slider/slide-03.png" alt="自宅で完結する高頻度モニタリング" class="w-32 h-24 object-cover rounded-lg shadow hover:shadow-lg transition-shadow" />
-                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+                <p class="text-xs text-center text-gray-500 mt-1">ホバーで拡大</p>
               </div>
             </div>
             <div class="p-6 pt-2">
@@ -172,7 +172,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
             <div class="p-4 flex justify-center">
               <div class="thumbnail-image cursor-pointer" data-image="/images/slider/slide-02.png" data-title="1000万人のビッグデータによるAI分析">
                 <img src="/images/slider/slide-02.png" alt="1000万人のビッグデータによるAI分析" class="w-32 h-24 object-cover rounded-lg shadow hover:shadow-lg transition-shadow" />
-                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+                <p class="text-xs text-center text-gray-500 mt-1">ホバーで拡大</p>
               </div>
             </div>
             <div class="p-6 pt-2">
@@ -214,10 +214,9 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       </div>
     </section>
 
-    <!-- 画像モーダル -->
+    <!-- 画像モーダル（ホバー表示） -->
     <div id="imageModal" class="image-modal">
       <div class="image-modal-content">
-        <span class="image-modal-close">&times;</span>
         <img id="modalImage" src="" alt="" />
         <p id="modalTitle" class="image-modal-title"></p>
       </div>
@@ -513,7 +512,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     border: none;
   }
 
-  /* 画像モーダル */
+  /* 画像モーダル（ホバー表示） */
   .image-modal {
     display: none;
     position: fixed;
@@ -525,6 +524,7 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     background-color: rgba(0, 0, 0, 0.85);
     justify-content: center;
     align-items: center;
+    pointer-events: none;
   }
   .image-modal.active {
     display: flex;
@@ -540,19 +540,6 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     max-height: 80vh;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  }
-  .image-modal-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: #fff;
-    font-size: 36px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-  .image-modal-close:hover {
-    color: #40b0a0;
   }
   .image-modal-title {
     color: #fff;
@@ -767,14 +754,14 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
     });
   });
 
-  // 画像モーダル
+  // 画像モーダル（ホバーで表示）
   const imageModal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage') as HTMLImageElement;
   const modalTitle = document.getElementById('modalTitle');
-  const imageModalClose = document.querySelector('.image-modal-close');
 
   document.querySelectorAll('.thumbnail-image').forEach(thumb => {
-    thumb.addEventListener('click', () => {
+    // マウスが乗ったら表示
+    thumb.addEventListener('mouseenter', () => {
       const imgSrc = thumb.getAttribute('data-image');
       const imgTitle = thumb.getAttribute('data-title');
       if (imageModal && modalImage && imgSrc) {
@@ -782,26 +769,16 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
         modalImage.alt = imgTitle || '';
         if (modalTitle) modalTitle.textContent = imgTitle || '';
         imageModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // マウスが離れたら非表示
+    thumb.addEventListener('mouseleave', () => {
+      if (imageModal) {
+        imageModal.classList.remove('active');
       }
     });
   });
-
-  if (imageModalClose && imageModal) {
-    imageModalClose.addEventListener('click', () => {
-      imageModal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-  }
-
-  if (imageModal) {
-    imageModal.addEventListener('click', (e) => {
-      if (e.target === imageModal) {
-        imageModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    });
-  }
 
   // 診断モーダル
   document.addEventListener('DOMContentLoaded', () => {
