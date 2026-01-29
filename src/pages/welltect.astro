@@ -27,66 +27,78 @@ import IndividualTests from '../components/sections/IndividualTests.astro';
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Step 1: 問題提起 -->
-        <div class="mb-20">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">1</div>
-            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">65歳までに<span class="text-red-600">4人に1人</span>ががんに</h2>
-          </div>
-          <p class="text-gray-600 mb-6 text-lg">
-            がんは決して他人事ではありません。20歳〜65歳未満のがん罹患者数は年々増加しており、働き盛りの世代にとって大きなリスクとなっています。
-          </p>
-          <div class="bg-gray-50 rounded-2xl p-4 lg:p-8 shadow-inner flex flex-col items-center">
-            <div class="thumbnail-image cursor-pointer" data-image="/images/welltect01.png" data-title="性別・年齢階級別がん罹患者数（1975年・2014年）">
-              <img src="/images/welltect01.png" alt="性別・年齢階級別がん罹患者数（1975年・2014年）" class="w-48 lg:w-64 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
-              <p class="text-xs text-center text-gray-500 mt-2">クリックで拡大</p>
+        <div class="mb-16">
+          <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">1</div>
+                <h2 class="text-xl lg:text-2xl font-bold text-gray-900">65歳までに<span class="text-red-600">4人に1人</span>ががんに</h2>
+              </div>
+              <p class="text-gray-600 text-sm lg:text-base">
+                がんは決して他人事ではありません。20歳〜65歳未満のがん罹患者数は年々増加しており、働き盛りの世代にとって大きなリスクとなっています。
+              </p>
+              <p class="text-xs text-gray-400 mt-2">出典：国立がん研究センター がん統計</p>
             </div>
-            <p class="text-sm text-gray-500 mt-4 text-center">出典：国立がん研究センター がん統計</p>
+            <div class="mt-4 lg:mt-0 flex-shrink-0">
+              <div class="thumbnail-image cursor-pointer" data-image="/images/welltect01.png" data-title="性別・年齢階級別がん罹患者数（1975年・2014年）">
+                <img src="/images/welltect01.png" alt="性別・年齢階級別がん罹患者数（1975年・2014年）" class="w-32 lg:w-40 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
+                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Step 2: 希望 -->
-        <div class="mb-20">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">2</div>
-            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">でも、心配はいりません</h2>
-          </div>
-          <div class="bg-gradient-to-r from-teal-50 to-green-50 border-l-4 border-teal-500 p-6 rounded-r-xl mb-6">
-            <p class="text-xl font-bold text-teal-800">
-              がんは<span class="text-teal-600 underline decoration-4 decoration-teal-300">早期発見・早期治療</span>で助かります
-            </p>
-          </div>
-          <p class="text-gray-600 mb-6 text-lg">
-            ステージIで発見できれば、多くのがんで5年生存率は80%以上。早期発見が命を救う鍵です。
-          </p>
-          <div class="bg-gray-50 rounded-2xl p-4 lg:p-8 shadow-inner flex flex-col items-center">
-            <div class="thumbnail-image cursor-pointer" data-image="/images/welltect02.png" data-title="がんの5年生存率">
-              <img src="/images/welltect02.png" alt="がんの5年生存率" class="w-48 lg:w-64 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
-              <p class="text-xs text-center text-gray-500 mt-2">クリックで拡大</p>
+        <div class="mb-16">
+          <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-teal-500 to-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">2</div>
+                <h2 class="text-xl lg:text-2xl font-bold text-gray-900">でも、心配はいりません</h2>
+              </div>
+              <div class="bg-gradient-to-r from-teal-50 to-green-50 border-l-4 border-teal-500 p-4 rounded-r-xl mb-4">
+                <p class="text-base lg:text-lg font-bold text-teal-800">
+                  がんは<span class="text-teal-600 underline decoration-2 decoration-teal-300">早期発見・早期治療</span>で助かります
+                </p>
+              </div>
+              <p class="text-gray-600 text-sm lg:text-base">
+                ステージIで発見できれば、多くのがんで5年生存率は80%以上。早期発見が命を救う鍵です。
+              </p>
+              <p class="text-xs text-gray-400 mt-2">ステージIで発見すれば、大腸がん・胃がんは95%、食道がんは83%の生存率</p>
             </div>
-            <p class="text-sm text-gray-500 mt-4 text-center">ステージIで発見すれば、大腸がん・胃がんは95%、食道がんは83%の生存率</p>
+            <div class="mt-4 lg:mt-0 flex-shrink-0">
+              <div class="thumbnail-image cursor-pointer" data-image="/images/welltect02.png" data-title="がんの5年生存率">
+                <img src="/images/welltect02.png" alt="がんの5年生存率" class="w-32 lg:w-40 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
+                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Step 3: 課題 -->
-        <div class="mb-20">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">3</div>
-            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">しかし、年1回の検診では...</h2>
-          </div>
-          <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-r-xl mb-6">
-            <p class="text-xl font-bold text-amber-800">
-              年1回の人間ドックでは、<span class="text-red-600">その間のがんの発見が遅れる</span>可能性があります
-            </p>
-          </div>
-          <p class="text-gray-600 mb-6 text-lg">
-            腫瘍マーカーではステージ3以上にならないと検出しづらいのが現状。人間ドックの間隔が1年では、急速に進行するがんを見逃すリスクがあります。
-          </p>
-          <div class="bg-gray-50 rounded-2xl p-4 lg:p-8 shadow-inner flex flex-col items-center">
-            <div class="thumbnail-image cursor-pointer" data-image="/images/welltect03.png" data-title="腫瘍マーカーとがんステージの関係">
-              <img src="/images/welltect03.png" alt="腫瘍マーカーとがんステージの関係" class="w-48 lg:w-64 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
-              <p class="text-xs text-center text-gray-500 mt-2">クリックで拡大</p>
+        <div class="mb-16">
+          <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">3</div>
+                <h2 class="text-xl lg:text-2xl font-bold text-gray-900">しかし、年1回の検診では...</h2>
+              </div>
+              <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-4 rounded-r-xl mb-4">
+                <p class="text-base lg:text-lg font-bold text-amber-800">
+                  年1回の人間ドックでは、<span class="text-red-600">その間のがんの発見が遅れる</span>可能性があります
+                </p>
+              </div>
+              <p class="text-gray-600 text-sm lg:text-base">
+                腫瘍マーカーではステージ3以上にならないと検出しづらいのが現状。人間ドックの間隔が1年では、急速に進行するがんを見逃すリスクがあります。
+              </p>
+              <p class="text-xs text-gray-400 mt-2">ウェルテクトは年4回のモニタリングで早期発見をサポート</p>
             </div>
-            <p class="text-sm text-gray-500 mt-4 text-center">ウェルテクトは年4回のモニタリングで早期発見をサポート</p>
+            <div class="mt-4 lg:mt-0 flex-shrink-0">
+              <div class="thumbnail-image cursor-pointer" data-image="/images/welltect03.png" data-title="腫瘍マーカーとがんステージの関係">
+                <img src="/images/welltect03.png" alt="腫瘍マーカーとがんステージの関係" class="w-32 lg:w-40 rounded-lg shadow-md hover:shadow-xl transition-shadow" />
+                <p class="text-xs text-center text-gray-500 mt-1">クリックで拡大</p>
+              </div>
+            </div>
           </div>
         </div>
 
