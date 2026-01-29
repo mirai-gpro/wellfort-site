@@ -2,6 +2,31 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// サプリメント商品データ
+const supplements = [
+  {
+    id: 'muse2',
+    name: 'MUSE2',
+    image: '/images/sup01.jpg',
+    description: '100% Japanese RICE KOJI / enzyme ONLY. Additive/Gluten/Alcohol FREE, Vegan, Halal.',
+    url: 'https://shop.wellfort.co.jp/view/item/000000000023'
+  },
+  {
+    id: 'thedio',
+    name: 'THE Dio',
+    image: '/images/sup02.jpg',
+    description: 'AUTOPHAGY DRINK. 贅沢な美容と健康のためのドリンク。',
+    url: 'https://shop.wellfort.co.jp/view/item/000000000024'
+  },
+  {
+    id: 'cenz',
+    name: 'CENZ MAGMA MINERAL',
+    image: '/images/sup03.jpg',
+    description: '野生植物抽出ミネラル加工食品。日々のミネラル補給に。',
+    url: 'https://shop.wellfort.co.jp/view/item/000000000025'
+  }
+];
 ---
 
 <BaseLayout title="サプリメント - Wellfort">
@@ -14,17 +39,33 @@ import Footer from '../components/Footer.astro';
           <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             サプリメント
           </h1>
-          <p class="text-lg text-gray-600">
+          <p class="text-lg text-gray-600 mb-2">
             提携・研究・開発・販売
+          </p>
+          <p class="tagline">
+            医療グレードの視点から提案する、<br class="sm:hidden">身体機能の最適化と拡張の為のサプリ
           </p>
         </div>
       </div>
     </section>
 
-    <section class="image-section">
+    <section class="products-section">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="image-container fade-in">
-          <img src="/images/sapuri_lp.png" alt="サプリメント" class="main-image" />
+        <div class="products-grid">
+          {supplements.map((product, index) => (
+            <div class="product-card fade-in" style={`animation-delay: ${index * 0.15}s`}>
+              <div class="product-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div class="product-content">
+                <h3 class="product-name">{product.name}</h3>
+                <p class="product-description">{product.description}</p>
+                <a href={product.url} target="_blank" rel="noopener noreferrer" class="product-btn">
+                  詳細を見る
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -47,21 +88,92 @@ import Footer from '../components/Footer.astro';
     background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
   }
 
-  .image-section {
+  .tagline {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #0d9488;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+
+  .products-section {
     padding: 40px 0 60px;
   }
 
-  .image-container {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 
-  .main-image {
+  .product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(13, 148, 136, 0.2);
+  }
+
+  .product-image {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f8f9fa;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+
+  .product-content {
+    padding: 24px;
+  }
+
+  .product-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .product-description {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    min-height: 48px;
+  }
+
+  .product-btn {
     display: block;
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .product-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
   }
 
   .cta-section {
@@ -98,6 +210,41 @@ import Footer from '../components/Footer.astro';
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* レスポンシブ対応 */
+  @media (max-width: 900px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-section {
+      padding: 60px 0 30px;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-name {
+      font-size: 18px;
+    }
+
+    .product-description {
+      min-height: auto;
+    }
+
+    .cta-section {
+      padding: 30px 0 60px;
     }
   }
 </style>
