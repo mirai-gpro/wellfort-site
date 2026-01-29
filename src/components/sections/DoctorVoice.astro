@@ -1,0 +1,349 @@
+---
+// DOCTOR'S VOICE & お客様の声セクション
+---
+
+<!-- 医師の声セクション -->
+<section class="doctor-voice-section">
+  <div class="container">
+    <div class="doctor-header fade-in">
+      <h2 class="doctor-title">DOCTOR'S VOICE<br>医師の声</h2>
+      <p class="doctor-subtitle">
+        ウェルテクトのサービスは現役で活躍している医師からもおすすめの声をいただいています。
+      </p>
+    </div>
+
+    <div class="doctor-content">
+      <div class="doctor-profile fade-in">
+        <div class="doctor-image">
+          <img src="https://shop.wellfort.co.jp/Contents/img/TopImage/doctor-photo.png" alt="森田医師" />
+        </div>
+        <div class="doctor-info">
+          <h3 class="doctor-name">森田医師</h3>
+          <h4 class="doctor-name-en">Dr. MORITA</h4>
+          <p class="doctor-bio">
+            医師・ジャーナリスト。<br>
+            現役医師として診療に従事しつつ、医療ドラマ（ドクターX等）・各種番組監修、各種メディアに出演中。
+          </p>
+        </div>
+      </div>
+
+      <div class="doctor-message fade-in">
+        <h3 class="message-title">MESSAGE</h3>
+        <div class="message-content">
+          <p>
+            日本人の2人に1人はがんになる時代です。 しかし、早期発見早期治療が出来れば、多くのがんは命に係わらないといっても過言ではありません。 多くの患者さんを診断していると、もっと早く検査しておけばよかったという声を聞きます。 簡単に検査のできて医師と直接健康相談のできるウェルテクトは、早期発見の懸け橋になるのではないかと考えています。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="doctor-interview fade-in">
+      <h3 class="interview-title">INTERVIEW</h3>
+      <div class="interview-content">
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/_MjD8AtrqrI"
+            title="森田医師インタビュー"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お客様の声セクション -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-title fade-in">お客様の声</h2>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-content">
+          <div class="testimonial-icon">
+            <img src="https://shop.wellfort.co.jp/Contents/img/TopImage/user-voice.png" alt="K.Mさん" />
+          </div>
+          <p class="testimonial-text">
+            日常的な健康管理が格段に効率化されました。忙しい中でも定期的に健康状態をチェックできるのは安心です。医師とのオンライン相談も非常に有益でした。
+          </p>
+          <div class="testimonial-author">
+            <strong>K.M さん</strong>
+            <span>会社経営者</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* 医師の声セクション */
+.doctor-voice-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+}
+
+.doctor-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.doctor-title {
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.doctor-subtitle {
+  font-size: clamp(16px, 2.5vw, 18px);
+  color: #555;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.doctor-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.doctor-profile {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.doctor-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.doctor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-info {
+  flex-grow: 1;
+}
+
+.doctor-name {
+  font-size: 28px;
+  color: #0066cc;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.doctor-name-en {
+  font-size: 20px;
+  color: #0066cc;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.doctor-bio {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.doctor-message {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.message-title {
+  font-size: 24px;
+  color: #0066cc;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.message-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #0066cc;
+}
+
+.message-content {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.doctor-interview {
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.interview-title {
+  font-size: 24px;
+  color: #0066cc;
+  margin-bottom: 20px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.interview-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #0066cc;
+}
+
+.interview-content {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.doctor-voice-section .video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.doctor-voice-section .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* お客様の声 */
+.testimonials-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.testimonials-section .section-title {
+  text-align: center;
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.testimonial-card {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.testimonial-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonial-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.testimonial-author {
+  text-align: center;
+}
+
+.testimonial-author strong {
+  display: block;
+  font-size: 18px;
+  color: #0066cc;
+  margin-bottom: 5px;
+}
+
+.testimonial-author span {
+  font-size: 14px;
+  color: #999;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .doctor-voice-section {
+    padding: 60px 0;
+  }
+
+  .doctor-header {
+    margin-bottom: 40px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .doctor-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .doctor-message,
+  .doctor-interview {
+    padding: 30px;
+  }
+
+  .testimonials-section {
+    padding: 60px 0;
+  }
+}
+</style>

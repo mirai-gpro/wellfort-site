@@ -1,0 +1,187 @@
+---
+// 最新ニュース3件表示セクション
+---
+
+<section class="latest-news-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2 class="section-title">最新ニュース</h2>
+      <p class="section-subtitle">ウェルフォートの最新情報をお届けします</p>
+    </div>
+
+    <div class="news-grid">
+      <!-- ニュース1 -->
+      <article class="news-card fade-in">
+        <div class="news-card-image">
+          <img src="/files/news_250325180332_0.jpg" alt="吉成名高選手">
+        </div>
+        <div class="news-card-content">
+          <h3 class="news-card-title">吉成名高選手 さいたまスーパーアリーナ『ONE 172: TAKERU vs. RODTANG』にて3R KO勝利を収める</h3>
+          <p class="news-card-excerpt">
+            ウェルフォートがパンツスポンサーを務める吉成名高選手が3月23日にさいたまスーパーアリーナで行われた『ONE 172: TAKERU vs. RODTANG』にてラック・エラワン選手に3RKO勝利を収め...
+          </p>
+        </div>
+      </article>
+
+      <!-- ニュース2 -->
+      <article class="news-card fade-in">
+        <div class="news-card-image">
+          <img src="/files/news_250306160217_0.jpg" alt="もうひとつの太陽">
+        </div>
+        <div class="news-card-content">
+          <h3 class="news-card-title">健康モニタリングの重要性を訴求するショートムービー「もうひとつの太陽」を公開</h3>
+          <p class="news-card-excerpt">
+            健康モニタリングサービス「ウェルテクト」を提供する株式会社ウェルフォートは2025年3月6日より、健康予防の重要性を訴求する新しいショートムービーを公開...
+          </p>
+        </div>
+      </article>
+
+      <!-- ニュース3 -->
+      <article class="news-card fade-in">
+        <div class="news-card-image">
+          <img src="/files/news_241202133014_0.jpg" alt="ムエタイRWS">
+        </div>
+        <div class="news-card-content">
+          <h3 class="news-card-title">ムエタイRWS（ラジャダムナンワールドシリーズ）第4回日本大会</h3>
+          <p class="news-card-excerpt">
+            2024年12月1日に横浜大さん橋ホールで行われたムエタイRWS第4回日本大会において、株式会社ウェルフォートは大会スポンサーをつとめました...
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="news-cta fade-in">
+      <a href="/news" class="news-link-button">ニュース一覧を見る</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.latest-news-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.latest-news-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.latest-news-section .section-title {
+  font-size: clamp(28px, 5vw, 36px);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.latest-news-section .section-subtitle {
+  font-size: clamp(16px, 2.5vw, 18px);
+  color: #555;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.news-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.news-card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.news-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-card-image img {
+  transform: scale(1.05);
+}
+
+.news-card-content {
+  padding: 20px;
+}
+
+.news-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-excerpt {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-cta {
+  text-align: center;
+}
+
+.news-link-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #0066cc;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.news-link-button:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+}
+
+/* レスポンシブ */
+@media (max-width: 992px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .latest-news-section {
+    padding: 60px 0;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .news-card-image {
+    height: 160px;
+  }
+}
+</style>
