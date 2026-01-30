@@ -59,18 +59,13 @@
           公式X
         </h3>
         <div class="media-content">
-          <a href="https://x.com/Monobe_wellfort" target="_blank" rel="noopener noreferrer" class="x-embed-link">
-            <div class="x-embed-container">
-              <div class="x-embed-placeholder">
-                <svg class="x-large-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                <p class="x-follow-text">@Monobe_wellfort</p>
-                <span class="x-follow-btn">Xでフォローする</span>
-              </div>
+          <a href="https://x.com/Monobe_wellfort" target="_blank" rel="noopener noreferrer" class="x-image-link">
+            <img src="/images/X_monobe.png" alt="@Monobe_wellfort" class="x-profile-image" />
+            <div class="x-overlay">
+              <span>Xでフォローする</span>
             </div>
           </a>
-          <p class="media-description">最新情報をXでチェック</p>
+          <p class="media-description">@Monobe_wellfort</p>
         </div>
       </div>
 
@@ -207,52 +202,52 @@
   margin: 0;
 }
 
-/* X Embed */
-.x-embed-link {
+/* X Image */
+.x-image-link {
   display: block;
-  text-decoration: none;
-}
-
-.x-embed-container {
-  border-radius: 12px;
+  position: relative;
+  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 12px;
-  background: linear-gradient(135deg, #f7f9fa 0%, #eef2f5 100%);
-  border: 1px solid #e1e8ed;
 }
 
-.x-embed-placeholder {
-  padding: 40px 20px;
-  text-align: center;
+.x-profile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.x-large-icon {
-  width: 48px;
-  height: 48px;
-  color: #000;
-  margin-bottom: 16px;
+.x-image-link:hover .x-profile-image {
+  transform: scale(1.05);
 }
 
-.x-follow-text {
-  font-size: 18px;
-  font-weight: 700;
-  color: #0f1419;
-  margin-bottom: 16px;
+.x-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.x-follow-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #000;
+.x-image-link:hover .x-overlay {
+  opacity: 1;
+}
+
+.x-overlay span {
   color: white;
   font-weight: 600;
   font-size: 14px;
-  border-radius: 24px;
-  transition: background 0.3s ease;
-}
-
-.x-embed-link:hover .x-follow-btn {
-  background: #333;
+  padding: 10px 20px;
+  background: #000;
+  border-radius: 20px;
 }
 
 /* Instagram */
