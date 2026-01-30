@@ -32,7 +32,7 @@ const navItems = [
       </a>
 
       <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-1">
+      <div class="hidden lg:flex items-center space-x-4">
         {navItems.map((item) => (
           item.dropdown ? (
             <div class="nav-dropdown relative">
@@ -65,13 +65,6 @@ const navItems = [
             </a>
           )
         ))}
-      </div>
-
-      <!-- CTA Button (Desktop) -->
-      <div class="hidden lg:block">
-        <a href="/online-meeting" class="btn-primary text-sm px-6 py-3">
-          無料オンライン面談
-        </a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -122,11 +115,6 @@ const navItems = [
           </a>
         )
       ))}
-      <div class="pt-4">
-        <a href="/online-meeting" class="btn-primary w-full text-center">
-          無料オンライン面談
-        </a>
-      </div>
     </div>
   </div>
 </header>
