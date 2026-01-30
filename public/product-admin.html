@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Admin - Wellfort</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .schedule-link {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #4caf50;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .schedule-link:hover {
+      background: #388e3c;
+    }
+
+    .add-product-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #667eea;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .add-product-btn:hover {
+      background: #5a67d8;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .logout-btn {
+      padding: 8px 20px;
+      background: #f44336;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .logout-btn:hover {
+      background: #d32f2f;
+    }
+
+    #login-screen {
+      max-width: 500px;
+      margin: 100px auto;
+      background: white;
+      padding: 60px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    #login-screen h2 {
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 32px;
+    }
+
+    #login-screen p {
+      margin-bottom: 40px;
+      color: #666;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .product-card.inactive {
+      opacity: 0.5;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .product-price {
+      font-size: 18px;
+      color: #667eea;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-renewal-info {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .renewal-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #ff9800;
+      color: white;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    .product-order {
+      font-size: 12px;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .status-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .status-active {
+      background: #4caf50;
+      color: white;
+    }
+
+    .status-inactive {
+      background: #9e9e9e;
+      color: white;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 800px;
+      padding: 30px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #666;
+      background: none;
+      border: none;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      cursor: pointer;
+    }
+
+    .image-preview {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-top: 10px;
+      border: 2px solid #e0e0e0;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-secondary {
+      background: #f5f5f5;
+      color: #333;
+      border: 2px solid #e0e0e0;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .btn-secondary:hover {
+      background: #e0e0e0;
+    }
+
+    .btn-danger {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-danger:hover {
+      background: #d32f2f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+    }
+
+    .btn-danger:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .message {
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .message.success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      display: block;
+    }
+
+    .message.error {
+      background: #ffebee;
+      color: #c62828;
+      display: block;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .modal-actions-left {
+      display: flex;
+      gap: 10px;
+    }
+
+    .modal-actions-right {
+      display: flex;
+      gap: 10px;
+    }
+
+    .confirm-dialog {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .confirm-dialog h3 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .confirm-dialog p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .confirm-dialog-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .section-divider {
+      border-top: 2px solid #e0e0e0;
+      margin: 30px 0 20px 0;
+      padding-top: 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .help-text {
+      font-size: 13px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 1200px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .form-row, .form-row-3 {
+        grid-template-columns: 1fr;
+      }
+      
+      .header-actions {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+      }
+
+      .modal-actions {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .modal-actions-left,
+      .modal-actions-right {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="login-screen">
+    <h2>Product Management System</h2>
+    <p>Please sign in with your Google account</p>
+  </div>
+
+  <div id="main-screen" style="display: none;">
+    <div class="container">
+      <header>
+        <h1>Product Management</h1>
+        <div class="header-actions">
+          <a href="/src/sales_schedule_set.html" class="schedule-link">無料オンライン面談の可能日時を設定・修正</a>
+          <a href="#" class="add-product-btn" onclick="openInsertModal()">新規商品登録</a>
+          <div class="user-info">
+            <img id="user-avatar" class="user-avatar" src="" alt="">
+            <span id="user-name"></span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </header>
+
+      <div id="message" class="message"></div>
+
+      <div id="loading" class="loading">Loading...</div>
+
+      <div id="products-container" class="products-grid"></div>
+    </div>
+  </div>
+
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h2 style="margin-bottom: 30px;">Edit Product</h2>
+
+      <div id="modal-message" class="message"></div>
+
+      <form id="edit-form">
+        <input type="hidden" id="product-id">
+
+        <div class="form-group">
+          <label for="product-name">Product Name *</label>
+          <input type="text" id="product-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="product-description">Short Description</label>
+          <textarea id="product-description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="product-detail">Detail Description</label>
+          <textarea id="product-detail"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-price">Standard Price (JPY) *</label>
+            <input type="number" id="product-price" required min="0">
+            <div class="help-text">通常価格（1回限りまたはサブスク通常価格）</div>
+          </div>
+
+          <div class="form-group">
+            <label for="product-category">Category</label>
+            <input type="text" id="product-category">
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-title">?? サブスクリプション設定</div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="product-renewal-available">
+            <label for="product-renewal-available">サブスクリプション商品として設定</label>
+          </div>
+          <div class="help-text">チェックを入れると初回価格と継続価格を設定できます</div>
+        </div>
+
+        <div class="form-row" id="renewal-prices-section" style="display: none;">
+          <div class="form-group">
+            <label for="product-first-time-price">初回価格 (JPY)</label>
+            <input type="number" id="product-first-time-price" min="0">
+            <div class="help-text">初回購入時の特別価格（未入力時は通常価格）</div>
+          </div>
+
+          <div class="form-group">
+            <label for="product-renewal-price">継続価格 (JPY)</label>
+            <input type="number" id="product-renewal-price" min="0">
+            <div class="help-text">2回目以降の継続価格（未入力時は通常価格）</div>
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-title">?? その他設定</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-sort">Sort Order</label>
+            <input type="number" id="product-sort" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="product-active" checked>
+              <label for="product-active">Active</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="product-image">Image URL</label>
+          <input type="url" id="product-image" placeholder="https://example.com/image.jpg">
+          <img id="image-preview" class="image-preview" style="display: none;">
+        </div>
+
+        <div class="modal-actions">
+          <div class="modal-actions-left">
+            <button type="button" class="btn-danger" id="delete-btn" onclick="confirmDelete()">DELETE</button>
+          </div>
+          <div class="modal-actions-right">
+            <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+            <button type="submit" class="btn-primary" id="save-btn">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="insert-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeInsertModal()">&times;</button>
+      <h2 style="margin-bottom: 30px;">Add New Product</h2>
+
+      <div id="insert-modal-message" class="message"></div>
+
+      <form id="insert-form">
+        <div class="form-group">
+          <label for="insert-product-name">Product Name *</label>
+          <input type="text" id="insert-product-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="insert-product-description">Short Description</label>
+          <textarea id="insert-product-description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="insert-product-detail">Detail Description</label>
+          <textarea id="insert-product-detail"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="insert-product-price">Standard Price (JPY) *</label>
+            <input type="number" id="insert-product-price" required min="0">
+            <div class="help-text">通常価格（1回限りまたはサブスク通常価格）</div>
+          </div>
+
+          <div class="form-group">
+            <label for="insert-product-category">Category</label>
+            <input type="text" id="insert-product-category">
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-title">?? サブスクリプション設定</div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="insert-product-renewal-available">
+            <label for="insert-product-renewal-available">サブスクリプション商品として設定</label>
+          </div>
+          <div class="help-text">チェックを入れると初回価格と継続価格を設定できます</div>
+        </div>
+
+        <div class="form-row" id="insert-renewal-prices-section" style="display: none;">
+          <div class="form-group">
+            <label for="insert-product-first-time-price">初回価格 (JPY)</label>
+            <input type="number" id="insert-product-first-time-price" min="0">
+            <div class="help-text">初回購入時の特別価格（未入力時は通常価格）</div>
+          </div>
+
+          <div class="form-group">
+            <label for="insert-product-renewal-price">継続価格 (JPY)</label>
+            <input type="number" id="insert-product-renewal-price" min="0">
+            <div class="help-text">2回目以降の継続価格（未入力時は通常価格）</div>
+          </div>
+        </div>
+
+        <div class="section-divider">
+          <div class="section-title">?? その他設定</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="insert-product-sort">Sort Order</label>
+            <input type="number" id="insert-product-sort" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="insert-product-active" checked>
+              <label for="insert-product-active">Active</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="insert-product-image">Image URL</label>
+          <input type="url" id="insert-product-image" placeholder="https://example.com/image.jpg">
+          <img id="insert-image-preview" class="image-preview" style="display: none;">
+        </div>
+
+        <div style="margin-top: 30px; text-align: right;">
+          <button type="button" class="btn-secondary" onclick="closeInsertModal()">Cancel</button>
+          <button type="submit" class="btn-primary" id="insert-save-btn">Add Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="modal">
+    <div class="confirm-dialog">
+      <h3>Confirm Delete</h3>
+      <p>Are you sure you want to delete this product? This action cannot be undone.</p>
+      <div class="confirm-dialog-buttons">
+        <button type="button" class="btn-secondary" onclick="closeConfirmModal()">Cancel</button>
+        <button type="button" class="btn-danger" id="confirm-delete-btn" onclick="deleteProduct()">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  
+  <script>
+    const SUPABASE_URL = 'https://nlydlveiokiivjwpnnaf.supabase.co'
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5seWRsdmVpb2tpaXZqd3BubmFmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5NTg0OTMsImV4cCI6MjA3NzUzNDQ5M30.lNfQ57KiuQdwC5iM1cfZDcAS7TJoE6gYkepNoqcqzFw'
+    const GOOGLE_CLIENT_ID = '734153699442-2lh7nggpr2b5seq1let842pg7ohu28c2.apps.googleusercontent.com'
+
+    let currentUser = null
+    let accessToken = null
+    let products = []
+
+    // サブスク設定の表示/非表示切り替え（編集モーダル）
+    document.addEventListener('DOMContentLoaded', function() {
+      const renewalCheckbox = document.getElementById('product-renewal-available')
+      const renewalSection = document.getElementById('renewal-prices-section')
+      
+      if (renewalCheckbox) {
+        renewalCheckbox.addEventListener('change', function() {
+          renewalSection.style.display = this.checked ? 'grid' : 'none'
+        })
+      }
+
+      // 新規登録モーダル用
+      const insertRenewalCheckbox = document.getElementById('insert-product-renewal-available')
+      const insertRenewalSection = document.getElementById('insert-renewal-prices-section')
+      
+      if (insertRenewalCheckbox) {
+        insertRenewalCheckbox.addEventListener('change', function() {
+          insertRenewalSection.style.display = this.checked ? 'grid' : 'none'
+        })
+      }
+    })
+
+    async function handleCredentialResponse(response) {
+      console.log('Google authentication success')
+      
+      try {
+        const authResponse = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=id_token', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY
+          },
+          body: JSON.stringify({
+            provider: 'google',
+            id_token: response.credential
+          })
+        })
+
+        const authData = await authResponse.json()
+
+        if (authData.error) {
+          throw new Error(authData.error.message || 'Login failed')
+        }
+
+        accessToken = authData.access_token
+        currentUser = authData.user
+
+        console.log('Supabase authentication success')
+
+        document.getElementById('user-avatar').src = currentUser.user_metadata.avatar_url || currentUser.user_metadata.picture
+        document.getElementById('user-name').textContent = currentUser.user_metadata.full_name || currentUser.user_metadata.name
+
+        document.getElementById('login-screen').style.display = 'none'
+        document.getElementById('main-screen').style.display = 'block'
+
+        await loadProducts()
+
+      } catch (err) {
+        console.error('Authentication error:', err)
+        alert('Login failed: ' + err.message)
+      }
+    }
+
+    function logout() {
+      if (confirm('Are you sure you want to logout?')) {
+        currentUser = null
+        accessToken = null
+        
+        document.getElementById('login-screen').style.display = 'block'
+        document.getElementById('main-screen').style.display = 'none'
+        
+        if (window.google && google.accounts && google.accounts.id) {
+          google.accounts.id.disableAutoSelect()
+        }
+        
+        setTimeout(function() {
+          window.location.reload()
+        }, 500)
+      }
+    }
+
+    async function loadProducts() {
+      try {
+        document.getElementById('loading').style.display = 'block'
+        document.getElementById('products-container').innerHTML = ''
+
+        const response = await fetch(SUPABASE_URL + '/functions/v1/get-products?active_only=false', {
+          headers: {
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+          }
+        })
+
+        const result = await response.json()
+
+        if (!result.success) {
+          throw new Error(result.error)
+        }
+
+        products = result.data
+
+        products.sort(function(a, b) {
+          if (a.sort_order !== b.sort_order) {
+            return a.sort_order - b.sort_order
+          }
+          return new Date(b.created_at) - new Date(a.created_at)
+        })
+
+        displayProducts()
+
+      } catch (err) {
+        console.error('Product load error:', err)
+        showMessage('Failed to load products: ' + err.message, 'error')
+      } finally {
+        document.getElementById('loading').style.display = 'none'
+      }
+    }
+
+    function displayProducts() {
+      const container = document.getElementById('products-container')
+      container.innerHTML = ''
+
+      products.forEach(function(product, index) {
+        const card = document.createElement('div')
+        card.className = 'product-card' + (!product.is_active ? ' inactive' : '')
+        card.onclick = function() { openEditModal(product) }
+
+        const statusBadge = product.is_active 
+          ? '<span class="status-badge status-active">Active</span>'
+          : '<span class="status-badge status-inactive">Inactive</span>'
+
+        // 価格表示の構築
+        let priceHtml = '<div class="product-price">JPY ' + product.price.toLocaleString() + '</div>'
+        
+        // サブスク情報の表示
+        let renewalHtml = ''
+        if (product.is_renewal_available) {
+          renewalHtml += '<div class="product-renewal-info">'
+          renewalHtml += '<span class="renewal-badge">サブスク</span>'
+          if (product.first_time_price) {
+            renewalHtml += ' 初回: ' + product.first_time_price.toLocaleString()
+          }
+          if (product.renewal_price) {
+            renewalHtml += ' / 継続: ' + product.renewal_price.toLocaleString()
+          }
+          renewalHtml += '</div>'
+        }
+
+        card.innerHTML = statusBadge +
+          '<img class="product-image" src="' + (product.image_url || 'https://via.placeholder.com/300x200?text=No+Image') + '" alt="' + product.name + '" onerror="this.src=\'https://via.placeholder.com/300x200?text=No+Image\'">' +
+          '<div class="product-name">' + product.name + '</div>' +
+          priceHtml +
+          renewalHtml +
+          '<div class="product-order">' +
+            '<span>Order: ' + product.sort_order + '</span>' +
+            '<span>Position: ' + (index + 1) + '</span>' +
+          '</div>'
+
+        container.appendChild(card)
+      })
+    }
+
+    function openEditModal(product) {
+      document.getElementById('product-id').value = product.id
+      document.getElementById('product-name').value = product.name
+      document.getElementById('product-description').value = product.description || ''
+      document.getElementById('product-detail').value = product.detail_description || ''
+      document.getElementById('product-price').value = product.price
+      document.getElementById('product-category').value = product.category || ''
+      document.getElementById('product-sort').value = product.sort_order
+      document.getElementById('product-active').checked = product.is_active
+      document.getElementById('product-image').value = product.image_url || ''
+
+      // サブスク関連の設定
+      const isRenewalAvailable = product.is_renewal_available || false
+      document.getElementById('product-renewal-available').checked = isRenewalAvailable
+      document.getElementById('product-first-time-price').value = product.first_time_price || ''
+      document.getElementById('product-renewal-price').value = product.renewal_price || ''
+      
+      // サブスク設定セクションの表示/非表示
+      document.getElementById('renewal-prices-section').style.display = isRenewalAvailable ? 'grid' : 'none'
+
+      if (product.image_url) {
+        const preview = document.getElementById('image-preview')
+        preview.src = product.image_url
+        preview.style.display = 'block'
+      }
+
+      document.getElementById('edit-modal').classList.add('active')
+    }
+
+    function closeModal() {
+      document.getElementById('edit-modal').classList.remove('active')
+      document.getElementById('edit-form').reset()
+      document.getElementById('image-preview').style.display = 'none'
+      document.getElementById('modal-message').style.display = 'none'
+      document.getElementById('renewal-prices-section').style.display = 'none'
+    }
+
+    function openInsertModal() {
+      document.getElementById('insert-modal').classList.add('active')
+    }
+
+    function closeInsertModal() {
+      document.getElementById('insert-modal').classList.remove('active')
+      document.getElementById('insert-form').reset()
+      document.getElementById('insert-image-preview').style.display = 'none'
+      document.getElementById('insert-modal-message').style.display = 'none'
+      document.getElementById('insert-renewal-prices-section').style.display = 'none'
+    }
+
+    function confirmDelete() {
+      document.getElementById('confirm-modal').classList.add('active')
+    }
+
+    function closeConfirmModal() {
+      document.getElementById('confirm-modal').classList.remove('active')
+    }
+
+    async function deleteProduct() {
+      const productId = document.getElementById('product-id').value
+      const deleteBtn = document.getElementById('confirm-delete-btn')
+      
+      deleteBtn.disabled = true
+      deleteBtn.textContent = 'Deleting...'
+
+      try {
+        const response = await fetch(SUPABASE_URL + '/functions/v1/delete-product', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+          },
+          body: JSON.stringify({
+            id: productId
+          })
+        })
+
+        const result = await response.json()
+
+        if (!result.success) {
+          throw new Error(result.error)
+        }
+
+        closeConfirmModal()
+        closeModal()
+        showMessage('Product deleted successfully', 'success')
+        
+        await loadProducts()
+
+      } catch (err) {
+        console.error('Delete error:', err)
+        showModalMessage('Delete failed: ' + err.message, 'error')
+      } finally {
+        deleteBtn.disabled = false
+        deleteBtn.textContent = 'Delete'
+      }
+    }
+
+    document.getElementById('product-image').addEventListener('input', function(e) {
+      const preview = document.getElementById('image-preview')
+      if (e.target.value) {
+        preview.src = e.target.value
+        preview.style.display = 'block'
+      } else {
+        preview.style.display = 'none'
+      }
+    })
+
+    document.getElementById('insert-product-image').addEventListener('input', function(e) {
+      const preview = document.getElementById('insert-image-preview')
+      if (e.target.value) {
+        preview.src = e.target.value
+        preview.style.display = 'block'
+      } else {
+        preview.style.display = 'none'
+      }
+    })
+
+    document.getElementById('edit-form').addEventListener('submit', async function(e) {
+      e.preventDefault()
+
+      const btn = document.getElementById('save-btn')
+      btn.disabled = true
+      btn.textContent = 'Saving...'
+
+      try {
+        const isRenewalAvailable = document.getElementById('product-renewal-available').checked
+        const firstTimePrice = document.getElementById('product-first-time-price').value
+        const renewalPrice = document.getElementById('product-renewal-price').value
+
+        const productData = {
+          id: document.getElementById('product-id').value,
+          name: document.getElementById('product-name').value,
+          description: document.getElementById('product-description').value || null,
+          detail_description: document.getElementById('product-detail').value || null,
+          price: parseInt(document.getElementById('product-price').value),
+          category: document.getElementById('product-category').value || null,
+          sort_order: parseInt(document.getElementById('product-sort').value),
+          is_active: document.getElementById('product-active').checked,
+          image_url: document.getElementById('product-image').value || null,
+          is_renewal_available: isRenewalAvailable,
+          first_time_price: firstTimePrice ? parseInt(firstTimePrice) : null,
+          renewal_price: renewalPrice ? parseInt(renewalPrice) : null
+        }
+
+        const response = await fetch(SUPABASE_URL + '/functions/v1/update-product', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+          },
+          body: JSON.stringify(productData)
+        })
+
+        const result = await response.json()
+
+        if (!result.success) {
+          throw new Error(result.error)
+        }
+
+        showModalMessage('Saved successfully', 'success')
+        
+        setTimeout(function() {
+          closeModal()
+          loadProducts()
+        }, 1000)
+
+      } catch (err) {
+        console.error('Save error:', err)
+        showModalMessage('Save failed: ' + err.message, 'error')
+      } finally {
+        btn.disabled = false
+        btn.textContent = 'Save'
+      }
+    })
+
+    document.getElementById('insert-form').addEventListener('submit', async function(e) {
+      e.preventDefault()
+
+      const btn = document.getElementById('insert-save-btn')
+      btn.disabled = true
+      btn.textContent = 'Adding...'
+
+      try {
+        const isRenewalAvailable = document.getElementById('insert-product-renewal-available').checked
+        const firstTimePrice = document.getElementById('insert-product-first-time-price').value
+        const renewalPrice = document.getElementById('insert-product-renewal-price').value
+
+        const productData = {
+          name: document.getElementById('insert-product-name').value,
+          description: document.getElementById('insert-product-description').value || null,
+          detail_description: document.getElementById('insert-product-detail').value || null,
+          price: parseInt(document.getElementById('insert-product-price').value),
+          category: document.getElementById('insert-product-category').value || null,
+          sort_order: parseInt(document.getElementById('insert-product-sort').value),
+          is_active: document.getElementById('insert-product-active').checked,
+          image_url: document.getElementById('insert-product-image').value || null,
+          is_renewal_available: isRenewalAvailable,
+          first_time_price: firstTimePrice ? parseInt(firstTimePrice) : null,
+          renewal_price: renewalPrice ? parseInt(renewalPrice) : null
+        }
+
+        const response = await fetch(SUPABASE_URL + '/functions/v1/insert-product', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + accessToken
+          },
+          body: JSON.stringify(productData)
+        })
+
+        const result = await response.json()
+
+        if (!result.success) {
+          throw new Error(result.error)
+        }
+
+        showInsertModalMessage('Product added successfully', 'success')
+        
+        setTimeout(function() {
+          closeInsertModal()
+          loadProducts()
+        }, 1000)
+
+      } catch (err) {
+        console.error('Insert error:', err)
+        showInsertModalMessage('Insert failed: ' + err.message, 'error')
+      } finally {
+        btn.disabled = false
+        btn.textContent = 'Add Product'
+      }
+    })
+
+    function showMessage(text, type) {
+      const message = document.getElementById('message')
+      message.textContent = text
+      message.className = 'message ' + type
+
+      if (type === 'success') {
+        setTimeout(function() {
+          message.style.display = 'none'
+        }, 3000)
+      }
+    }
+
+    function showModalMessage(text, type) {
+      const message = document.getElementById('modal-message')
+      message.textContent = text
+      message.className = 'message ' + type
+
+      if (type === 'success') {
+        setTimeout(function() {
+          message.style.display = 'none'
+        }, 3000)
+      }
+    }
+
+    function showInsertModalMessage(text, type) {
+      const message = document.getElementById('insert-modal-message')
+      message.textContent = text
+      message.className = 'message ' + type
+
+      if (type === 'success') {
+        setTimeout(function() {
+          message.style.display = 'none'
+        }, 3000)
+      }
+    }
+
+    // Google OneTap認証の初期化
+    window.onload = function() {
+      console.log('Initializing Google One Tap')
+      
+      const checkGoogleLoaded = setInterval(function() {
+        if (typeof google !== 'undefined' && google.accounts && google.accounts.id) {
+          clearInterval(checkGoogleLoaded)
+          
+          console.log('Google Identity Services loaded')
+          
+          google.accounts.id.initialize({
+            client_id: GOOGLE_CLIENT_ID,
+            callback: handleCredentialResponse
+          })
+
+          google.accounts.id.prompt()
+        }
+      }, 100)
+    }
+  </script>
+</body>
+</html>
