@@ -14,13 +14,13 @@ import Technology from '../components/sections/Technology.astro';
     <!-- Hero -->
     <section class="pt-32 pb-12 bg-gradient-to-b from-teal-50 to-white">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="flex justify-center mb-4">
+        <div class="flex justify-center mb-4" data-scroll="zoom-in">
           <img src="/images/welltect_logo.png" alt="Welltect" class="h-20 lg:h-24" />
         </div>
-        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4" data-scroll="fade-up" data-scroll-delay="100">
           Welltect（モニタリングサービス）
         </h1>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-scroll="fade-up" data-scroll-delay="200">
           自宅で手軽に、高精度な健康モニタリング。<br />
           経営幹部から一般社員まで、最適なパッケージをご用意しています。
         </p>
@@ -32,7 +32,7 @@ import Technology from '../components/sections/Technology.astro';
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Step 1: 問題提起 -->
-        <div class="mb-16">
+        <div class="mb-16" data-scroll="fade-up">
           <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
             <div class="flex-1">
               <div class="flex items-center gap-4 mb-4">
@@ -58,7 +58,7 @@ import Technology from '../components/sections/Technology.astro';
         </div>
 
         <!-- Step 2: 希望 -->
-        <div class="mb-16">
+        <div class="mb-16" data-scroll="fade-up">
           <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
             <div class="flex-1">
               <div class="flex items-center gap-4 mb-4">
@@ -89,7 +89,7 @@ import Technology from '../components/sections/Technology.astro';
         </div>
 
         <!-- Step 3: 課題 -->
-        <div class="mb-16">
+        <div class="mb-16" data-scroll="fade-up">
           <div class="flex flex-col lg:flex-row lg:items-start lg:gap-8">
             <div class="flex-1">
               <div class="flex items-center gap-4 mb-4">
@@ -120,7 +120,7 @@ import Technology from '../components/sections/Technology.astro';
         </div>
 
         <!-- Step 4: 解決策 -->
-        <div class="mb-8">
+        <div class="mb-8" data-scroll="fade-up">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white shadow-lg">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ import Technology from '../components/sections/Technology.astro';
             </div>
             <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">そこで、<span class="text-teal-600">Welltect</span></h2>
           </div>
-          <div class="bg-gradient-to-r from-teal-500 to-blue-500 p-6 lg:p-8 rounded-2xl mb-6 text-white shadow-xl">
+          <div class="bg-gradient-to-r from-teal-500 to-blue-500 p-6 lg:p-8 rounded-2xl mb-6 text-white shadow-xl" data-scroll="zoom-in" data-scroll-delay="100">
             <p class="text-2xl lg:text-3xl font-bold text-center">
               年間4回の監視体制で、<br class="sm:hidden" />早期発見・早期治療が可能に！
             </p>
@@ -156,7 +156,7 @@ import Technology from '../components/sections/Technology.astro';
     <!-- ===== プラン選択UI ===== -->
     <section id="plan-selector" class="py-20 bg-gradient-to-br from-white via-tiffany-50/20 to-cyan-50/30">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" data-scroll="fade-up">
           <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">最適なプランを選択</h2>
           <p class="text-gray-600">
             ポジション/役割と年代を選択すると、推奨プランが表示されます。
@@ -164,12 +164,12 @@ import Technology from '../components/sections/Technology.astro';
         </div>
 
         <!-- Step 1: ポジション/役割選択 -->
-        <div class="mb-10">
+        <div class="mb-10" data-scroll="fade-up" data-scroll-delay="100">
           <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span class="w-8 h-8 bg-tiffany-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
             ポジションを選択
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="role-selector">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 scroll-stagger" id="role-selector">
             <button type="button" data-role="executive"
               class="role-card p-5 rounded-2xl border-2 border-gray-200 bg-white text-center transition-all hover:border-tiffany-400 hover:shadow-md cursor-pointer">
               <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
@@ -363,9 +363,9 @@ import Technology from '../components/sections/Technology.astro';
     <!-- もっと詳しく知るセクション -->
     <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">もっと詳しく知る</h2>
-        <p class="text-gray-600 mb-10">サービスについてのご質問やご相談はお気軽にどうぞ</p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4" data-scroll="fade-up">もっと詳しく知る</h2>
+        <p class="text-gray-600 mb-10" data-scroll="fade-up" data-scroll-delay="100">サービスについてのご質問やご相談はお気軽にどうぞ</p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center scroll-stagger">
           <a href="/contact" class="inline-flex items-center justify-center px-12 py-5 bg-white border-2 border-tiffany-500 text-tiffany-700 font-bold text-lg rounded-xl hover:bg-tiffany-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
