@@ -3,30 +3,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// サプリメント商品データ
-const supplements = [
-  {
-    id: 'muse2',
-    name: 'MUSE2',
-    image: '/images/sup02.jpg',
-    description: '100% Japanese RICE KOJI / enzyme ONLY. Additive/Gluten/Alcohol FREE, Vegan, Halal.',
-    url: '/products/b167a936-77b6-46b4-b709-eee071b4446e'
-  },
-  {
-    id: 'thedio',
-    name: 'THE Dio',
-    image: '/images/sup01.jpg',
-    description: 'AUTOPHAGY DRINK. 贅沢な美容と健康のためのドリンク。',
-    url: '/products/3754273c-2d9e-4553-80c0-f1624e066ed4'
-  },
-  {
-    id: 'cenz',
-    name: 'CENZ MAGMA MINERAL',
-    image: '/images/sup03.jpg',
-    description: '野生植物抽出ミネラル加工食品。日々のミネラル補給に。',
-    url: '/products/40c0d59a-b263-4c6a-adcd-a821478356b4'
+const API_URL = 'https://nlydlveiokiivjwpnnaf.supabase.co/functions/v1';
+
+// 商品データを取得
+let products: any[] = [];
+let error = null;
+
+try {
+  const response = await fetch(`${API_URL}/get-products`);
+  const result = await response.json();
+
+  if (result.success) {
+    // カテゴリが「サプリメント」の商品のみを抽出（DBのソート順を維持）
+    products = (result.data || []).filter((product: any) => product.category === 'サプリメント');
+  } else {
+    error = result.error;
   }
-];
+} catch (e) {
+  console.error('Error fetching products:', e);
+  error = e;
+}
+
+// 商品名から価格表示を削除するヘルパー関数
+function cleanProductName(name: string): string {
+  if (!name) return '';
+  return name.replace(/\s*販売価格[:：]?¥[\d,]+\s*\(税込\)\s*/g, '').trim();
+}
+
+// テキストを指定文字数で切り詰めるヘルパー関数
+function truncateText(text: string, maxLength: number = 190): { text: string; isTruncated: boolean } {
+  if (!text) return { text: '', isTruncated: false };
+  if (text.length <= maxLength) return { text, isTruncated: false };
+  return { text: text.slice(0, maxLength), isTruncated: true };
+}
+
+// featuresから特徴の配列を取得するヘルパー関数
+function getFeaturesList(features: any): string[] {
+  if (!features) return [];
+
+  if (features.検査頻度 && Array.isArray(features.検査頻度)) {
+    return features.検査頻度;
+  }
+
+  if (features.検査内容 && Array.isArray(features.検査内容)) {
+    return features.検査内容;
+  }
+
+  if (features.特徴 && Array.isArray(features.特徴)) {
+    return features.特徴;
+  }
+
+  const allArrays: string[] = [];
+  for (const key in features) {
+    if (Array.isArray(features[key])) {
+      allArrays.push(...features[key]);
+    }
+  }
+
+  return allArrays;
+}
 ---
 
 <BaseLayout title="サプリメント - Wellfort">
@@ -52,20 +87,55 @@ const supplements = [
     <section class="products-section">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="products-grid">
-          {supplements.map((product, index) => (
-            <div class="product-card fade-in" style={`animation-delay: ${index * 0.15}s`}>
-              <div class="product-image">
-                <img src={product.image} alt={product.name} />
+          {products && products.map((product, index) => {
+            const featuresList = getFeaturesList(product.features);
+            const displayName = cleanProductName(product.name);
+            const { text: descriptionText, isTruncated } = truncateText(product.description, 190);
+
+            return (
+              <div class="product-card fade-in" style={`animation-delay: ${index * 0.1}s`}>
+                <div class="product-content">
+                  {/* 商品画像（倍サイズ） */}
+                  {product.image_url && (
+                    <div class="product-image">
+                      <img src={product.image_url} alt={displayName} />
+                    </div>
+                  )}
+
+                  <h3 class="product-name">{displayName}</h3>
+                  <p class="product-description">
+                    {descriptionText}
+                    {isTruncated && <span class="description-more">...more</span>}
+                  </p>
+
+                  {featuresList.length > 0 && (
+                    <ul class="product-features">
+                      {featuresList.slice(0, 3).map((feature: string) => (
+                        <li>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3333 4L6 11.3333L2.66667 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div class="product-footer">
+                    <div class="product-price">
+                      <span class="price-label">料金</span>
+                      <span class="price-amount">¥{product.price.toLocaleString()}</span>
+                      <span class="price-tax">（税込）</span>
+                    </div>
+
+                    <a href={`/products/${product.id}`} class="product-btn">
+                      詳細を見る
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="product-content">
-                <h3 class="product-name">{product.name}</h3>
-                <p class="product-description">{product.description}</p>
-                <a href={product.url} class="product-btn">
-                  詳細を見る
-                </a>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -98,11 +168,12 @@ const supplements = [
 
   .products-section {
     padding: 40px 0 60px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
   }
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
   }
 
@@ -112,6 +183,7 @@ const supplements = [
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
+    position: relative;
   }
 
   .product-card:hover {
@@ -119,11 +191,18 @@ const supplements = [
     box-shadow: 0 12px 40px rgba(13, 148, 136, 0.2);
   }
 
+  .product-content {
+    padding: 30px;
+  }
+
+  /* 商品画像（倍サイズ：160px） */
   .product-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+    border-radius: 12px;
     overflow: hidden;
-    background: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .product-image img {
@@ -137,37 +216,97 @@ const supplements = [
     transform: scale(1.05);
   }
 
-  .product-content {
-    padding: 24px;
-  }
-
   .product-name {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     color: #1f2937;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     line-height: 1.4;
   }
 
   .product-description {
-    font-size: 14px;
+    font-size: 15px;
     color: #6b7280;
     line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .description-more {
+    color: #0d9488;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .description-more:hover {
+    text-decoration: underline;
+  }
+
+  .product-features {
+    list-style: none;
+    margin-bottom: 24px;
+    padding: 0;
+  }
+
+  .product-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #4b5563;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .product-features li:last-child {
+    border-bottom: none;
+  }
+
+  .product-features svg {
+    color: #0d9488;
+    flex-shrink: 0;
+  }
+
+  .product-footer {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 24px;
+  }
+
+  .product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
     margin-bottom: 20px;
-    min-height: 48px;
+  }
+
+  .price-label {
+    font-size: 14px;
+    color: #9ca3af;
+  }
+
+  .price-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f2937;
+  }
+
+  .price-tax {
+    font-size: 14px;
+    color: #9ca3af;
   }
 
   .product-btn {
     display: block;
     width: 100%;
-    padding: 14px 24px;
+    padding: 16px 24px;
     background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
     color: white;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     border-radius: 8px;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
     text-decoration: none;
   }
 
@@ -214,33 +353,31 @@ const supplements = [
   }
 
   /* レスポンシブ対応 */
-  @media (max-width: 900px) {
-    .products-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .hero-section {
       padding: 60px 0 30px;
     }
 
     .products-grid {
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 24px;
     }
 
     .product-content {
-      padding: 20px;
+      padding: 24px 20px;
+    }
+
+    .product-image {
+      width: 140px;
+      height: 140px;
     }
 
     .product-name {
-      font-size: 18px;
+      font-size: 20px;
     }
 
-    .product-description {
-      min-height: auto;
+    .price-amount {
+      font-size: 28px;
     }
 
     .cta-section {
