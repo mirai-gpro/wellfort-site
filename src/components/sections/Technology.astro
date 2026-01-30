@@ -26,7 +26,7 @@
           <div class="relative w-full aspect-square max-w-md mx-auto">
             <div class="absolute inset-0 bg-gradient-radial from-tiffany-500/30 via-tiffany-400/20 to-transparent rounded-full animate-pulse"></div>
             <div class="absolute inset-8 bg-gradient-radial from-tiffany-600/40 via-tiffany-500/30 to-transparent rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-            
+
             <!-- Center Circle -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-tiffany rounded-full shadow-luxury-lg flex items-center justify-center">
               <div class="text-center text-white">
@@ -66,7 +66,7 @@
       <!-- Right: AI Reports -->
       <div class="space-y-8 slide-up" style="animation-delay: 0.2s;">
         <!-- Prediction Report -->
-        <div class="card-luxury group hover:scale-105 transition-all duration-500">
+        <div class="card-luxury group hover:scale-105 transition-all duration-500 report-hover-card cursor-pointer" data-image="/images/yosoku.png" data-title="AI疾病予測報告書">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-luxury group-hover:scale-110 transition-transform">
               <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,12 +89,13 @@
                 </svg>
                 <span>年1回の5年後疾病予測</span>
               </div>
+              <p class="text-xs text-gray-400 mt-2">ホバーで報告書サンプルを表示</p>
             </div>
           </div>
         </div>
 
         <!-- Prevention Report -->
-        <div class="card-luxury group hover:scale-105 transition-all duration-500">
+        <div class="card-luxury group hover:scale-105 transition-all duration-500 report-hover-card cursor-pointer" data-image="/images/yobou.png" data-title="AI疾病予防報告書">
           <div class="flex items-start space-x-4">
             <div class="flex-shrink-0 w-16 h-16 bg-gradient-tiffany rounded-2xl flex items-center justify-center shadow-luxury group-hover:scale-110 transition-transform">
               <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,6 +118,7 @@
                 </svg>
                 <span>年4回の生活習慣改善アドバイス</span>
               </div>
+              <p class="text-xs text-gray-400 mt-2">ホバーで報告書サンプルを表示</p>
             </div>
           </div>
         </div>
@@ -135,4 +137,78 @@
     </div>
 
   </div>
+
+  <!-- 画像モーダル（ホバー表示） -->
+  <div id="reportImageModal" class="report-image-modal">
+    <div class="report-image-modal-content">
+      <img id="reportModalImage" src="" alt="" />
+      <p id="reportModalTitle" class="report-image-modal-title"></p>
+    </div>
+  </div>
 </section>
+
+<style>
+  /* 画像モーダル（ホバー表示） */
+  .report-image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .report-image-modal.active {
+    display: flex;
+  }
+  .report-image-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+  }
+  .report-image-modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+  .report-image-modal-title {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 16px;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // 画像モーダル（ホバーで表示）
+  const reportImageModal = document.getElementById('reportImageModal');
+  const reportModalImage = document.getElementById('reportModalImage') as HTMLImageElement;
+  const reportModalTitle = document.getElementById('reportModalTitle');
+
+  document.querySelectorAll('.report-hover-card').forEach(card => {
+    // マウスが乗ったら表示
+    card.addEventListener('mouseenter', () => {
+      const imgSrc = card.getAttribute('data-image');
+      const imgTitle = card.getAttribute('data-title');
+      if (reportImageModal && reportModalImage && imgSrc) {
+        reportModalImage.src = imgSrc;
+        reportModalImage.alt = imgTitle || '';
+        if (reportModalTitle) reportModalTitle.textContent = imgTitle || '';
+        reportImageModal.classList.add('active');
+      }
+    });
+
+    // マウスが離れたら非表示
+    card.addEventListener('mouseleave', () => {
+      if (reportImageModal) {
+        reportImageModal.classList.remove('active');
+      }
+    });
+  });
+</script>
