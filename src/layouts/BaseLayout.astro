@@ -24,4 +24,179 @@ const { title, description = "健康寿命延伸を実現する未病プラッ�
 
 <style is:global>
   @import "../styles/global.css";
+
+  /* ===== スクロールアニメーション ===== */
+
+  /* 基本のアニメーション設定 */
+  [data-scroll] {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  [data-scroll].is-visible {
+    opacity: 1;
+  }
+
+  /* フェードイン（上から） */
+  [data-scroll="fade-up"] {
+    transform: translateY(40px);
+  }
+  [data-scroll="fade-up"].is-visible {
+    transform: translateY(0);
+  }
+
+  /* フェードイン（下から） */
+  [data-scroll="fade-down"] {
+    transform: translateY(-40px);
+  }
+  [data-scroll="fade-down"].is-visible {
+    transform: translateY(0);
+  }
+
+  /* フェードイン（左から） */
+  [data-scroll="fade-left"] {
+    transform: translateX(-60px);
+  }
+  [data-scroll="fade-left"].is-visible {
+    transform: translateX(0);
+  }
+
+  /* フェードイン（右から） */
+  [data-scroll="fade-right"] {
+    transform: translateX(60px);
+  }
+  [data-scroll="fade-right"].is-visible {
+    transform: translateX(0);
+  }
+
+  /* ズームイン */
+  [data-scroll="zoom-in"] {
+    transform: scale(0.9);
+  }
+  [data-scroll="zoom-in"].is-visible {
+    transform: scale(1);
+  }
+
+  /* ズームアウト */
+  [data-scroll="zoom-out"] {
+    transform: scale(1.1);
+  }
+  [data-scroll="zoom-out"].is-visible {
+    transform: scale(1);
+  }
+
+  /* フリップ */
+  [data-scroll="flip-up"] {
+    transform: perspective(1000px) rotateX(10deg) translateY(30px);
+  }
+  [data-scroll="flip-up"].is-visible {
+    transform: perspective(1000px) rotateX(0) translateY(0);
+  }
+
+  /* スライドイン（バウンス付き） */
+  [data-scroll="bounce-in"] {
+    transform: translateY(50px) scale(0.95);
+  }
+  [data-scroll="bounce-in"].is-visible {
+    transform: translateY(0) scale(1);
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  @keyframes bounceIn {
+    0% { transform: translateY(50px) scale(0.95); }
+    60% { transform: translateY(-10px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+
+  /* ブラー解除 */
+  [data-scroll="blur"] {
+    filter: blur(10px);
+  }
+  [data-scroll="blur"].is-visible {
+    filter: blur(0);
+  }
+
+  /* 遅延設定 */
+  [data-scroll-delay="100"] { transition-delay: 100ms; }
+  [data-scroll-delay="200"] { transition-delay: 200ms; }
+  [data-scroll-delay="300"] { transition-delay: 300ms; }
+  [data-scroll-delay="400"] { transition-delay: 400ms; }
+  [data-scroll-delay="500"] { transition-delay: 500ms; }
+  [data-scroll-delay="600"] { transition-delay: 600ms; }
+  [data-scroll-delay="700"] { transition-delay: 700ms; }
+  [data-scroll-delay="800"] { transition-delay: 800ms; }
+
+  /* タイトル専用アニメーション */
+  .scroll-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .scroll-title.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 画像・カード専用アニメーション */
+  .scroll-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .scroll-card.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* 連続アイテム用のスタガー効果 */
+  .scroll-stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .scroll-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+  .scroll-stagger.is-visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+  .scroll-stagger.is-visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+  .scroll-stagger.is-visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+  .scroll-stagger.is-visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+  .scroll-stagger.is-visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+
+  /* 減速アニメーション（ユーザー設定を尊重） */
+  @media (prefers-reduced-motion: reduce) {
+    [data-scroll],
+    .scroll-title,
+    .scroll-card,
+    .scroll-stagger > * {
+      transition: none;
+      animation: none;
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
 </style>
+
+<script>
+  // スクロールアニメーション用 Intersection Observer
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollElements = document.querySelectorAll('[data-scroll], .scroll-title, .scroll-card, .scroll-stagger');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -80px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    scrollElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
