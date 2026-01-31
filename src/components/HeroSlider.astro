@@ -62,11 +62,11 @@ const slides = [
         data-slide={index}
       >
         <!-- Background Image -->
-        <div class="absolute inset-0">
-          <img 
+        <div class="absolute inset-0 bg-gray-900">
+          <img
             src={`/images/slider/slide-0${slide.id}.png`}
             alt={slide.imageAlt}
-            class="w-full h-full object-cover"
+            class="w-full h-full object-contain sm:object-cover"
             loading={slide.id === 1 ? 'eager' : 'lazy'}
           />
         </div>
