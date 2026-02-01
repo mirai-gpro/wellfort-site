@@ -521,28 +521,27 @@
 </head>
 <body>
   <div id="login-screen">
-    <h2>Product Management System</h2>
-    <p>Please sign in with your Google account</p>
+    <h2>商品管理システム</h2>
+    <p>Googleアカウントでログインしてください</p>
   </div>
 
   <div id="main-screen" style="display: none;">
     <div class="container">
       <header>
-        <h1>Product Management</h1>
+        <h1>商品管理</h1>
         <div class="header-actions">
-          <a href="/src/sales_schedule_set.html" class="schedule-link">無料オンライン面談の可能日時を設定・修正</a>
           <a href="#" class="add-product-btn" onclick="openInsertModal()">新規商品登録</a>
           <div class="user-info">
             <img id="user-avatar" class="user-avatar" src="" alt="">
             <span id="user-name"></span>
-            <button class="logout-btn" onclick="logout()">Logout</button>
+            <button class="logout-btn" onclick="logout()">ログアウト</button>
           </div>
         </div>
       </header>
 
       <div id="message" class="message"></div>
 
-      <div id="loading" class="loading">Loading...</div>
+      <div id="loading" class="loading">読み込み中...</div>
 
       <div id="products-container" class="products-grid"></div>
     </div>
@@ -551,7 +550,7 @@
   <div id="edit-modal" class="modal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h2 style="margin-bottom: 30px;">Edit Product</h2>
+      <h2 style="margin-bottom: 30px;">商品編集</h2>
 
       <div id="modal-message" class="message"></div>
 
@@ -559,29 +558,29 @@
         <input type="hidden" id="product-id">
 
         <div class="form-group">
-          <label for="product-name">Product Name *</label>
+          <label for="product-name">商品名 *</label>
           <input type="text" id="product-name" required>
         </div>
 
         <div class="form-group">
-          <label for="product-description">Short Description</label>
+          <label for="product-description">簡易説明</label>
           <textarea id="product-description"></textarea>
         </div>
 
         <div class="form-group">
-          <label for="product-detail">Detail Description</label>
+          <label for="product-detail">詳細説明</label>
           <textarea id="product-detail"></textarea>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="product-price">Standard Price (JPY) *</label>
+            <label for="product-price">通常価格 (円) *</label>
             <input type="number" id="product-price" required min="0">
             <div class="help-text">通常価格（1回限りまたはサブスク通常価格）</div>
           </div>
 
           <div class="form-group">
-            <label for="product-category">Category</label>
+            <label for="product-category">カテゴリ</label>
             <input type="text" id="product-category">
           </div>
         </div>
@@ -618,7 +617,7 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="product-sort">Sort Order</label>
+            <label for="product-sort">表示順</label>
             <input type="number" id="product-sort" min="0" value="0">
           </div>
 
@@ -626,24 +625,24 @@
             <label>&nbsp;</label>
             <div class="checkbox-group">
               <input type="checkbox" id="product-active" checked>
-              <label for="product-active">Active</label>
+              <label for="product-active">有効</label>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="product-image">Image URL</label>
+          <label for="product-image">画像URL</label>
           <input type="url" id="product-image" placeholder="https://example.com/image.jpg">
           <img id="image-preview" class="image-preview" style="display: none;">
         </div>
 
         <div class="modal-actions">
           <div class="modal-actions-left">
-            <button type="button" class="btn-danger" id="delete-btn" onclick="confirmDelete()">DELETE</button>
+            <button type="button" class="btn-danger" id="delete-btn" onclick="confirmDelete()">削除</button>
           </div>
           <div class="modal-actions-right">
-            <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
-            <button type="submit" class="btn-primary" id="save-btn">Save</button>
+            <button type="button" class="btn-secondary" onclick="closeModal()">キャンセル</button>
+            <button type="submit" class="btn-primary" id="save-btn">保存</button>
           </div>
         </div>
       </form>
@@ -653,35 +652,35 @@
   <div id="insert-modal" class="modal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeInsertModal()">&times;</button>
-      <h2 style="margin-bottom: 30px;">Add New Product</h2>
+      <h2 style="margin-bottom: 30px;">新規商品登録</h2>
 
       <div id="insert-modal-message" class="message"></div>
 
       <form id="insert-form">
         <div class="form-group">
-          <label for="insert-product-name">Product Name *</label>
+          <label for="insert-product-name">商品名 *</label>
           <input type="text" id="insert-product-name" required>
         </div>
 
         <div class="form-group">
-          <label for="insert-product-description">Short Description</label>
+          <label for="insert-product-description">簡易説明</label>
           <textarea id="insert-product-description"></textarea>
         </div>
 
         <div class="form-group">
-          <label for="insert-product-detail">Detail Description</label>
+          <label for="insert-product-detail">詳細説明</label>
           <textarea id="insert-product-detail"></textarea>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="insert-product-price">Standard Price (JPY) *</label>
+            <label for="insert-product-price">通常価格 (円) *</label>
             <input type="number" id="insert-product-price" required min="0">
             <div class="help-text">通常価格（1回限りまたはサブスク通常価格）</div>
           </div>
 
           <div class="form-group">
-            <label for="insert-product-category">Category</label>
+            <label for="insert-product-category">カテゴリ</label>
             <input type="text" id="insert-product-category">
           </div>
         </div>
@@ -718,7 +717,7 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="insert-product-sort">Sort Order</label>
+            <label for="insert-product-sort">表示順</label>
             <input type="number" id="insert-product-sort" min="0" value="0">
           </div>
 
@@ -726,20 +725,20 @@
             <label>&nbsp;</label>
             <div class="checkbox-group">
               <input type="checkbox" id="insert-product-active" checked>
-              <label for="insert-product-active">Active</label>
+              <label for="insert-product-active">有効</label>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="insert-product-image">Image URL</label>
+          <label for="insert-product-image">画像URL</label>
           <input type="url" id="insert-product-image" placeholder="https://example.com/image.jpg">
           <img id="insert-image-preview" class="image-preview" style="display: none;">
         </div>
 
         <div style="margin-top: 30px; text-align: right;">
-          <button type="button" class="btn-secondary" onclick="closeInsertModal()">Cancel</button>
-          <button type="submit" class="btn-primary" id="insert-save-btn">Add Product</button>
+          <button type="button" class="btn-secondary" onclick="closeInsertModal()">キャンセル</button>
+          <button type="submit" class="btn-primary" id="insert-save-btn">商品追加</button>
         </div>
       </form>
     </div>
@@ -747,11 +746,11 @@
 
   <div id="confirm-modal" class="modal">
     <div class="confirm-dialog">
-      <h3>Confirm Delete</h3>
-      <p>Are you sure you want to delete this product? This action cannot be undone.</p>
+      <h3>削除確認</h3>
+      <p>この商品を削除しますか？この操作は取り消せません。</p>
       <div class="confirm-dialog-buttons">
-        <button type="button" class="btn-secondary" onclick="closeConfirmModal()">Cancel</button>
-        <button type="button" class="btn-danger" id="confirm-delete-btn" onclick="deleteProduct()">Delete</button>
+        <button type="button" class="btn-secondary" onclick="closeConfirmModal()">キャンセル</button>
+        <button type="button" class="btn-danger" id="confirm-delete-btn" onclick="deleteProduct()">削除</button>
       </div>
     </div>
   </div>
@@ -826,12 +825,12 @@
 
       } catch (err) {
         console.error('Authentication error:', err)
-        alert('Login failed: ' + err.message)
+        alert('ログインに失敗しました: ' + err.message)
       }
     }
 
     function logout() {
-      if (confirm('Are you sure you want to logout?')) {
+      if (confirm('ログアウトしますか？')) {
         currentUser = null
         accessToken = null
         
@@ -878,7 +877,7 @@
 
       } catch (err) {
         console.error('Product load error:', err)
-        showMessage('Failed to load products: ' + err.message, 'error')
+        showMessage('商品の読み込みに失敗しました: ' + err.message, 'error')
       } finally {
         document.getElementById('loading').style.display = 'none'
       }
@@ -893,9 +892,9 @@
         card.className = 'product-card' + (!product.is_active ? ' inactive' : '')
         card.onclick = function() { openEditModal(product) }
 
-        const statusBadge = product.is_active 
-          ? '<span class="status-badge status-active">Active</span>'
-          : '<span class="status-badge status-inactive">Inactive</span>'
+        const statusBadge = product.is_active
+          ? '<span class="status-badge status-active">有効</span>'
+          : '<span class="status-badge status-inactive">無効</span>'
 
         // 価格表示の構築
         let priceHtml = '<div class="product-price">JPY ' + product.price.toLocaleString() + '</div>'
@@ -920,8 +919,8 @@
           priceHtml +
           renewalHtml +
           '<div class="product-order">' +
-            '<span>Order: ' + product.sort_order + '</span>' +
-            '<span>Position: ' + (index + 1) + '</span>' +
+            '<span>表示順: ' + product.sort_order + '</span>' +
+            '<span>位置: ' + (index + 1) + '</span>' +
           '</div>'
 
         container.appendChild(card)
@@ -990,7 +989,7 @@
       const deleteBtn = document.getElementById('confirm-delete-btn')
       
       deleteBtn.disabled = true
-      deleteBtn.textContent = 'Deleting...'
+      deleteBtn.textContent = '削除中...'
 
       try {
         const response = await fetch(SUPABASE_URL + '/functions/v1/delete-product', {
@@ -1012,16 +1011,16 @@
 
         closeConfirmModal()
         closeModal()
-        showMessage('Product deleted successfully', 'success')
-        
+        showMessage('商品を削除しました', 'success')
+
         await loadProducts()
 
       } catch (err) {
         console.error('Delete error:', err)
-        showModalMessage('Delete failed: ' + err.message, 'error')
+        showModalMessage('削除に失敗しました: ' + err.message, 'error')
       } finally {
         deleteBtn.disabled = false
-        deleteBtn.textContent = 'Delete'
+        deleteBtn.textContent = '削除'
       }
     }
 
@@ -1050,7 +1049,7 @@
 
       const btn = document.getElementById('save-btn')
       btn.disabled = true
-      btn.textContent = 'Saving...'
+      btn.textContent = '保存中...'
 
       try {
         const isRenewalAvailable = document.getElementById('product-renewal-available').checked
@@ -1087,8 +1086,8 @@
           throw new Error(result.error)
         }
 
-        showModalMessage('Saved successfully', 'success')
-        
+        showModalMessage('保存しました', 'success')
+
         setTimeout(function() {
           closeModal()
           loadProducts()
@@ -1096,10 +1095,10 @@
 
       } catch (err) {
         console.error('Save error:', err)
-        showModalMessage('Save failed: ' + err.message, 'error')
+        showModalMessage('保存に失敗しました: ' + err.message, 'error')
       } finally {
         btn.disabled = false
-        btn.textContent = 'Save'
+        btn.textContent = '保存'
       }
     })
 
@@ -1108,7 +1107,7 @@
 
       const btn = document.getElementById('insert-save-btn')
       btn.disabled = true
-      btn.textContent = 'Adding...'
+      btn.textContent = '追加中...'
 
       try {
         const isRenewalAvailable = document.getElementById('insert-product-renewal-available').checked
@@ -1144,8 +1143,8 @@
           throw new Error(result.error)
         }
 
-        showInsertModalMessage('Product added successfully', 'success')
-        
+        showInsertModalMessage('商品を追加しました', 'success')
+
         setTimeout(function() {
           closeInsertModal()
           loadProducts()
@@ -1153,10 +1152,10 @@
 
       } catch (err) {
         console.error('Insert error:', err)
-        showInsertModalMessage('Insert failed: ' + err.message, 'error')
+        showInsertModalMessage('追加に失敗しました: ' + err.message, 'error')
       } finally {
         btn.disabled = false
-        btn.textContent = 'Add Product'
+        btn.textContent = '商品追加'
       }
     })
 
