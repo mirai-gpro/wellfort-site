@@ -332,6 +332,104 @@
       border: 2px solid #e0e0e0;
     }
 
+    .image-upload-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .image-upload-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .file-input-wrapper input[type="file"] {
+      display: none;
+    }
+
+    .file-select-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .file-select-btn:hover {
+      background: #388e3c;
+    }
+
+    .file-select-btn:disabled {
+      background: #9e9e9e;
+      cursor: not-allowed;
+    }
+
+    .file-name {
+      flex: 1;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .upload-progress {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      background: #e3f2fd;
+      border-radius: 8px;
+    }
+
+    .upload-progress.active {
+      display: flex;
+    }
+
+    .upload-progress-bar {
+      flex: 1;
+      height: 8px;
+      background: #bbdefb;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .upload-progress-bar-inner {
+      height: 100%;
+      background: #2196f3;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    .upload-progress-text {
+      font-size: 12px;
+      color: #1976d2;
+      white-space: nowrap;
+    }
+
+    .or-divider {
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin: 5px 0;
+    }
+
     .btn-primary {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -631,9 +729,30 @@
         </div>
 
         <div class="form-group">
-          <label for="product-image">画像URL</label>
-          <input type="url" id="product-image" placeholder="https://example.com/image.jpg">
-          <img id="image-preview" class="image-preview" style="display: none;">
+          <label>商品画像</label>
+          <div class="image-upload-wrapper">
+            <div class="image-upload-row">
+              <div class="file-input-wrapper">
+                <input type="file" id="product-image-file" accept="image/*">
+                <button type="button" class="file-select-btn" onclick="document.getElementById('product-image-file').click()">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                  </svg>
+                  画像を選択
+                </button>
+              </div>
+              <span class="file-name" id="product-file-name">ファイルが選択されていません</span>
+            </div>
+            <div class="upload-progress" id="product-upload-progress">
+              <div class="upload-progress-bar">
+                <div class="upload-progress-bar-inner" id="product-progress-bar" style="width: 0%"></div>
+              </div>
+              <span class="upload-progress-text" id="product-progress-text">アップロード中...</span>
+            </div>
+            <div class="or-divider">または URL を直接入力</div>
+            <input type="url" id="product-image" placeholder="https://example.com/image.jpg">
+            <img id="image-preview" class="image-preview" style="display: none;">
+          </div>
         </div>
 
         <div class="modal-actions">
@@ -731,9 +850,30 @@
         </div>
 
         <div class="form-group">
-          <label for="insert-product-image">画像URL</label>
-          <input type="url" id="insert-product-image" placeholder="https://example.com/image.jpg">
-          <img id="insert-image-preview" class="image-preview" style="display: none;">
+          <label>商品画像</label>
+          <div class="image-upload-wrapper">
+            <div class="image-upload-row">
+              <div class="file-input-wrapper">
+                <input type="file" id="insert-product-image-file" accept="image/*">
+                <button type="button" class="file-select-btn" onclick="document.getElementById('insert-product-image-file').click()">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                  </svg>
+                  画像を選択
+                </button>
+              </div>
+              <span class="file-name" id="insert-product-file-name">ファイルが選択されていません</span>
+            </div>
+            <div class="upload-progress" id="insert-product-upload-progress">
+              <div class="upload-progress-bar">
+                <div class="upload-progress-bar-inner" id="insert-product-progress-bar" style="width: 0%"></div>
+              </div>
+              <span class="upload-progress-text" id="insert-product-progress-text">アップロード中...</span>
+            </div>
+            <div class="or-divider">または URL を直接入力</div>
+            <input type="url" id="insert-product-image" placeholder="https://example.com/image.jpg">
+            <img id="insert-image-preview" class="image-preview" style="display: none;">
+          </div>
         </div>
 
         <div style="margin-top: 30px; text-align: right;">
@@ -962,6 +1102,10 @@
       document.getElementById('image-preview').style.display = 'none'
       document.getElementById('modal-message').style.display = 'none'
       document.getElementById('renewal-prices-section').style.display = 'none'
+      // ファイル選択状態をリセット
+      document.getElementById('product-image-file').value = ''
+      document.getElementById('product-file-name').textContent = 'ファイルが選択されていません'
+      document.getElementById('product-upload-progress').classList.remove('active')
     }
 
     function openInsertModal() {
@@ -974,6 +1118,10 @@
       document.getElementById('insert-image-preview').style.display = 'none'
       document.getElementById('insert-modal-message').style.display = 'none'
       document.getElementById('insert-renewal-prices-section').style.display = 'none'
+      // ファイル選択状態をリセット
+      document.getElementById('insert-product-image-file').value = ''
+      document.getElementById('insert-product-file-name').textContent = 'ファイルが選択されていません'
+      document.getElementById('insert-product-upload-progress').classList.remove('active')
     }
 
     function confirmDelete() {
@@ -1194,6 +1342,141 @@
         }, 3000)
       }
     }
+
+    // ========== 画像アップロード機能 ==========
+
+    // ファイルをSupabase Storageにアップロードする関数
+    async function uploadImage(file, prefix) {
+      const timestamp = Date.now()
+      const safeName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_')
+      const fileName = prefix + '_' + timestamp + '_' + safeName
+
+      const response = await fetch(SUPABASE_URL + '/storage/v1/object/product-images/' + fileName, {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + accessToken,
+          'Content-Type': file.type,
+          'x-upsert': 'true'
+        },
+        body: file
+      })
+
+      if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error.message || 'アップロードに失敗しました')
+      }
+
+      // 公開URLを返す
+      return SUPABASE_URL + '/storage/v1/object/public/product-images/' + fileName
+    }
+
+    // 編集モーダル用のファイル選択イベント
+    document.getElementById('product-image-file').addEventListener('change', async function(e) {
+      const file = e.target.files[0]
+      if (!file) return
+
+      const fileNameEl = document.getElementById('product-file-name')
+      const progressEl = document.getElementById('product-upload-progress')
+      const progressBar = document.getElementById('product-progress-bar')
+      const progressText = document.getElementById('product-progress-text')
+      const imageUrlInput = document.getElementById('product-image')
+      const preview = document.getElementById('image-preview')
+
+      fileNameEl.textContent = file.name
+      progressEl.classList.add('active')
+      progressBar.style.width = '0%'
+      progressText.textContent = 'アップロード中...'
+
+      try {
+        // プログレスアニメーション（実際のプログレスAPIがないため疑似）
+        let progress = 0
+        const progressInterval = setInterval(function() {
+          progress += 10
+          if (progress <= 90) {
+            progressBar.style.width = progress + '%'
+          }
+        }, 100)
+
+        const imageUrl = await uploadImage(file, 'product')
+
+        clearInterval(progressInterval)
+        progressBar.style.width = '100%'
+        progressText.textContent = 'アップロード完了!'
+
+        // URLを設定
+        imageUrlInput.value = imageUrl
+        preview.src = imageUrl
+        preview.style.display = 'block'
+
+        setTimeout(function() {
+          progressEl.classList.remove('active')
+        }, 1500)
+
+      } catch (err) {
+        console.error('Upload error:', err)
+        progressText.textContent = 'エラー: ' + err.message
+        progressBar.style.width = '0%'
+        progressBar.style.background = '#f44336'
+
+        setTimeout(function() {
+          progressEl.classList.remove('active')
+          progressBar.style.background = ''
+        }, 3000)
+      }
+    })
+
+    // 新規登録モーダル用のファイル選択イベント
+    document.getElementById('insert-product-image-file').addEventListener('change', async function(e) {
+      const file = e.target.files[0]
+      if (!file) return
+
+      const fileNameEl = document.getElementById('insert-product-file-name')
+      const progressEl = document.getElementById('insert-product-upload-progress')
+      const progressBar = document.getElementById('insert-product-progress-bar')
+      const progressText = document.getElementById('insert-product-progress-text')
+      const imageUrlInput = document.getElementById('insert-product-image')
+      const preview = document.getElementById('insert-image-preview')
+
+      fileNameEl.textContent = file.name
+      progressEl.classList.add('active')
+      progressBar.style.width = '0%'
+      progressText.textContent = 'アップロード中...'
+
+      try {
+        let progress = 0
+        const progressInterval = setInterval(function() {
+          progress += 10
+          if (progress <= 90) {
+            progressBar.style.width = progress + '%'
+          }
+        }, 100)
+
+        const imageUrl = await uploadImage(file, 'product')
+
+        clearInterval(progressInterval)
+        progressBar.style.width = '100%'
+        progressText.textContent = 'アップロード完了!'
+
+        imageUrlInput.value = imageUrl
+        preview.src = imageUrl
+        preview.style.display = 'block'
+
+        setTimeout(function() {
+          progressEl.classList.remove('active')
+        }, 1500)
+
+      } catch (err) {
+        console.error('Upload error:', err)
+        progressText.textContent = 'エラー: ' + err.message
+        progressBar.style.width = '0%'
+        progressBar.style.background = '#f44336'
+
+        setTimeout(function() {
+          progressEl.classList.remove('active')
+          progressBar.style.background = ''
+        }, 3000)
+      }
+    })
 
     // Google OneTap認証の初期化
     window.onload = function() {
