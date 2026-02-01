@@ -365,18 +365,12 @@ import Technology from '../components/sections/Technology.astro';
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-4" data-scroll="fade-up">もっと詳しく知る</h2>
         <p class="text-gray-600 mb-10" data-scroll="fade-up" data-scroll-delay="100">サービスについてのご質問やご相談はお気軽にどうぞ</p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center scroll-stagger">
-          <a href="/contact" class="inline-flex items-center justify-center px-12 py-5 bg-white border-2 border-tiffany-500 text-tiffany-700 font-bold text-lg rounded-xl hover:bg-tiffany-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+        <div class="flex justify-center scroll-stagger">
+          <a href="/contact" class="inline-flex items-center justify-center px-12 py-5 bg-gradient-to-r from-tiffany-500 to-tiffany-600 text-white font-bold text-lg rounded-xl hover:from-tiffany-600 hover:to-tiffany-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
             <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             お問合せ
-          </a>
-          <a href="/online-meeting" class="inline-flex items-center justify-center px-12 py-5 bg-gradient-to-r from-tiffany-500 to-tiffany-600 text-white font-bold text-lg rounded-xl hover:from-tiffany-600 hover:to-tiffany-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-            無料オンライン面談
           </a>
         </div>
       </div>
@@ -436,7 +430,7 @@ import Technology from '../components/sections/Technology.astro';
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     pointer-events: none;
@@ -446,13 +440,13 @@ import Technology from '../components/sections/Technology.astro';
   }
   .image-modal-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 70%;
+    max-height: 70%;
     text-align: center;
   }
   .image-modal-content img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 70vh;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
